@@ -49,7 +49,7 @@ export const SAAS_PLANS: Record<SubscriptionPlan, PlanDetails> = {
       process.env.NEXT_PUBLIC_PAYMENT_URL_VISA ||
       process.env.NEXT_PUBLIC_GUMROAD_VISA_URL ||
       process.env.NEXT_PUBLIC_LEMON_SQUEEZY_VISA_URL ||
-      '',
+      'https://tawhidh.gumroad.com/l/qzaetv',
   },
   agency_pro: {
     id: 'agency_pro',

@@ -208,92 +208,132 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
 
           {/* Right Column: Payment Methods & Action */}
           <form onSubmit={handleProcessPayment} className="space-y-4 flex flex-col justify-between">
-            <div className="space-y-3">
-              <label className="text-[11px] font-bold text-slate-300 block">
-                Select Payment Gateway:
-              </label>
-
-              {/* Payment Method Pills */}
-              <div className="grid grid-cols-2 gap-2">
-                <button
-                  type="button"
-                  onClick={() => setPaymentMethod('card')}
-                  className={`p-2.5 rounded-xl border text-left transition flex items-center gap-2 ${
-                    paymentMethod === 'card'
-                      ? 'border-emerald-400 bg-emerald-500/10 text-white font-bold'
-                      : 'border-white/[0.08] text-slate-400 bg-white/[0.02]'
-                  }`}
-                >
-                  <CreditCard className="w-4 h-4 text-emerald-400 shrink-0" />
-                  <span className="text-xs">Credit Card</span>
-                </button>
-
-                <button
-                  type="button"
-                  onClick={() => setPaymentMethod('lemon_squeezy')}
-                  className={`p-2.5 rounded-xl border text-left transition flex items-center gap-2 ${
-                    paymentMethod === 'lemon_squeezy'
-                      ? 'border-yellow-400 bg-yellow-500/10 text-white font-bold'
-                      : 'border-white/[0.08] text-slate-400 bg-white/[0.02]'
-                  }`}
-                >
-                  <Globe className="w-4 h-4 text-yellow-400 shrink-0" />
-                  <span className="text-xs">Lemon Squeezy</span>
-                </button>
-              </div>
-
-              {/* Card Inputs */}
-              <div className="space-y-2 pt-1">
-                <div>
-                  <label className="text-[10px] font-bold text-slate-400 block mb-1">
-                    Card Number:
-                  </label>
-                  <input
-                    type="text"
-                    required
-                    value={cardNumber}
-                    onChange={(e) => setCardNumber(e.target.value)}
-                    className="w-full p-2 bg-slate-900 border border-white/[0.12] rounded-xl text-xs text-white"
-                  />
+            {plan.checkoutUrl ? (
+              <div className="space-y-4">
+                <div className="p-4 rounded-2xl bg-gradient-to-br from-emerald-500/10 via-emerald-500/5 to-teal-500/5 border border-emerald-500/20 space-y-3">
+                  <div className="flex items-center gap-2.5">
+                    <div className="w-8 h-8 rounded-xl bg-pink-500/20 text-pink-400 flex items-center justify-center font-black text-sm">
+                      G
+                    </div>
+                    <div>
+                      <h4 className="text-xs font-bold text-white">Official Gumroad Checkout</h4>
+                      <p className="text-[11px] text-slate-400">Global SSL Encrypted Payment Portal</p>
+                    </div>
+                  </div>
+                  <div className="grid grid-cols-2 gap-2 text-[11px] text-slate-300 pt-1">
+                    <div className="flex items-center gap-1.5 p-2 rounded-lg bg-black/30 border border-white/5">
+                      <CreditCard className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                      <span>Credit &amp; Debit Cards</span>
+                    </div>
+                    <div className="flex items-center gap-1.5 p-2 rounded-lg bg-black/30 border border-white/5">
+                      <Zap className="w-3.5 h-3.5 text-lime-400 shrink-0" />
+                      <span>PayPal &amp; Apple Pay</span>
+                    </div>
+                  </div>
+                  <p className="text-[11px] text-slate-400 leading-relaxed">
+                    Clicking below will securely redirect you to our official verified checkout. After completing payment, your license will be emailed to you and can be activated instantly.
+                  </p>
                 </div>
 
+                <div className="p-2.5 rounded-xl bg-white/[0.03] border border-white/[0.06] text-[10px] text-slate-400 space-y-1">
+                  <div className="flex items-center gap-2">
+                    <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />
+                    <span>30-Day Money-Back Guarantee if rejected by caseworker or court.</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-slate-400/80 pl-6">
+                    <Building2 className="w-3.5 h-3.5 text-lime-400 shrink-0" />
+                    <span>Direct Bank Payouts enabled via Gumroad / Payoneer / Wise.</span>
+                  </div>
+                </div>
+              </div>
+            ) : (
+              <div className="space-y-3">
+                <label className="text-[11px] font-bold text-slate-300 block">
+                  Select Payment Gateway:
+                </label>
+
+                {/* Payment Method Pills */}
                 <div className="grid grid-cols-2 gap-2">
+                  <button
+                    type="button"
+                    onClick={() => setPaymentMethod('card')}
+                    className={`p-2.5 rounded-xl border text-left transition flex items-center gap-2 ${
+                      paymentMethod === 'card'
+                        ? 'border-emerald-400 bg-emerald-500/10 text-white font-bold'
+                        : 'border-white/[0.08] text-slate-400 bg-white/[0.02]'
+                    }`}
+                  >
+                    <CreditCard className="w-4 h-4 text-emerald-400 shrink-0" />
+                    <span className="text-xs">Credit Card</span>
+                  </button>
+
+                  <button
+                    type="button"
+                    onClick={() => setPaymentMethod('lemon_squeezy')}
+                    className={`p-2.5 rounded-xl border text-left transition flex items-center gap-2 ${
+                      paymentMethod === 'lemon_squeezy'
+                        ? 'border-yellow-400 bg-yellow-500/10 text-white font-bold'
+                        : 'border-white/[0.08] text-slate-400 bg-white/[0.02]'
+                    }`}
+                  >
+                    <Globe className="w-4 h-4 text-yellow-400 shrink-0" />
+                    <span className="text-xs">Lemon Squeezy</span>
+                  </button>
+                </div>
+
+                {/* Card Inputs */}
+                <div className="space-y-2 pt-1">
                   <div>
                     <label className="text-[10px] font-bold text-slate-400 block mb-1">
-                      Expiry (MM/YY):
+                      Card Number:
                     </label>
                     <input
                       type="text"
                       required
-                      value={cardExpiry}
-                      onChange={(e) => setCardExpiry(e.target.value)}
+                      value={cardNumber}
+                      onChange={(e) => setCardNumber(e.target.value)}
                       className="w-full p-2 bg-slate-900 border border-white/[0.12] rounded-xl text-xs text-white"
                     />
                   </div>
-                  <div>
-                    <label className="text-[10px] font-bold text-slate-400 block mb-1">CVC:</label>
-                    <input
-                      type="text"
-                      required
-                      value={cardCvc}
-                      onChange={(e) => setCardCvc(e.target.value)}
-                      className="w-full p-2 bg-slate-900 border border-white/[0.12] rounded-xl text-xs text-white"
-                    />
-                  </div>
-                </div>
-              </div>
 
-              <div className="p-2.5 rounded-xl bg-white/[0.03] border border-white/[0.06] text-[10px] text-slate-400 space-y-1">
-                <div className="flex items-center gap-2">
-                  <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />
-                  <span>30-Day Money-Back Guarantee if rejected by caseworker or court.</span>
+                  <div className="grid grid-cols-2 gap-2">
+                    <div>
+                      <label className="text-[10px] font-bold text-slate-400 block mb-1">
+                        Expiry (MM/YY):
+                      </label>
+                      <input
+                        type="text"
+                        required
+                        value={cardExpiry}
+                        onChange={(e) => setCardExpiry(e.target.value)}
+                        className="w-full p-2 bg-slate-900 border border-white/[0.12] rounded-xl text-xs text-white"
+                      />
+                    </div>
+                    <div>
+                      <label className="text-[10px] font-bold text-slate-400 block mb-1">CVC:</label>
+                      <input
+                        type="text"
+                        required
+                        value={cardCvc}
+                        onChange={(e) => setCardCvc(e.target.value)}
+                        className="w-full p-2 bg-slate-900 border border-white/[0.12] rounded-xl text-xs text-white"
+                      />
+                    </div>
+                  </div>
                 </div>
-                <div className="flex items-center gap-2 text-slate-400/80 pl-6">
-                  <Building2 className="w-3.5 h-3.5 text-lime-400 shrink-0" />
-                  <span>Direct Bank Payouts enabled via Gumroad / Payoneer / Wise.</span>
+
+                <div className="p-2.5 rounded-xl bg-white/[0.03] border border-white/[0.06] text-[10px] text-slate-400 space-y-1">
+                  <div className="flex items-center gap-2">
+                    <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />
+                    <span>30-Day Money-Back Guarantee if rejected by caseworker or court.</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-slate-400/80 pl-6">
+                    <Building2 className="w-3.5 h-3.5 text-lime-400 shrink-0" />
+                    <span>Direct Bank Payouts enabled via Gumroad / Payoneer / Wise.</span>
+                  </div>
                 </div>
               </div>
-            </div>
+            )}
 
             <button
               type="submit"
