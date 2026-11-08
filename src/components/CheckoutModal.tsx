@@ -65,10 +65,13 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
   const handleProcessPayment = (e: React.FormEvent) => {
     e.preventDefault();
 
-    // If real live checkout URL is configured (e.g. from Lemon Squeezy or Stripe), redirect customer directly
+    // If real live checkout URL is configured (Gumroad), redirect customer directly in the same tab
     if (plan.checkoutUrl) {
-      window.open(plan.checkoutUrl, '_blank');
-      onClose();
+      const checkoutUrlWithEmail =
+        user?.email && !plan.checkoutUrl.includes('email=')
+          ? `${plan.checkoutUrl}${plan.checkoutUrl.includes('?') ? '&' : '?'}email=${encodeURIComponent(user.email)}`
+          : plan.checkoutUrl;
+      window.location.href = checkoutUrlWithEmail;
       return;
     }
 

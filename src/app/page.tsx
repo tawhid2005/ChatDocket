@@ -140,13 +140,38 @@ export default function Home() {
             currency: 'USD',
             discount: 0,
             finalAmount: planParam === 'agency_pro' ? 39 : 12,
-            paymentMethod: 'lemon_squeezy',
+            paymentMethod: 'gumroad',
             status: 'completed',
             licenseKey,
             createdAt: new Date().toISOString(),
           };
 
           setCompletedOrder(newOrder);
+
+          // Update user profile and persist to localStorage
+          setUser((prevUser) => {
+            const updated: UserProfile = prevUser
+              ? {
+                  ...prevUser,
+                  plan: planParam,
+                  licenseKey,
+                  purchasedAt: new Date().toISOString(),
+                }
+              : {
+                  id: 'usr_verified',
+                  email: 'customer@chatdocket.com',
+                  name: 'Verified Customer',
+                  plan: planParam,
+                  licenseKey,
+                  purchasedAt: new Date().toISOString(),
+                };
+            try {
+              localStorage.setItem('cd_user_profile', JSON.stringify(updated));
+            } catch {}
+            return updated;
+          });
+
+          // Permanently unlock Pro features and remove all watermarks
           setBrandingConfig((b) => ({ ...b, isPro: true, showWatermark: false }));
           setIsInvoiceOpen(true);
           setAuthNotice(`🎉 Payment Verified! Official License ${licenseKey} Activated.`);
