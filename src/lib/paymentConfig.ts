@@ -93,3 +93,47 @@ export function generateLicenseKey(plan: SubscriptionPlan): string {
   return `${prefix}-${seg1}-${seg2}-${seg3}`;
 }
 
+// Programmatically trigger Gumroad's in-page modal overlay on top of the current page
+export function openGumroadOverlay(checkoutUrl: string, userEmail?: string): void {
+  if (typeof window === 'undefined') return;
+
+  try {
+    const url = new URL(checkoutUrl);
+    // wanted=true tells Gumroad to skip preview and show payment fields directly
+    url.searchParams.set('wanted', 'true');
+    if (userEmail && !url.searchParams.has('email')) {
+      url.searchParams.set('email', userEmail);
+    }
+
+    // Ensure gumroad.js is loaded
+    if (!document.querySelector('script[src*="gumroad.js"]')) {
+      const script = document.createElement('script');
+      script.src = 'https://gumroad.com/js/gumroad.js';
+      script.async = true;
+      document.body.appendChild(script);
+    }
+
+    // Create a temporary hidden anchor with gumroad-button class to trigger overlay modal
+    const tempLink = document.createElement('a');
+    tempLink.href = url.toString();
+    tempLink.className = 'gumroad-button';
+    tempLink.setAttribute('data-gumroad-single-product', 'true');
+    tempLink.style.display = 'none';
+    document.body.appendChild(tempLink);
+
+    setTimeout(() => {
+      tempLink.click();
+      setTimeout(() => {
+        try {
+          if (document.body.contains(tempLink)) {
+            document.body.removeChild(tempLink);
+          }
+        } catch {}
+      }, 1500);
+    }, 80);
+  } catch {
+    window.location.href = checkoutUrl;
+  }
+}
+
+

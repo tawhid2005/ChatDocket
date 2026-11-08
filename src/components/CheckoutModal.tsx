@@ -15,7 +15,12 @@ import {
   Building2,
 } from 'lucide-react';
 import { UserProfile, SubscriptionPlan, PaymentOrder } from '@/types/auth';
-import { SAAS_PLANS, VALID_PROMO_CODES, generateLicenseKey } from '@/lib/paymentConfig';
+import {
+  SAAS_PLANS,
+  VALID_PROMO_CODES,
+  generateLicenseKey,
+  openGumroadOverlay,
+} from '@/lib/paymentConfig';
 
 interface CheckoutModalProps {
   isOpen: boolean;
@@ -65,13 +70,10 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
   const handleProcessPayment = (e: React.FormEvent) => {
     e.preventDefault();
 
-    // If real live checkout URL is configured (Gumroad), redirect customer directly in the same tab
+    // If real live checkout URL is configured (Gumroad), trigger in-page overlay directly over the page
     if (plan.checkoutUrl) {
-      const checkoutUrlWithEmail =
-        user?.email && !plan.checkoutUrl.includes('email=')
-          ? `${plan.checkoutUrl}${plan.checkoutUrl.includes('?') ? '&' : '?'}email=${encodeURIComponent(user.email)}`
-          : plan.checkoutUrl;
-      window.location.href = checkoutUrlWithEmail;
+      onClose();
+      openGumroadOverlay(plan.checkoutUrl, user?.email);
       return;
     }
 
@@ -234,7 +236,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
                     </div>
                   </div>
                   <p className="text-[11px] text-slate-400 leading-relaxed">
-                    Clicking below will securely redirect you to our official verified checkout. After completing payment, your license will be emailed to you and can be activated instantly.
+                    Clicking below will launch the official SSL-encrypted payment modal right over this page. Enter your card or PayPal, and upon confirmation your subscription and watermark-free PDF export will activate immediately!
                   </p>
                 </div>
 
@@ -349,7 +351,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
                 <>
                   <span>
                     {plan.checkoutUrl
-                      ? `Proceed to Checkout ($${finalPrice.toFixed(2)})`
+                      ? `Open Payment Popup ($${finalPrice.toFixed(2)})`
                       : `Pay $${finalPrice.toFixed(2)} & Unlock Instant License`}
                   </span>
                   <ArrowRight className="w-4 h-4" />

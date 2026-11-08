@@ -182,6 +182,74 @@ export default function Home() {
         }
       }
     } catch {}
+
+    // Listen for Gumroad In-Page Overlay 'sale' postMessage event (when payment completes right in modal)
+    const handleGumroadSale = (event: MessageEvent) => {
+      if (!event.origin || !event.origin.includes('gumroad.com')) return;
+
+      try {
+        const payload = typeof event.data === 'string' ? JSON.parse(event.data) : event.data;
+        if (payload && (payload.post_message_name === 'sale' || payload.event === 'sale')) {
+          const planToUnlock: SubscriptionPlan = 'visa_pass';
+          const licenseKey = generateLicenseKey(planToUnlock);
+          const orderId = payload.order_number || `GR-${Date.now().toString().slice(-8)}`;
+          const customerEmail = payload.email || 'customer@chatdocket.com';
+
+          const newOrder: PaymentOrder = {
+            orderId: String(orderId),
+            userId: 'usr_verified',
+            userName: payload.name || 'Verified Customer',
+            userEmail: customerEmail,
+            planId: planToUnlock,
+            planName: 'Visa & Court Single Case Pass',
+            amount: 12,
+            currency: 'USD',
+            discount: 0,
+            finalAmount: 12,
+            paymentMethod: 'gumroad',
+            status: 'completed',
+            licenseKey,
+            createdAt: new Date().toISOString(),
+          };
+
+          setCompletedOrder(newOrder);
+
+          setUser((prevUser) => {
+            const updated: UserProfile = prevUser
+              ? {
+                  ...prevUser,
+                  plan: planToUnlock,
+                  licenseKey,
+                  purchasedAt: new Date().toISOString(),
+                }
+              : {
+                  id: 'usr_verified',
+                  email: customerEmail,
+                  name: payload.name || 'Verified Customer',
+                  plan: planToUnlock,
+                  licenseKey,
+                  purchasedAt: new Date().toISOString(),
+                };
+            try {
+              localStorage.setItem('cd_user_profile', JSON.stringify(updated));
+            } catch {}
+            return updated;
+          });
+
+          setBrandingConfig((b) => ({ ...b, isPro: true, showWatermark: false }));
+          setIsCheckoutOpen(false);
+          setIsPricingOpen(false);
+          setIsInvoiceOpen(true);
+          setAuthNotice(`🎉 Payment Verified! Official License ${licenseKey} Activated.`);
+          setTimeout(() => setAuthNotice(null), 8000);
+        }
+      } catch {}
+    };
+
+    window.addEventListener('message', handleGumroadSale);
+    return () => {
+      window.removeEventListener('message', handleGumroadSale);
+    };
   }, []);
 
   // Reset to initial clean state
