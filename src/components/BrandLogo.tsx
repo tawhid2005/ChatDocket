@@ -13,10 +13,10 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
   size = 'md',
   showText = true,
 }) => {
-  const iconDimensions = {
-    sm: 'w-7 h-7',
-    md: 'w-9 h-9',
-    lg: 'w-12 h-12',
+  const pixelSize = {
+    sm: 28,
+    md: 36,
+    lg: 44,
   }[size];
 
   const textStyles = {
@@ -28,12 +28,18 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
   return (
     <div className={`flex items-center gap-2.5 select-none ${className}`}>
       {/* Precision Geometric SVG Monogram */}
-      <div className={`relative ${iconDimensions} shrink-0`}>
+      <div
+        className="shrink-0 relative"
+        style={{ width: `${pixelSize}px`, height: `${pixelSize}px` }}
+      >
         <svg
+          width={pixelSize}
+          height={pixelSize}
           viewBox="0 0 44 44"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          className="w-full h-full drop-shadow-[0_4px_16px_rgba(16,185,129,0.35)]"
+          style={{ width: '100%', height: '100%' }}
+          className="drop-shadow-[0_4px_16px_rgba(16,185,129,0.35)]"
         >
           {/* Frosted rounded container */}
           <rect
