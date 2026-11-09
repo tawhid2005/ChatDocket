@@ -164,6 +164,7 @@ export default function Home() {
                   plan: planParam,
                   licenseKey,
                   purchasedAt: new Date().toISOString(),
+                  isVerified: true,
                 };
             try {
               localStorage.setItem('cd_user_profile', JSON.stringify(updated));
@@ -229,6 +230,7 @@ export default function Home() {
                   plan: planToUnlock,
                   licenseKey,
                   purchasedAt: new Date().toISOString(),
+                  isVerified: true,
                 };
             try {
               localStorage.setItem('cd_user_profile', JSON.stringify(updated));

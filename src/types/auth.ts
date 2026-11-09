@@ -24,7 +24,7 @@ export interface PaymentOrder {
   promoCode?: string;
   discount: number;
   finalAmount: number;
-  paymentMethod: 'card' | 'apple_pay' | 'google_pay' | 'paypal' | 'lemon_squeezy';
+  paymentMethod: 'card' | 'apple_pay' | 'google_pay' | 'paypal' | 'lemon_squeezy' | 'gumroad';
   status: 'completed' | 'pending' | 'failed';
   licenseKey: string;
   createdAt: string;

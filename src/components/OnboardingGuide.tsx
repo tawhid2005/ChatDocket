@@ -128,6 +128,39 @@ export const OnboardingGuide: React.FC<OnboardingGuideProps> = ({
         </div>
       )}
 
+      {/* ================= 3-STEP VISUAL WORKFLOW ================= */}
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-3xl mx-auto">
+        <div className="p-3.5 rounded-2xl bg-white/[0.03] border border-white/[0.08] flex items-center gap-3">
+          <div className="w-8 h-8 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 flex items-center justify-center font-black text-xs shrink-0">
+            1
+          </div>
+          <div>
+            <span className="font-bold text-xs text-white block">1. Upload Chat</span>
+            <span className="text-[11px] text-slate-400">WhatsApp .zip or .txt (or try Demo)</span>
+          </div>
+        </div>
+
+        <div className="p-3.5 rounded-2xl bg-white/[0.03] border border-white/[0.08] flex items-center gap-3">
+          <div className="w-8 h-8 rounded-xl bg-teal-500/10 border border-teal-500/30 text-teal-300 flex items-center justify-center font-black text-xs shrink-0">
+            2
+          </div>
+          <div>
+            <span className="font-bold text-xs text-white block">2. Auto-Format</span>
+            <span className="text-[11px] text-slate-400">Select UKVI, USCIS, or IRCC Preset</span>
+          </div>
+        </div>
+
+        <div className="p-3.5 rounded-2xl bg-white/[0.03] border border-white/[0.08] flex items-center gap-3">
+          <div className="w-8 h-8 rounded-xl bg-lime-500/10 border border-lime-500/30 text-lime-400 flex items-center justify-center font-black text-xs shrink-0">
+            3
+          </div>
+          <div>
+            <span className="font-bold text-xs text-white block">3. Download PDF</span>
+            <span className="text-[11px] text-slate-400">Bates Stamped &amp; SHA-256 Verified</span>
+          </div>
+        </div>
+      </div>
+
       {/* ================= MAIN UPLOAD DROPZONE ================= */}
       <div
         onDrop={handleDrop}
@@ -162,7 +195,7 @@ export const OnboardingGuide: React.FC<OnboardingGuideProps> = ({
         </h2>
 
         <p className="text-xs sm:text-sm text-slate-400 max-w-lg mx-auto mb-6">
-          Drag and drop single or multiple WhatsApp archives (e.g. Year 1 + Year 2). Chat Docket automatically merges and deduplicates them in memory!
+          Drag and drop your WhatsApp export archive, or click below to browse. You can also test with our 1-click sample demo!
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
@@ -170,22 +203,64 @@ export const OnboardingGuide: React.FC<OnboardingGuideProps> = ({
             type="button"
             onClick={() => fileInputRef.current?.click()}
             disabled={isLoading}
-            className="w-full sm:w-auto px-8 py-3.5 bg-gradient-to-r from-emerald-400 to-lime-400 hover:from-emerald-300 hover:to-lime-300 active:scale-95 text-slate-950 font-black text-sm rounded-2xl shadow-xl shadow-emerald-500/25 transition disabled:opacity-50"
+            className="w-full sm:w-auto px-8 py-3.5 bg-gradient-to-r from-emerald-400 to-lime-400 hover:from-emerald-300 hover:to-lime-300 active:scale-95 text-slate-950 font-black text-sm rounded-2xl shadow-xl shadow-emerald-500/25 transition disabled:opacity-50 flex items-center justify-center gap-2 cursor-pointer"
           >
-            {isLoading ? 'Processing...' : '📁 Choose File from Computer'}
+            {isLoading ? (
+              <span>Processing Archive...</span>
+            ) : (
+              <>
+                <UploadCloud className="w-4 h-4 stroke-[2.5]" />
+                <span>📁 Choose File from Computer</span>
+              </>
+            )}
+          </button>
+
+          <button
+            type="button"
+            onClick={onLoadDemo}
+            disabled={isLoading}
+            className="w-full sm:w-auto px-6 py-3.5 bg-white/[0.08] hover:bg-white/[0.15] border border-white/[0.15] hover:border-emerald-400/50 text-white font-bold text-sm rounded-2xl transition flex items-center justify-center gap-2 cursor-pointer group shadow-lg"
+          >
+            <Sparkles className="w-4 h-4 text-emerald-400 group-hover:rotate-12 transition-transform" />
+            <span>✨ Try Live Demo (Sample Chat)</span>
           </button>
         </div>
 
         <div className="mt-6 pt-5 border-t border-white/[0.08] flex flex-wrap items-center justify-center gap-5 text-xs text-slate-400">
           <span className="flex items-center gap-1.5 text-emerald-400 font-semibold">
-            <Lock className="w-3.5 h-3.5" /> 100% Local Browser Memory
+            <Lock className="w-3.5 h-3.5" /> 100% Local In-Browser Privacy
           </span>
           <span className="flex items-center gap-1.5">
-            <FileArchive className="w-3.5 h-3.5 text-slate-400" /> Supports .zip with photos &amp; voice calls
+            <FileArchive className="w-3.5 h-3.5 text-slate-400" /> Supports .zip with photos &amp; calls
           </span>
           <span className="flex items-center gap-1.5">
             <FileText className="w-3.5 h-3.5 text-slate-400" /> Supports raw .txt files
           </span>
+        </div>
+      </div>
+
+      {/* ================= SUPPORTED EMBASSIES & STANDARDS ================= */}
+      <div className="max-w-3xl mx-auto pt-1">
+        <p className="text-center text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-3">
+          Embassy Compliant &amp; Formatted for Official Legal Standards
+        </p>
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
+          <div className="p-3 rounded-2xl bg-white/[0.02] border border-white/[0.06] text-center">
+            <span className="text-xs font-bold text-white block mb-0.5">🇬🇧 UK Home Office</span>
+            <span className="text-[10px] text-slate-400">Appendix FM Partner Visa</span>
+          </div>
+          <div className="p-3 rounded-2xl bg-white/[0.02] border border-white/[0.06] text-center">
+            <span className="text-xs font-bold text-white block mb-0.5">🇺🇸 US USCIS</span>
+            <span className="text-[10px] text-slate-400">Form I-130 / CR1 Bona Fide</span>
+          </div>
+          <div className="p-3 rounded-2xl bg-white/[0.02] border border-white/[0.06] text-center">
+            <span className="text-xs font-bold text-white block mb-0.5">🇨🇦 Canada IRCC</span>
+            <span className="text-[10px] text-slate-400">Guide IMM 5289 (10-Pg Limit)</span>
+          </div>
+          <div className="p-3 rounded-2xl bg-white/[0.02] border border-white/[0.06] text-center">
+            <span className="text-xs font-bold text-white block mb-0.5">🇦🇺 Australia DHA</span>
+            <span className="text-[10px] text-slate-400">Subclass 820/801 Relationship</span>
+          </div>
         </div>
       </div>
 
@@ -430,6 +505,52 @@ export const OnboardingGuide: React.FC<OnboardingGuideProps> = ({
           <p className="text-xs text-slate-400 leading-relaxed">
             Bates stamps (<code>Exhibit A - Page 001</code>), cryptographic SHA-256 integrity hash, line numbers, and certified translation stamps.
           </p>
+        </div>
+      </div>
+
+      {/* ================= FREQUENTLY ASKED QUESTIONS (SEO & TRUST) ================= */}
+      <div id="faq" className="max-w-3xl mx-auto space-y-4 pt-6">
+        <div className="text-center space-y-1 mb-4">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-bold uppercase tracking-wider">
+            <HelpCircle className="w-3.5 h-3.5" />
+            <span>Answers for Applicants &amp; Solicitors</span>
+          </div>
+          <h3 className="text-xl sm:text-2xl font-black text-white">
+            Frequently Asked Questions
+          </h3>
+          <p className="text-xs text-slate-400">
+            Everything you need to know about embassy compliance, privacy, and evidence rules.
+          </p>
+        </div>
+
+        <div className="space-y-3">
+          {faqs.map((faq, index) => {
+            const isOpen = openFaq === index;
+            return (
+              <div
+                key={index}
+                className="rounded-2xl border border-white/[0.08] bg-white/[0.02] overflow-hidden transition"
+              >
+                <button
+                  type="button"
+                  onClick={() => setOpenFaq(isOpen ? null : index)}
+                  className="w-full p-4 text-left flex items-center justify-between gap-3 hover:bg-white/[0.03] transition cursor-pointer"
+                >
+                  <span className="font-bold text-xs sm:text-sm text-white">{faq.q}</span>
+                  <ChevronDown
+                    className={`w-4 h-4 text-slate-400 shrink-0 transition-transform duration-200 ${
+                      isOpen ? 'rotate-180 text-emerald-400' : ''
+                    }`}
+                  />
+                </button>
+                {isOpen && (
+                  <div className="px-4 pb-4 pt-1 text-xs text-slate-300 leading-relaxed border-t border-white/[0.04]">
+                    {faq.a}
+                  </div>
+                )}
+              </div>
+            );
+          })}
         </div>
       </div>
     </div>

@@ -1,13 +1,15 @@
 import { MetadataRoute } from 'next';
 
 export default function robots(): MetadataRoute.Robots {
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://chatdocketofficial.vercel.app';
+
   return {
     rules: {
       userAgent: '*',
       allow: '/',
       disallow: ['/api/'],
     },
-    sitemap: 'https://chatdocket.com/sitemap.xml',
+    sitemap: `${baseUrl}/sitemap.xml`,
   };
 }
 
