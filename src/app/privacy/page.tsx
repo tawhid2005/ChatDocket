@@ -4,10 +4,22 @@ import type { Metadata } from 'next';
 import { ShieldCheck, Lock, ArrowLeft } from 'lucide-react';
 import { BrandLogo } from '@/components/BrandLogo';
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://chatdocketofficial.vercel.app';
+
 export const metadata: Metadata = {
-  title: 'Privacy Policy — ChatDocket',
+  title: 'Privacy Policy — Zero-Knowledge Client-Side Processing',
   description:
     'ChatDocket Zero-Knowledge Privacy Policy: 100% client-side in-browser WhatsApp PDF processing with zero chat uploads.',
+  alternates: {
+    canonical: `${siteUrl}/privacy`,
+  },
+  openGraph: {
+    title: 'Privacy Policy — ChatDocket',
+    description:
+      '100% client-side WhatsApp PDF exporter with zero server uploads of personal messages or media.',
+    url: `${siteUrl}/privacy`,
+    type: 'website',
+  },
 };
 
 export default function PrivacyPolicyPage() {

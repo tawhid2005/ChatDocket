@@ -164,6 +164,7 @@ export const OnboardingGuide: React.FC<OnboardingGuideProps> = ({
 
       {/* ================= MAIN UPLOAD DROPZONE ================= */}
       <div
+        id="upload"
         onDrop={handleDrop}
         onDragOver={handleDragOver}
         onDragLeave={handleDragLeave}
@@ -240,30 +241,67 @@ export const OnboardingGuide: React.FC<OnboardingGuideProps> = ({
         </div>
       </div>
 
-      {/* ================= SUPPORTED EMBASSIES & STANDARDS ================= */}
-      <div className="max-w-3xl mx-auto pt-1">
-        <p className="text-center text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-3">
-          Embassy Compliant &amp; Formatted for Official Legal Standards
-        </p>
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
-          <div className="p-3 rounded-2xl bg-white/[0.02] border border-white/[0.06] text-center">
-            <span className="text-xs font-bold text-white block mb-0.5">🇬🇧 UK Home Office</span>
-            <span className="text-[10px] text-slate-400">Appendix FM Partner Visa</span>
-          </div>
-          <div className="p-3 rounded-2xl bg-white/[0.02] border border-white/[0.06] text-center">
-            <span className="text-xs font-bold text-white block mb-0.5">🇺🇸 US USCIS</span>
-            <span className="text-[10px] text-slate-400">Form I-130 / CR1 Bona Fide</span>
-          </div>
-          <div className="p-3 rounded-2xl bg-white/[0.02] border border-white/[0.06] text-center">
-            <span className="text-xs font-bold text-white block mb-0.5">🇨🇦 Canada IRCC</span>
-            <span className="text-[10px] text-slate-400">Guide IMM 5289 (10-Pg Limit)</span>
-          </div>
-          <div className="p-3 rounded-2xl bg-white/[0.02] border border-white/[0.06] text-center">
-            <span className="text-xs font-bold text-white block mb-0.5">🇦🇺 Australia DHA</span>
-            <span className="text-[10px] text-slate-400">Subclass 820/801 Relationship</span>
-          </div>
+      {/* ================= SUPPORTED EMBASSIES & OFFICIAL GUIDES ================= */}
+      <section id="compliance" className="max-w-3xl mx-auto pt-1">
+        <div className="flex items-center justify-between gap-2 mb-3">
+          <h2 className="text-xs sm:text-sm font-bold uppercase tracking-wider text-slate-300">
+            Embassy Compliant Presets &amp; Official Formatting Guides
+          </h2>
+          <Link href="/guide" className="text-[11px] font-bold text-emerald-400 hover:underline shrink-0">
+            All Guides →
+          </Link>
         </div>
-      </div>
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
+          <Link
+            href="/guide/whatsapp-to-pdf-uk-spouse-visa"
+            className="group p-3 rounded-2xl bg-white/[0.02] hover:bg-emerald-500/[0.06] border border-white/[0.08] hover:border-emerald-500/40 text-center transition"
+          >
+            <span className="text-xs font-bold text-white group-hover:text-emerald-300 block mb-0.5">
+              🇬🇧 UK Home Office
+            </span>
+            <span className="text-[10px] text-slate-400 block">Appendix FM Partner Visa</span>
+            <span className="text-[10px] text-emerald-400/90 font-semibold mt-1 inline-block">
+              Read Guide →
+            </span>
+          </Link>
+          <Link
+            href="/guide/whatsapp-chat-proof-uscis-i130"
+            className="group p-3 rounded-2xl bg-white/[0.02] hover:bg-cyan-500/[0.06] border border-white/[0.08] hover:border-cyan-500/40 text-center transition"
+          >
+            <span className="text-xs font-bold text-white group-hover:text-cyan-300 block mb-0.5">
+              🇺🇸 US USCIS
+            </span>
+            <span className="text-[10px] text-slate-400 block">Form I-130 / CR1 Bona Fide</span>
+            <span className="text-[10px] text-cyan-400/90 font-semibold mt-1 inline-block">
+              Read Guide →
+            </span>
+          </Link>
+          <Link
+            href="/guide/whatsapp-evidence-canada-ircc"
+            className="group p-3 rounded-2xl bg-white/[0.02] hover:bg-lime-500/[0.06] border border-white/[0.08] hover:border-lime-500/40 text-center transition"
+          >
+            <span className="text-xs font-bold text-white group-hover:text-lime-300 block mb-0.5">
+              🇨🇦 Canada IRCC
+            </span>
+            <span className="text-[10px] text-slate-400 block">Guide IMM 5289 (10-Pg Limit)</span>
+            <span className="text-[10px] text-lime-400/90 font-semibold mt-1 inline-block">
+              Read Guide →
+            </span>
+          </Link>
+          <Link
+            href="/guide/whatsapp-proof-australia-partner-visa"
+            className="group p-3 rounded-2xl bg-white/[0.02] hover:bg-indigo-500/[0.06] border border-white/[0.08] hover:border-indigo-500/40 text-center transition"
+          >
+            <span className="text-xs font-bold text-white group-hover:text-indigo-300 block mb-0.5">
+              🇦🇺 Australia DHA
+            </span>
+            <span className="text-[10px] text-slate-400 block">Subclass 820/801 Relationship</span>
+            <span className="text-[10px] text-indigo-400/90 font-semibold mt-1 inline-block">
+              Read Guide →
+            </span>
+          </Link>
+        </div>
+      </section>
 
       {/* ================= STEP-BY-STEP EXPORT GUIDE FOR IPHONE & ANDROID ================= */}
       <div className="max-w-3xl mx-auto bg-white/[0.02] border border-white/[0.08] rounded-3xl p-6 sm:p-8 backdrop-blur-xl space-y-5">
@@ -419,13 +457,13 @@ export const OnboardingGuide: React.FC<OnboardingGuideProps> = ({
       </div>
 
       {/* ================= 6 MULTI-USE VERTICALS (MULTI-PURPOSE PLATFORM) ================= */}
-      <div className="max-w-5xl mx-auto space-y-4">
+      <section id="features" className="max-w-5xl mx-auto space-y-4">
         <div className="text-center space-y-1">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-400 text-xs font-bold uppercase tracking-wider mb-1">
             <Sparkles className="w-3.5 h-3.5" />
             <span>Multi-Purpose Legal &amp; Evidence Engine</span>
           </div>
-          <h3 className="text-2xl font-black text-white">One Tool, Endless Evidentiary &amp; Memory Use Cases</h3>
+          <h2 className="text-2xl font-black text-white">One Tool, Endless Evidentiary &amp; Memory Use Cases</h2>
           <p className="text-xs text-slate-400 max-w-lg mx-auto">
             Engineered for immigration solicitors, litigants in court, families, landlords, freelancers, and couples worldwide.
           </p>
@@ -480,7 +518,63 @@ export const OnboardingGuide: React.FC<OnboardingGuideProps> = ({
             </p>
           </div>
         </div>
-      </div>
+      </section>
+
+      {/* ================= COMPARISON TABLE (AI OVERVIEW & FEATURED SNIPPET READY) ================= */}
+      <section id="comparison" className="max-w-4xl mx-auto space-y-3">
+        <div className="text-center space-y-1">
+          <h2 className="text-lg sm:text-xl font-black text-white">
+            Manual Screenshots vs. Copy-Paste vs. ChatDocket
+          </h2>
+          <p className="text-xs text-slate-400">
+            Why immigration lawyers and visa applicants replace manual screenshots with structured evidentiary packets.
+          </p>
+        </div>
+        <div className="overflow-x-auto rounded-2xl border border-white/[0.08] bg-white/[0.02]">
+          <table className="w-full text-left text-xs">
+            <thead className="bg-white/[0.04] text-slate-300 border-b border-white/[0.08]">
+              <tr>
+                <th className="py-3 px-4 font-bold">Requirement</th>
+                <th className="py-3 px-4 font-bold">Manual Screenshots</th>
+                <th className="py-3 px-4 font-bold">Raw .TXT Dump</th>
+                <th className="py-3 px-4 font-bold text-emerald-400">ChatDocket Exporter</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-white/[0.06] text-slate-300">
+              <tr>
+                <td className="py-2.5 px-4 font-semibold text-white">Time to Prepare</td>
+                <td className="py-2.5 px-4 text-slate-400">4–10 hours</td>
+                <td className="py-2.5 px-4 text-slate-400">1 hour (messy)</td>
+                <td className="py-2.5 px-4 text-emerald-400 font-bold">Under 5 minutes</td>
+              </tr>
+              <tr>
+                <td className="py-2.5 px-4 font-semibold text-white">Page Target (IRCC 10-Pg / UKVI 15–25 Pg)</td>
+                <td className="py-2.5 px-4 text-rose-400">Disorganized images</td>
+                <td className="py-2.5 px-4 text-rose-400">1,000+ unread pages</td>
+                <td className="py-2.5 px-4 text-emerald-400 font-bold">Auto Smart Sampling</td>
+              </tr>
+              <tr>
+                <td className="py-2.5 px-4 font-semibold text-white">Bates Stamps &amp; SHA-256 Hash</td>
+                <td className="py-2.5 px-4 text-slate-500">Not available</td>
+                <td className="py-2.5 px-4 text-slate-500">Not available</td>
+                <td className="py-2.5 px-4 text-emerald-400 font-bold">Sequential Auto + Certificate</td>
+              </tr>
+              <tr>
+                <td className="py-2.5 px-4 font-semibold text-white">Voice/Video Call Schedule &amp; Gaps</td>
+                <td className="py-2.5 px-4 text-slate-500">Manual crops only</td>
+                <td className="py-2.5 px-4 text-slate-500">Buried in raw lines</td>
+                <td className="py-2.5 px-4 text-emerald-400 font-bold">Dedicated Cover &amp; Call Log Pages</td>
+              </tr>
+              <tr>
+                <td className="py-2.5 px-4 font-semibold text-white">Privacy (Zero Server Upload)</td>
+                <td className="py-2.5 px-4 text-slate-400">Depends on editor</td>
+                <td className="py-2.5 px-4 text-rose-400">Cloud converters upload files</td>
+                <td className="py-2.5 px-4 text-emerald-400 font-bold">100% Local Browser RAM</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
 
       {/* ================= 3 FEATURE HIGHLIGHTS ================= */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-5xl mx-auto">
@@ -516,9 +610,9 @@ export const OnboardingGuide: React.FC<OnboardingGuideProps> = ({
             <HelpCircle className="w-3.5 h-3.5" />
             <span>Answers for Applicants &amp; Solicitors</span>
           </div>
-          <h3 className="text-xl sm:text-2xl font-black text-white">
+          <h2 className="text-xl sm:text-2xl font-black text-white">
             Frequently Asked Questions
-          </h3>
+          </h2>
           <p className="text-xs text-slate-400">
             Everything you need to know about embassy compliance, privacy, and evidence rules.
           </p>
@@ -535,6 +629,7 @@ export const OnboardingGuide: React.FC<OnboardingGuideProps> = ({
                 <button
                   type="button"
                   onClick={() => setOpenFaq(isOpen ? null : index)}
+                  aria-expanded={isOpen}
                   className="w-full p-4 text-left flex items-center justify-between gap-3 hover:bg-white/[0.03] transition cursor-pointer"
                 >
                   <span className="font-bold text-xs sm:text-sm text-white">{faq.q}</span>
@@ -544,21 +639,26 @@ export const OnboardingGuide: React.FC<OnboardingGuideProps> = ({
                     }`}
                   />
                 </button>
-                {isOpen && (
-                  <div className="px-4 pb-4 pt-1 text-xs text-slate-300 leading-relaxed border-t border-white/[0.04]">
-                    {faq.a}
-                  </div>
-                )}
+                <div
+                  className={`${
+                    isOpen ? 'block' : 'hidden'
+                  } px-4 pb-4 pt-1 text-xs text-slate-300 leading-relaxed border-t border-white/[0.04]`}
+                >
+                  {faq.a}
+                </div>
               </div>
             );
           })}
         </div>
       </div>
 
-      {/* ================= CLEAN FOOTER WITH PRIVACY & TERMS ================= */}
+      {/* ================= CLEAN FOOTER WITH GUIDES, PRIVACY & TERMS ================= */}
       <footer className="max-w-5xl mx-auto pt-8 pb-4 border-t border-white/[0.08] flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500">
         <span>© {new Date().getFullYear()} ChatDocket • 100% Client-Side WhatsApp Legal &amp; Visa Exporter</span>
-        <div className="flex items-center gap-5 font-semibold text-slate-400">
+        <div className="flex flex-wrap items-center justify-center gap-5 font-semibold text-slate-400">
+          <Link href="/guide" className="hover:text-emerald-400 transition">
+            Immigration Guides
+          </Link>
           <Link href="/privacy" className="hover:text-emerald-400 transition">
             Privacy Policy
           </Link>

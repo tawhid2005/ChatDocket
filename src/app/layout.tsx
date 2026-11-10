@@ -5,33 +5,40 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://chatdocketofficial.
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: 'ChatDocket — Official WhatsApp Chat to PDF for Spouse Visa & Court Evidence',
+  title: {
+    default: 'ChatDocket — WhatsApp Chat to PDF for Spouse Visa & Court Evidence',
+    template: '%s | ChatDocket',
+  },
   description:
-    '100% Client-Side Private Micro-SaaS to convert exported WhatsApp .zip & .txt chats into court-ready legal exhibits and embassy-compliant spouse visa packets (UK Home Office Appendix FM, US USCIS I-130, Canada IRCC IMM 5289, Australia Partner 820/801) with Bates numbering, smart sampling, cover page analytics, and SHA-256 integrity.',
+    'Convert exported WhatsApp chats into court-ready legal exhibits and embassy-compliant spouse visa packets (UK Home Office Appendix FM, US USCIS I-130, Canada IRCC, Australia Partner Visa 820/801). 100% client-side, private, with Bates numbering and SHA-256 integrity.',
   keywords: [
-    'WhatsApp chat to PDF for visa',
+    'whatsapp chat to pdf for visa',
+    'whatsapp chat proof for spouse visa',
+    'how to export whatsapp chat for immigration',
+    'UK spouse visa whatsapp evidence',
+    'USCIS I-130 whatsapp chat logs',
+    'Canada IRCC whatsapp chat history',
+    'Australia partner visa 820 801 whatsapp proof',
+    'whatsapp bates numbering court exhibit',
+    'convert whatsapp export to legal document',
     'WhatsApp chat to PDF for spouse visa',
-    'UK Spouse Visa WhatsApp chat proof generator',
     'UK Home Office Appendix FM relationship evidence',
     'USCIS I-130 WhatsApp message history export',
-    'USCIS bona fide marriage chat proof',
-    'IRCC Canada Spousal Sponsorship WhatsApp print IMM 5289',
-    'Australia Partner Visa 820 801 WhatsApp evidence',
-    'WhatsApp Bates numbering court exhibit generator',
+    'IRCC Canada Spousal Sponsorship WhatsApp IMM 5289',
+    'WhatsApp chat statement of truth affidavit CPR 32',
     'Offline private WhatsApp PDF exporter without server upload',
     'WhatsApp zip to PDF with photos and voice call logs',
-    'WhatsApp call log schedule table exporter',
     'Legal redaction tool for WhatsApp chat',
-    'WhatsApp chat statement of truth affidavit CPR 32',
-    'Convert WhatsApp export to legal document',
-    'WhatsApp message printout for immigration interview',
-    'WhatsApp chat evidence solicitor tool',
   ],
-  authors: [{ name: 'ChatDocket Security & Legal Tech', url: siteUrl }],
+  authors: [{ name: 'ChatDocket Legal Tech', url: siteUrl }],
   creator: 'ChatDocket',
-  publisher: 'ChatDocket Micro-SaaS',
+  publisher: 'ChatDocket',
   applicationName: 'ChatDocket',
+  generator: 'Next.js',
   category: 'Legal & Immigration Software',
+  ...(process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
+    ? { verification: { google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION } }
+    : {}),
   openGraph: {
     type: 'website',
     locale: 'en_US',
@@ -71,38 +78,108 @@ export const metadata: Metadata = {
   alternates: {
     canonical: siteUrl,
   },
+  appleWebApp: {
+    capable: true,
+    title: 'ChatDocket',
+    statusBarStyle: 'black-translucent',
+  },
 };
 
-const jsonLdSoftwareSchema = {
+const jsonLdWebApp = {
   '@context': 'https://schema.org',
-  '@type': 'SoftwareApplication',
+  '@type': ['SoftwareApplication', 'WebApplication'],
   name: 'ChatDocket',
+  url: siteUrl,
+  description:
+    'Client-side privacy-first web application converting WhatsApp exports into official court and spouse visa evidence with Bates stamping, smart sampling, and SHA-256 verification.',
+  applicationCategory: 'UtilitiesApplication',
+  applicationSubCategory: 'Legal & Immigration Document Formatter',
   operatingSystem: 'All Modern Web Browsers (Chrome, Safari, Firefox, Edge, iOS, Android)',
-  applicationCategory: 'LegalService',
+  browserRequirements: 'Requires a modern browser with JavaScript enabled',
+  inLanguage: 'en',
+  featureList: [
+    'WhatsApp .zip and .txt archive parsing in local browser RAM',
+    'UK Home Office Appendix FM spouse visa preset',
+    'US USCIS I-130 and CR1 bona fide marriage exhibit formatting',
+    'Canada IRCC IMM 5289 10-page target sampling preset',
+    'Australia DHA Partner Visa Subclass 820/801 preset',
+    'Sequential Bates stamping and SHA-256 integrity hash',
+    'Auto-redaction of phone numbers, emails, and IDs',
+    'Chronological voice/video call schedule and photo gallery',
+  ],
   offers: [
     {
       '@type': 'Offer',
       name: 'Free Verification Preview',
       price: '0.00',
       priceCurrency: 'USD',
+      availability: 'https://schema.org/InStock',
+      url: siteUrl,
     },
     {
       '@type': 'Offer',
       name: 'Visa & Court Single Case Pass',
       price: '12.00',
       priceCurrency: 'USD',
-      url: 'https://tawhidh.gumroad.com/l/qzaetv',
+      availability: 'https://schema.org/InStock',
+      url: siteUrl,
+    },
+    {
+      '@type': 'Offer',
+      name: 'Law Firm & Agency Pro Monthly',
+      price: '39.00',
+      priceCurrency: 'USD',
+      availability: 'https://schema.org/InStock',
+      url: siteUrl,
     },
   ],
-  aggregateRating: {
-    '@type': 'AggregateRating',
-    ratingValue: '4.95',
-    ratingCount: '3480',
-    bestRating: '5',
-    worstRating: '1',
-  },
+};
+
+const jsonLdWebSite = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'ChatDocket',
+  url: siteUrl,
   description:
-    'Client-side privacy-first micro-SaaS converting WhatsApp exports into official court and spouse visa evidence with Bates stamping, smart sampling, and SHA-256 verification.',
+    'WhatsApp Chat to Official Spouse Visa & Legal PDF Exporter for UKVI, USCIS, IRCC, and Australia DHA.',
+  inLanguage: 'en',
+};
+
+const jsonLdOrganization = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'ChatDocket',
+  url: siteUrl,
+  logo: {
+    '@type': 'ImageObject',
+    url: `${siteUrl}/icon.svg`,
+  },
+  sameAs: ['https://github.com/tawhid2005/ChatDocket'],
+  contactPoint: {
+    '@type': 'ContactPoint',
+    email: 'support@chatdocket.com',
+    contactType: 'customer support',
+    availableLanguage: 'English',
+  },
+};
+
+const jsonLdBreadcrumb = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'Home',
+      item: siteUrl,
+    },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: 'Guides',
+      item: `${siteUrl}/guide`,
+    },
+  ],
 };
 
 const jsonLdHowToSchema = {
@@ -115,7 +192,7 @@ const jsonLdHowToSchema = {
     {
       '@type': 'HowToStep',
       name: 'Export WhatsApp Chat as .ZIP or .TXT',
-      text: 'On iPhone or Android, open WhatsApp, go to your spouse’s chat settings, select "Export Chat", choose "Attach Media" or "Without Media", and save the file.',
+      text: "On iPhone or Android, open WhatsApp, go to your spouse's chat settings, select \"Export Chat\", choose \"Attach Media\" or \"Without Media\", and save the file.",
     },
     {
       '@type': 'HowToStep',
@@ -157,7 +234,7 @@ const jsonLdFaqSchema = {
     },
     {
       '@type': 'Question',
-      name: 'What is Canada IRCC’s 10-page limit for WhatsApp chat history?',
+      name: "What is Canada IRCC's 10-page limit for WhatsApp chat history?",
       acceptedAnswer: {
         '@type': 'Answer',
         text: 'IRCC Guide IMM 5289 advises submitting a maximum of approximately 10 pages of communication history. ChatDocket includes a dedicated Canada IRCC preset that targets exactly 10-15 pages using proportional milestone sampling.',
@@ -200,7 +277,19 @@ export default function RootLayout({
       <head>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdSoftwareSchema) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdWebApp) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdWebSite) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdOrganization) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }}
         />
         <script
           type="application/ld+json"
@@ -210,9 +299,11 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdFaqSchema) }}
         />
-        {/* Gumroad In-App Overlay Script */}
-        <script src="https://gumroad.com/js/gumroad.js" async></script>
         <meta name="theme-color" content="#060810" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="apple-mobile-web-app-title" content="ChatDocket" />
       </head>
       <body className="min-h-full flex flex-col font-sans bg-[#060810] text-slate-100 selection:bg-emerald-500 selection:text-white">
         {children}
