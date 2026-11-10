@@ -63,7 +63,7 @@ generation took place 100% in local browser memory without uploading any data
 to external servers. Zero server logs exist.
 
 Generated via Chat Docket — WhatsApp to Legal & Visa PDF Exporter
-Web: https://chatdocket.com
+Web: https://chatdocketofficial.vercel.app
 ================================================================================`;
 
   const blob = new Blob([certContent], { type: 'text/plain;charset=utf-8' });

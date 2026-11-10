@@ -229,18 +229,11 @@ export const ControlSidebar: React.FC<ControlSidebarProps> = ({
             <div className="grid grid-cols-2 gap-2">
               <button
                 onClick={() => {
-                  onFilterChange({ mode: 'visa' });
-                  onBrandingChange({
-                    mode: 'visa',
-                    theme: 'whatsapp',
-                    layout: 'single',
-                    showCoverPage: true,
-                    showCallSummaryTable: true,
-                    showPhotoGrid: true,
-                    showGapAnnotations: true,
-                    showSha256Header: true,
-                    showLineNumbers: false,
-                  });
+                  const targetPreset =
+                    brandingConfig.visaPreset && brandingConfig.visaPreset !== 'custom'
+                      ? brandingConfig.visaPreset
+                      : 'uk_home_office';
+                  onApplyVisaPreset(targetPreset);
                 }}
                 className={`p-2.5 rounded-2xl border text-left transition cursor-pointer ${
                   brandingConfig.mode === 'visa'
@@ -1172,7 +1165,7 @@ export const ControlSidebar: React.FC<ControlSidebarProps> = ({
           className="flex-1 py-2.5 px-3 bg-gradient-to-r from-emerald-500 to-lime-400 hover:from-emerald-400 hover:to-lime-300 active:scale-95 text-slate-950 font-black text-xs rounded-xl shadow-lg shadow-emerald-500/25 flex items-center justify-center gap-1.5 transition"
         >
           <Printer className="w-4 h-4" />
-          <span>Print / Save Vector A4</span>
+          <span>Print / Save Vector {brandingConfig.paperSize === 'letter' ? 'US Letter' : 'A4'}</span>
         </button>
       </div>
     </aside>

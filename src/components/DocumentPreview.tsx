@@ -152,6 +152,50 @@ export const DocumentPreview: React.FC<DocumentPreviewProps> = ({
 
   const isMessageLimitReached = !brandingConfig.isPro && messages.length > FREE_MESSAGE_LIMIT;
 
+  // Dynamic sequential Bates page numbering based on active sections (no skipped numbers)
+  const batesPages = useMemo(() => {
+    let next = Math.max(1, brandingConfig.startingBatesNumber || 1);
+    const formatBates = (num: number) =>
+      `${brandingConfig.batesPrefix}${String(num).padStart(4, '0')}`;
+
+    const cover = brandingConfig.showCoverPage ? formatBates(next++) : '';
+    const callsPage =
+      brandingConfig.showCallSummaryTable && calls.length > 0 ? formatBates(next++) : '';
+    const gaps =
+      brandingConfig.showGapAnnotations && gapAnnotations.length > 0 ? formatBates(next++) : '';
+    const photos =
+      brandingConfig.showPhotoGrid && visibleMedia.length > 0 ? formatBates(next++) : '';
+    const messagesPage = formatBates(next++);
+
+    return { cover, calls: callsPage, gaps, photos, messages: messagesPage };
+  }, [
+    brandingConfig.startingBatesNumber,
+    brandingConfig.batesPrefix,
+    brandingConfig.showCoverPage,
+    brandingConfig.showCallSummaryTable,
+    brandingConfig.showGapAnnotations,
+    brandingConfig.showPhotoGrid,
+    calls.length,
+    gapAnnotations.length,
+    visibleMedia.length,
+  ]);
+
+  const visaPresetBadge = useMemo(() => {
+    if (brandingConfig.mode !== 'visa') return null;
+    switch (brandingConfig.visaPreset) {
+      case 'uk_home_office':
+        return 'UK Home Office (Appendix FM) Standard';
+      case 'us_uscis':
+        return 'US USCIS (Form I-130 / CR1) US Letter';
+      case 'canada_ircc':
+        return 'Canada IRCC (IMM 5289) Compact Format';
+      case 'australia_dha':
+        return 'Australia DHA (Subclass 820/801) Format';
+      default:
+        return null;
+    }
+  }, [brandingConfig.mode, brandingConfig.visaPreset]);
+
   // Non-English messages requiring translation
   const hasTranslations = useMemo(() => {
     return visibleMessages.some((m) => !!m.translation);
@@ -304,16 +348,23 @@ export const DocumentPreview: React.FC<DocumentPreviewProps> = ({
 
               {/* Title & Purpose */}
               <div className="mb-6 bg-slate-50 p-4 rounded-xl border border-slate-200">
-                <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-emerald-800 mb-1">
-                  <ShieldCheck className="w-4 h-4 text-emerald-600" />
-                  <span>
-                    {brandingConfig.mode === 'visa' && 'Spouse / Partner Visa Evidentiary Submission'}
-                    {brandingConfig.mode === 'legal' && 'Judicial & Court Legal Exhibit (Civil Proceedings)'}
-                    {brandingConfig.mode === 'custody' && 'Family Court Evidence (Custody & Communication Schedule)'}
-                    {brandingConfig.mode === 'tenant' && 'Residential Tenancy Dispute & Rent Correspondence Record'}
-                    {brandingConfig.mode === 'business' && 'Commercial Freelance & Contract Dispute Evidence'}
-                    {brandingConfig.mode === 'keepsake' && 'Our Story: Relationship Keepsake & Anniversary Book'}
+                <div className="flex flex-wrap items-center justify-between gap-2 text-xs font-bold uppercase tracking-wider text-emerald-800 mb-1">
+                  <span className="flex items-center gap-2">
+                    <ShieldCheck className="w-4 h-4 text-emerald-600" />
+                    <span>
+                      {brandingConfig.mode === 'visa' && 'Spouse / Partner Visa Evidentiary Submission'}
+                      {brandingConfig.mode === 'legal' && 'Judicial & Court Legal Exhibit (Civil Proceedings)'}
+                      {brandingConfig.mode === 'custody' && 'Family Court Evidence (Custody & Communication Schedule)'}
+                      {brandingConfig.mode === 'tenant' && 'Residential Tenancy Dispute & Rent Correspondence Record'}
+                      {brandingConfig.mode === 'business' && 'Commercial Freelance & Contract Dispute Evidence'}
+                      {brandingConfig.mode === 'keepsake' && 'Our Story: Relationship Keepsake & Anniversary Book'}
+                    </span>
                   </span>
+                  {visaPresetBadge && (
+                    <span className="px-2 py-0.5 rounded bg-emerald-100 text-emerald-900 border border-emerald-300 text-[10px] font-bold tracking-normal normal-case">
+                      {visaPresetBadge}
+                    </span>
+                  )}
                 </div>
                 <h2 className="text-lg font-bold text-slate-900">
                   {brandingConfig.mode === 'keepsake'
@@ -492,8 +543,7 @@ export const DocumentPreview: React.FC<DocumentPreviewProps> = ({
                     : 'Free Preview • Upgrade for Official Watermark-Free Submission'}
                 </span>
                 <span className="font-mono font-bold text-slate-700">
-                  {brandingConfig.batesPrefix}
-                  {String(brandingConfig.startingBatesNumber).padStart(4, '0')}
+                  {batesPages.cover}
                 </span>
               </div>
             </div>
@@ -587,8 +637,7 @@ export const DocumentPreview: React.FC<DocumentPreviewProps> = ({
             <div className="flex justify-between items-center text-[10px] text-slate-400 mt-8 pt-2 border-t border-slate-100 avoid-break">
               <span>{brandingConfig.caseReference || 'Exhibit Schedule'} • Call Summary</span>
               <span className="font-mono font-bold text-slate-700">
-                {brandingConfig.batesPrefix}
-                {String(brandingConfig.startingBatesNumber + 1).padStart(4, '0')}
+                {batesPages.calls}
               </span>
             </div>
           </div>
@@ -636,8 +685,7 @@ export const DocumentPreview: React.FC<DocumentPreviewProps> = ({
             <div className="flex justify-between items-center text-[10px] text-slate-400 mt-8 pt-2 border-t border-slate-100 avoid-break">
               <span>{brandingConfig.caseReference || 'Exhibit Schedule'} • Communication Gaps</span>
               <span className="font-mono font-bold text-slate-700">
-                {brandingConfig.batesPrefix}
-                {String(brandingConfig.startingBatesNumber + 2).padStart(4, '0')}
+                {batesPages.gaps}
               </span>
             </div>
           </div>
@@ -706,8 +754,7 @@ export const DocumentPreview: React.FC<DocumentPreviewProps> = ({
             <div className="flex justify-between items-center text-[10px] text-slate-400 mt-8 pt-2 border-t border-slate-100 avoid-break">
               <span>{brandingConfig.caseReference || 'Exhibit Schedule'} • Photo Evidence</span>
               <span className="font-mono font-bold text-slate-700">
-                {brandingConfig.batesPrefix}
-                {String(brandingConfig.startingBatesNumber + 3).padStart(4, '0')}
+                {batesPages.photos}
               </span>
             </div>
           </div>
@@ -997,8 +1044,7 @@ export const DocumentPreview: React.FC<DocumentPreviewProps> = ({
             </div>
 
             <div className="font-mono font-bold text-slate-700">
-              {brandingConfig.batesPrefix}
-              {String(brandingConfig.startingBatesNumber + 4).padStart(4, '0')}
+              {batesPages.messages}
             </div>
           </div>
         </div>

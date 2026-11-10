@@ -509,23 +509,11 @@ export default function Home() {
     if (preset === 'uk_home_office') {
       setBrandingConfig((prev) => ({
         ...prev,
+        mode: 'visa',
         visaPreset: 'uk_home_office',
         theme: 'whatsapp',
-        showCoverPage: true,
-        showCallSummaryTable: true,
-        showPhotoGrid: true,
-        showGapAnnotations: true,
-      }));
-      setFilterConfig((prev) => ({
-        ...prev,
-        samplingDensity: '3_per_week',
-      }));
-    } else if (preset === 'us_uscis') {
-      setBrandingConfig((prev) => ({
-        ...prev,
-        visaPreset: 'us_uscis',
-        theme: 'legal_table',
-        paperSize: 'letter',
+        paperSize: 'a4',
+        layout: 'single',
         showCoverPage: true,
         showCallSummaryTable: true,
         showPhotoGrid: true,
@@ -535,11 +523,33 @@ export default function Home() {
       }));
       setFilterConfig((prev) => ({
         ...prev,
+        mode: 'visa',
+        samplingDensity: '3_per_week',
+      }));
+    } else if (preset === 'us_uscis') {
+      setBrandingConfig((prev) => ({
+        ...prev,
+        mode: 'visa',
+        visaPreset: 'us_uscis',
+        theme: 'legal_table',
+        paperSize: 'letter',
+        layout: 'single',
+        showCoverPage: true,
+        showCallSummaryTable: true,
+        showPhotoGrid: true,
+        showGapAnnotations: true,
+        showSha256Header: true,
+        showLineNumbers: true,
+      }));
+      setFilterConfig((prev) => ({
+        ...prev,
+        mode: 'visa',
         samplingDensity: '5_per_month',
       }));
     } else if (preset === 'canada_ircc') {
       setBrandingConfig((prev) => ({
         ...prev,
+        mode: 'visa',
         visaPreset: 'canada_ircc',
         theme: 'whatsapp',
         paperSize: 'a4',
@@ -548,15 +558,19 @@ export default function Home() {
         showCallSummaryTable: true,
         showPhotoGrid: true,
         showGapAnnotations: true,
+        showSha256Header: true,
+        showLineNumbers: false,
       }));
       setFilterConfig((prev) => ({
         ...prev,
+        mode: 'visa',
         samplingDensity: 'target_pages',
         targetPageCount: 15,
       }));
     } else if (preset === 'australia_dha') {
       setBrandingConfig((prev) => ({
         ...prev,
+        mode: 'visa',
         visaPreset: 'australia_dha',
         theme: 'whatsapp',
         paperSize: 'a4',
@@ -565,9 +579,12 @@ export default function Home() {
         showCallSummaryTable: true,
         showPhotoGrid: true,
         showGapAnnotations: true,
+        showSha256Header: true,
+        showLineNumbers: true,
       }));
       setFilterConfig((prev) => ({
         ...prev,
+        mode: 'visa',
         samplingDensity: '3_per_week',
       }));
     }
@@ -608,27 +625,30 @@ export default function Home() {
           email: type === 'email',
           idNumbers: type === 'financial',
         });
+        if (redacted === m.content) return m;
         return {
           ...m,
+          originalContent: m.originalContent ?? m.content,
           content: redacted,
-          isRedacted: m.isRedacted || redacted !== m.content,
         };
       })
     );
   };
 
   const handleRedactKeyword = (keyword: string) => {
-    if (!keyword.trim()) return;
-    const escaped = keyword.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-    const regex = new RegExp(escaped, 'gi');
+    const trimmed = keyword.trim();
+    if (!trimmed) return;
+    const escaped = trimmed.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const lowerKw = trimmed.toLowerCase();
 
     setMessages((prev) =>
       prev.map((m) => {
-        if (regex.test(m.content)) {
+        if (m.content.toLowerCase().includes(lowerKw)) {
+          const regex = new RegExp(escaped, 'gi');
           return {
             ...m,
+            originalContent: m.originalContent ?? m.content,
             content: m.content.replace(regex, '[REDACTED]'),
-            isRedacted: true,
           };
         }
         return m;
@@ -640,13 +660,17 @@ export default function Home() {
     setMessages((prev) =>
       prev.map((m) => ({
         ...m,
+        content: m.originalContent ?? m.content,
+        originalContent: undefined,
         isRedacted: false,
       }))
     );
   };
 
   const redactedCount = useMemo(() => {
-    return messages.filter((m) => m.isRedacted).length;
+    return messages.filter(
+      (m) => m.isRedacted || (m.originalContent !== undefined && m.originalContent !== m.content)
+    ).length;
   }, [messages]);
 
   // Translation save handler
@@ -690,13 +714,16 @@ export default function Home() {
     let filtered = messages;
 
     if (filterConfig.startDate) {
-      const s = new Date(filterConfig.startDate);
-      filtered = filtered.filter((m) => m.timestamp >= s);
+      const s = new Date(`${filterConfig.startDate}T00:00:00`);
+      if (!Number.isNaN(s.getTime())) {
+        filtered = filtered.filter((m) => m.timestamp >= s);
+      }
     }
     if (filterConfig.endDate) {
-      const e = new Date(filterConfig.endDate);
-      e.setHours(23, 59, 59, 999);
-      filtered = filtered.filter((m) => m.timestamp <= e);
+      const e = new Date(`${filterConfig.endDate}T23:59:59.999`);
+      if (!Number.isNaN(e.getTime())) {
+        filtered = filtered.filter((m) => m.timestamp <= e);
+      }
     }
 
     if (filterConfig.selectedSenders.length > 0) {
@@ -862,8 +889,8 @@ export default function Home() {
           {/* Right Live Document Preview Canvas (Scrolls independently on Desktop, Full on Print) */}
           <div
             className={`${
-              mobileView === 'preview' ? 'flex flex-1' : 'hidden'
-            } lg:flex lg:flex-1 lg:h-full lg:overflow-hidden print:block print:h-auto print:overflow-visible`}
+              mobileView === 'preview' ? 'flex flex-1' : 'hidden print:block'
+            } lg:flex lg:flex-1 lg:h-full lg:overflow-hidden print:h-auto print:overflow-visible`}
           >
             <DocumentPreview
               messages={displayMessages}
