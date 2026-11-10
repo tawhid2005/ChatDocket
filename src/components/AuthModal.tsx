@@ -126,6 +126,28 @@ export const AuthModal: React.FC<AuthModalProps> = ({
 
     try {
       if (supabase) {
+        // Verify whether Google OAuth is enabled in Supabase before redirecting
+        const sbUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+        const sbKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+        if (sbUrl && sbKey) {
+          try {
+            const settingsRes = await fetch(`${sbUrl}/auth/v1/settings`, {
+              headers: { apikey: sbKey },
+            });
+            if (settingsRes.ok) {
+              const settings = await settingsRes.json();
+              if (!settings?.external?.google) {
+                setIsLoading(false);
+                setSuccessMessage('');
+                setErrorMessage(
+                  'Google Sign-In is not enabled in Supabase yet. Please enter your Email & Password below to sign in instantly!'
+                );
+                return;
+              }
+            }
+          } catch {}
+        }
+
         const { error } = await supabase.auth.signInWithOAuth({
           provider: 'google',
           options: {
