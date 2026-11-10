@@ -102,21 +102,22 @@ export const DocumentPreview: React.FC<DocumentPreviewProps> = ({
   const p1 = metadata?.participants[0] || brandingConfig.applicantName || 'Applicant';
   const p2 = metadata?.participants[1] || brandingConfig.sponsorName || 'Sponsor';
 
-  // Monthly breakdown data for Recharts
+  // Monthly breakdown data for Recharts (prefer true full-archive stats over sampled slice)
   const monthlyData = useMemo(() => {
-    const map = new Map<string, { month: string; count: number; [key: string]: any }>();
+    if (metadata?.monthlyStats && metadata.monthlyStats.length > 0) {
+      return metadata.monthlyStats;
+    }
+
+    const map = new Map<string, { month: string; count: number }>();
     messages.forEach((m) => {
       const monthKey = m.timestamp.toLocaleDateString('en-US', { month: 'short', year: '2-digit' });
       if (!map.has(monthKey)) {
-        map.set(monthKey, { month: monthKey, count: 0, [p1]: 0, [p2]: 0 });
+        map.set(monthKey, { month: monthKey, count: 0 });
       }
-      const item = map.get(monthKey)!;
-      item.count++;
-      if (m.sender === p1) item[p1] = (item[p1] || 0) + 1;
-      else if (m.sender === p2) item[p2] = (item[p2] || 0) + 1;
+      map.get(monthKey)!.count++;
     });
     return Array.from(map.values());
-  }, [messages, p1, p2]);
+  }, [metadata?.monthlyStats, messages]);
 
   // Photo evidence items
   const mediaItems = useMemo(() => {
@@ -129,8 +130,21 @@ export const DocumentPreview: React.FC<DocumentPreviewProps> = ({
   }, [messages, brandingConfig.isPro]);
 
   const visibleCalls = useMemo(() => {
-    return brandingConfig.isPro ? calls : calls.slice(0, FREE_CALL_LIMIT);
-  }, [calls, brandingConfig.isPro]);
+    if (!brandingConfig.isPro) {
+      return calls.slice(0, FREE_CALL_LIMIT);
+    }
+    // Keep call table concise on sampled embassy presets while showing full summary metrics
+    if (filterConfig.samplingDensity !== 'all' && calls.length > 50) {
+      const step = calls.length / 50;
+      const sampled: CallEntry[] = [];
+      for (let i = 0; i < 50; i++) {
+        const item = calls[Math.floor(i * step)];
+        if (item) sampled.push(item);
+      }
+      return sampled;
+    }
+    return calls;
+  }, [calls, brandingConfig.isPro, filterConfig.samplingDensity]);
 
   const visibleMedia = useMemo(() => {
     return brandingConfig.isPro ? mediaItems : mediaItems.slice(0, FREE_MEDIA_LIMIT);
@@ -143,22 +157,43 @@ export const DocumentPreview: React.FC<DocumentPreviewProps> = ({
     return visibleMessages.some((m) => !!m.translation);
   }, [visibleMessages]);
 
-  // Calculate total call duration approximation
-  const totalCallDurationMinutes = useMemo(() => {
-    let totalMins = 0;
+  // Calculate accurate call duration only from explicit durations in export, otherwise count answered calls
+  const callStats = useMemo(() => {
+    let totalExplicitMins = 0;
+    let explicitDurationCount = 0;
+    let answeredCount = 0;
+
     calls.forEach((c) => {
       if (c.status === 'answered') {
+        answeredCount++;
         const hrs = c.duration.match(/(\d+)\s*hr/i);
         const mins = c.duration.match(/(\d+)\s*min/i);
-        if (hrs) totalMins += parseInt(hrs[1], 10) * 60;
-        if (mins) totalMins += parseInt(mins[1], 10);
-        if (!hrs && !mins) totalMins += 20;
+        const secs = c.duration.match(/(\d+)\s*sec/i);
+        if (hrs || mins || secs) {
+          explicitDurationCount++;
+          if (hrs) totalExplicitMins += parseInt(hrs[1], 10) * 60;
+          if (mins) totalExplicitMins += parseInt(mins[1], 10);
+          if (secs) totalExplicitMins += Math.round(parseInt(secs[1], 10) / 60);
+        }
       }
     });
-    return totalMins;
+
+    if (explicitDurationCount > 0) {
+      return {
+        label: 'Call Hours Logged',
+        value: `${Math.floor(totalExplicitMins / 60)}h ${totalExplicitMins % 60}m`,
+        subtext: `${explicitDurationCount} timed calls`,
+      };
+    }
+
+    return {
+      label: 'Answered Calls',
+      value: `${answeredCount}`,
+      subtext: `${calls.length - answeredCount} missed / declined`,
+    };
   }, [calls]);
 
-  const callHoursFormatted = `${Math.floor(totalCallDurationMinutes / 60)}h ${totalCallDurationMinutes % 60}m`;
+  const callHoursFormatted = callStats.value;
 
   return (
     <div className="printable-area w-full flex-1 bg-[#090d16] p-3 sm:p-6 lg:p-8 lg:h-full lg:overflow-y-auto overflow-y-auto pb-24 lg:pb-8 print:h-auto print:overflow-visible">
@@ -309,9 +344,9 @@ export const DocumentPreview: React.FC<DocumentPreviewProps> = ({
                 </div>
 
                 <div className="p-3 bg-white rounded-xl border border-slate-200 shadow-2xs">
-                  <span className="text-[10px] font-bold uppercase text-slate-500 block">Call Hours</span>
+                  <span className="text-[10px] font-bold uppercase text-slate-500 block">{callStats.label}</span>
                   <span className="text-xl font-black text-emerald-700">{callHoursFormatted}</span>
-                  <span className="text-[10px] text-slate-400 block mt-0.5">Continuous contact</span>
+                  <span className="text-[10px] text-slate-400 block mt-0.5">{callStats.subtext}</span>
                 </div>
 
                 <div className="p-3 bg-white rounded-xl border border-slate-200 shadow-2xs">
@@ -329,15 +364,23 @@ export const DocumentPreview: React.FC<DocumentPreviewProps> = ({
                   <h3 className="text-xs font-bold text-slate-900 uppercase tracking-wide">
                     Monthly Communication Continuity Trend
                   </h3>
-                  <span className="text-[10px] text-slate-500">Messages per Month</span>
+                  <span className="text-[10px] text-slate-500">Total Messages per Month (Full Archive)</span>
                 </div>
 
                 {mounted && monthlyData.length > 0 ? (
                   <div className="h-44 w-full">
                     <ResponsiveContainer width="100%" height="100%">
-                      <BarChart data={monthlyData} margin={{ top: 5, right: 10, left: -20, bottom: 0 }}>
+                      <BarChart data={monthlyData} margin={{ top: 5, right: 10, left: 0, bottom: 0 }}>
                         <XAxis dataKey="month" tick={{ fontSize: 10, fill: '#64748b' }} axisLine={false} tickLine={false} />
-                        <YAxis tick={{ fontSize: 10, fill: '#64748b' }} axisLine={false} tickLine={false} />
+                        <YAxis
+                          width={42}
+                          tick={{ fontSize: 10, fill: '#64748b' }}
+                          tickFormatter={(val: number) =>
+                            val >= 1000 ? `${(val / 1000).toFixed(val % 1000 === 0 ? 0 : 1)}k` : String(val)
+                          }
+                          axisLine={false}
+                          tickLine={false}
+                        />
                         <Tooltip
                           contentStyle={{
                             backgroundColor: '#0f172a',
@@ -347,7 +390,12 @@ export const DocumentPreview: React.FC<DocumentPreviewProps> = ({
                             fontSize: '11px',
                           }}
                         />
-                        <Bar dataKey="count" fill="#10b981" radius={[4, 4, 0, 0]} />
+                        <Bar
+                          dataKey="count"
+                          fill="#10b981"
+                          radius={[4, 4, 0, 0]}
+                          isAnimationActive={false}
+                        />
                       </BarChart>
                     </ResponsiveContainer>
                   </div>

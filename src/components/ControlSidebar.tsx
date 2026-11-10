@@ -233,12 +233,16 @@ export const ControlSidebar: React.FC<ControlSidebarProps> = ({
                   onBrandingChange({
                     mode: 'visa',
                     theme: 'whatsapp',
+                    layout: 'single',
                     showCoverPage: true,
                     showCallSummaryTable: true,
                     showPhotoGrid: true,
+                    showGapAnnotations: true,
+                    showSha256Header: true,
+                    showLineNumbers: false,
                   });
                 }}
-                className={`p-2.5 rounded-2xl border text-left transition ${
+                className={`p-2.5 rounded-2xl border text-left transition cursor-pointer ${
                   brandingConfig.mode === 'visa'
                     ? 'border-emerald-500 bg-emerald-500/15 shadow-lg shadow-emerald-500/10'
                     : 'border-white/[0.08] hover:border-white/[0.15] bg-white/[0.02]'
@@ -259,11 +263,13 @@ export const ControlSidebar: React.FC<ControlSidebarProps> = ({
                   onBrandingChange({
                     mode: 'legal',
                     theme: 'legal_table',
+                    layout: 'single',
+                    showCoverPage: true,
                     showSha256Header: true,
                     showLineNumbers: true,
                   });
                 }}
-                className={`p-2.5 rounded-2xl border text-left transition ${
+                className={`p-2.5 rounded-2xl border text-left transition cursor-pointer ${
                   brandingConfig.mode === 'legal'
                     ? 'border-indigo-500 bg-indigo-500/15 shadow-lg shadow-indigo-500/10'
                     : 'border-white/[0.08] hover:border-white/[0.15] bg-white/[0.02]'
@@ -284,12 +290,14 @@ export const ControlSidebar: React.FC<ControlSidebarProps> = ({
                   onBrandingChange({
                     mode: 'custody',
                     theme: 'legal_table',
+                    layout: 'single',
+                    showCoverPage: true,
                     showSha256Header: true,
                     showCallSummaryTable: true,
                     showLineNumbers: true,
                   });
                 }}
-                className={`p-2.5 rounded-2xl border text-left transition ${
+                className={`p-2.5 rounded-2xl border text-left transition cursor-pointer ${
                   brandingConfig.mode === 'custody'
                     ? 'border-rose-500 bg-rose-500/15 shadow-lg shadow-rose-500/10'
                     : 'border-white/[0.08] hover:border-white/[0.15] bg-white/[0.02]'
@@ -310,12 +318,14 @@ export const ControlSidebar: React.FC<ControlSidebarProps> = ({
                   onBrandingChange({
                     mode: 'tenant',
                     theme: 'legal_table',
+                    layout: 'single',
                     showCoverPage: true,
                     showPhotoGrid: true,
+                    showSha256Header: true,
                     showLineNumbers: true,
                   });
                 }}
-                className={`p-2.5 rounded-2xl border text-left transition ${
+                className={`p-2.5 rounded-2xl border text-left transition cursor-pointer ${
                   brandingConfig.mode === 'tenant'
                     ? 'border-amber-500 bg-amber-500/15 shadow-lg shadow-amber-500/10'
                     : 'border-white/[0.08] hover:border-white/[0.15] bg-white/[0.02]'
@@ -336,11 +346,13 @@ export const ControlSidebar: React.FC<ControlSidebarProps> = ({
                   onBrandingChange({
                     mode: 'business',
                     theme: 'legal_table',
+                    layout: 'single',
+                    showCoverPage: true,
                     showSha256Header: true,
                     showLineNumbers: true,
                   });
                 }}
-                className={`p-2.5 rounded-2xl border text-left transition ${
+                className={`p-2.5 rounded-2xl border text-left transition cursor-pointer ${
                   brandingConfig.mode === 'business'
                     ? 'border-cyan-500 bg-cyan-500/15 shadow-lg shadow-cyan-500/10'
                     : 'border-white/[0.08] hover:border-white/[0.15] bg-white/[0.02]'
@@ -361,11 +373,15 @@ export const ControlSidebar: React.FC<ControlSidebarProps> = ({
                   onBrandingChange({
                     mode: 'keepsake',
                     theme: 'whatsapp',
+                    layout: 'single',
                     showCoverPage: true,
                     showPhotoGrid: true,
+                    showGapAnnotations: false,
+                    showSha256Header: false,
+                    showLineNumbers: false,
                   });
                 }}
-                className={`p-2.5 rounded-2xl border text-left transition ${
+                className={`p-2.5 rounded-2xl border text-left transition cursor-pointer ${
                   brandingConfig.mode === 'keepsake'
                     ? 'border-pink-500 bg-pink-500/15 shadow-lg shadow-pink-500/10'
                     : 'border-white/[0.08] hover:border-white/[0.15] bg-white/[0.02]'
@@ -390,7 +406,7 @@ export const ControlSidebar: React.FC<ControlSidebarProps> = ({
                 <div className="space-y-1.5">
                   <button
                     onClick={() => onApplyVisaPreset('uk_home_office')}
-                    className={`w-full p-2.5 rounded-xl border text-left flex items-center justify-between transition ${
+                    className={`w-full p-2.5 rounded-xl border text-left flex items-center justify-between transition cursor-pointer ${
                       brandingConfig.visaPreset === 'uk_home_office'
                         ? 'border-emerald-500 bg-emerald-500/15 text-white font-bold'
                         : 'border-white/[0.08] hover:bg-white/[0.04] text-slate-300'
@@ -407,7 +423,7 @@ export const ControlSidebar: React.FC<ControlSidebarProps> = ({
 
                   <button
                     onClick={() => onApplyVisaPreset('us_uscis')}
-                    className={`w-full p-2.5 rounded-xl border text-left flex items-center justify-between transition ${
+                    className={`w-full p-2.5 rounded-xl border text-left flex items-center justify-between transition cursor-pointer ${
                       brandingConfig.visaPreset === 'us_uscis'
                         ? 'border-cyan-500 bg-cyan-500/15 text-white font-bold'
                         : 'border-white/[0.08] hover:bg-white/[0.04] text-slate-300'
@@ -415,7 +431,7 @@ export const ControlSidebar: React.FC<ControlSidebarProps> = ({
                   >
                     <div>
                       <div className="font-bold">US USCIS (I-130 / CR1 / IR1)</div>
-                      <div className="text-[10px] text-slate-400">Bona Fide Marriage: Timeline &amp; Photos</div>
+                      <div className="text-[10px] text-slate-400">Bona Fide Marriage: Timeline &amp; US Letter</div>
                     </div>
                     <span className="text-[10px] uppercase font-extrabold px-1.5 py-0.5 rounded bg-cyan-500/20 text-cyan-400">
                       US
@@ -424,7 +440,7 @@ export const ControlSidebar: React.FC<ControlSidebarProps> = ({
 
                   <button
                     onClick={() => onApplyVisaPreset('canada_ircc')}
-                    className={`w-full p-2.5 rounded-xl border text-left flex items-center justify-between transition ${
+                    className={`w-full p-2.5 rounded-xl border text-left flex items-center justify-between transition cursor-pointer ${
                       brandingConfig.visaPreset === 'canada_ircc'
                         ? 'border-lime-500 bg-lime-500/15 text-white font-bold'
                         : 'border-white/[0.08] hover:bg-white/[0.04] text-slate-300'
@@ -436,6 +452,23 @@ export const ControlSidebar: React.FC<ControlSidebarProps> = ({
                     </div>
                     <span className="text-[10px] uppercase font-extrabold px-1.5 py-0.5 rounded bg-lime-500/20 text-lime-400">
                       CA
+                    </span>
+                  </button>
+
+                  <button
+                    onClick={() => onApplyVisaPreset('australia_dha')}
+                    className={`w-full p-2.5 rounded-xl border text-left flex items-center justify-between transition cursor-pointer ${
+                      brandingConfig.visaPreset === 'australia_dha'
+                        ? 'border-indigo-500 bg-indigo-500/15 text-white font-bold'
+                        : 'border-white/[0.08] hover:bg-white/[0.04] text-slate-300'
+                    }`}
+                  >
+                    <div>
+                      <div className="font-bold">Australia DHA (Subclass 820/801)</div>
+                      <div className="text-[10px] text-slate-400">Partner Visa continuous contact proof</div>
+                    </div>
+                    <span className="text-[10px] uppercase font-extrabold px-1.5 py-0.5 rounded bg-indigo-500/20 text-indigo-400">
+                      AU
                     </span>
                   </button>
                 </div>

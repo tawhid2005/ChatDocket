@@ -530,25 +530,45 @@ export default function Home() {
         showCallSummaryTable: true,
         showPhotoGrid: true,
         showGapAnnotations: true,
+        showSha256Header: true,
+        showLineNumbers: true,
       }));
       setFilterConfig((prev) => ({
         ...prev,
-        samplingDensity: 'all',
+        samplingDensity: '5_per_month',
       }));
     } else if (preset === 'canada_ircc') {
       setBrandingConfig((prev) => ({
         ...prev,
         visaPreset: 'canada_ircc',
         theme: 'whatsapp',
+        paperSize: 'a4',
         layout: 'two_column',
         showCoverPage: true,
         showCallSummaryTable: true,
         showPhotoGrid: true,
+        showGapAnnotations: true,
       }));
       setFilterConfig((prev) => ({
         ...prev,
         samplingDensity: 'target_pages',
         targetPageCount: 15,
+      }));
+    } else if (preset === 'australia_dha') {
+      setBrandingConfig((prev) => ({
+        ...prev,
+        visaPreset: 'australia_dha',
+        theme: 'whatsapp',
+        paperSize: 'a4',
+        layout: 'single',
+        showCoverPage: true,
+        showCallSummaryTable: true,
+        showPhotoGrid: true,
+        showGapAnnotations: true,
+      }));
+      setFilterConfig((prev) => ({
+        ...prev,
+        samplingDensity: '3_per_week',
       }));
     }
   };
@@ -715,7 +735,11 @@ export default function Home() {
   }, [messages, filterConfig]);
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#060810] text-slate-100 bg-tech-grid">
+    <div
+      className={`min-h-screen flex flex-col bg-[#060810] text-slate-100 bg-tech-grid ${
+        messages.length > 0 ? 'lg:h-screen lg:overflow-hidden print:h-auto print:overflow-visible' : ''
+      }`}
+    >
       {/* Top Navigation Bar */}
       <Navbar
         mode={brandingConfig.mode}
@@ -780,7 +804,7 @@ export default function Home() {
           />
         </main>
       ) : (
-        <main className="flex-1 flex flex-col lg:flex-row relative lg:h-[calc(100vh-56px)] lg:overflow-hidden print:h-auto print:overflow-visible">
+        <main className="flex-1 min-h-0 flex flex-col lg:flex-row relative lg:overflow-hidden print:h-auto print:overflow-visible">
           {/* Mobile Workspace Tab Bar (< 1024px, sits cleanly flush below 56px navbar) */}
           <div className="no-print lg:hidden sticky top-14 z-30 bg-[#080c16]/95 backdrop-blur-xl border-b border-white/[0.08] px-3 py-2 flex items-center gap-2">
             <button

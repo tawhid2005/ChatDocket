@@ -44,6 +44,11 @@ export interface ParticipantStats {
   lastMessageDate?: Date;
 }
 
+export interface MonthlyStat {
+  month: string;
+  count: number;
+}
+
 export interface ChatMetadata {
   fileName: string;
   fileSizeBytes: number;
@@ -57,6 +62,7 @@ export interface ChatMetadata {
   totalCalls: number;
   totalMedia: number;
   timeSpanMonths: number;
+  monthlyStats?: MonthlyStat[];
 }
 
 export interface GapAnnotation {
@@ -76,7 +82,7 @@ export type ExportMode =
   | 'keepsake';
 
 export type SamplingDensity = 'all' | '3_per_week' | '5_per_month' | 'target_pages';
-export type VisaPreset = 'uk_home_office' | 'us_uscis' | 'canada_ircc' | 'custom';
+export type VisaPreset = 'uk_home_office' | 'us_uscis' | 'canada_ircc' | 'australia_dha' | 'custom';
 export type DocumentTheme = 'whatsapp' | 'legal_table';
 export type DocumentLayout = 'single' | 'two_column';
 export type PaperSize = 'a4' | 'letter';

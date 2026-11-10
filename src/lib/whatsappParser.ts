@@ -1,5 +1,12 @@
 import JSZip from 'jszip';
-import { ParsedMessage, CallEntry, ChatMetadata, MediaType, ParticipantStats } from '@/types/chat';
+import {
+  ParsedMessage,
+  CallEntry,
+  ChatMetadata,
+  MediaType,
+  ParticipantStats,
+  MonthlyStat,
+} from '@/types/chat';
 
 // Universal Line Regex for messages with sender:
 // Matches iOS: [25/08/23, 14:32:05] John Doe: Hello
@@ -355,18 +362,24 @@ export function parseWhatsAppRawText(
     messages.push(currentMsg);
   }
 
-  // Metadata calculations
+  // Metadata calculations across ALL parsed messages (never truncated by sampling)
   const participants = Array.from(participantsSet).filter((p) => p !== 'System');
   const validMessages = messages.filter((m) => !m.isSystem);
 
-  const startDate = validMessages.length > 0 ? validMessages[0].timestamp : null;
-  const endDate = validMessages.length > 0 ? validMessages[validMessages.length - 1].timestamp : null;
+  let startDate: Date | null = null;
+  let endDate: Date | null = null;
+  for (const m of validMessages) {
+    if (!startDate || m.timestamp < startDate) startDate = m.timestamp;
+    if (!endDate || m.timestamp > endDate) endDate = m.timestamp;
+  }
 
   let timeSpanMonths = 0;
   if (startDate && endDate) {
     const diffTime = Math.abs(endDate.getTime() - startDate.getTime());
     timeSpanMonths = Math.max(1, Math.round(diffTime / (1000 * 60 * 60 * 24 * 30.4375)));
   }
+
+  const monthlyStats = computeMonthlyStats(validMessages);
 
   const metadata: ChatMetadata = {
     fileName: 'WhatsApp_Chat_Export.txt',
@@ -381,9 +394,31 @@ export function parseWhatsAppRawText(
     totalCalls: calls.length,
     totalMedia: messages.filter((m) => m.isMedia).length,
     timeSpanMonths,
+    monthlyStats,
   };
 
   return { messages, calls, metadata };
+}
+
+function computeMonthlyStats(msgs: ParsedMessage[]): MonthlyStat[] {
+  const map = new Map<string, { sortKey: number; month: string; count: number }>();
+  for (const m of msgs) {
+    const d = m.timestamp;
+    if (isNaN(d.getTime())) continue;
+    const yr = d.getFullYear();
+    const mo = d.getMonth();
+    const sortKey = yr * 100 + mo;
+    const label = d.toLocaleDateString('en-US', { month: 'short', year: '2-digit' });
+    const existing = map.get(String(sortKey));
+    if (existing) {
+      existing.count++;
+    } else {
+      map.set(String(sortKey), { sortKey, month: label, count: 1 });
+    }
+  }
+  return Array.from(map.values())
+    .sort((a, b) => a.sortKey - b.sortKey)
+    .map(({ month, count }) => ({ month, count }));
 }
 
 function finalizeMessage(
@@ -644,13 +679,7 @@ export function mergeWhatsAppArchives(archives: ParseResult[]): ParseResult {
     totalCalls: allCalls.length,
     totalMedia: totalMediaCount,
     timeSpanMonths,
-  };
-
-  return {
-    messages: allMessages,
-    calls: allCalls,
-    metadata: mergedMetadata,
-    mediaFiles: combinedMedia,
+    monthlyStats: computeMonthlyStats(allMessages.filter((m) => !m.isSystem)),
   };
 
   return {
