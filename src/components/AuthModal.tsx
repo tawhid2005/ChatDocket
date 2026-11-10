@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { X, Lock, Mail, User, ShieldCheck, ArrowRight, Sparkles, CheckCircle2, AlertCircle } from 'lucide-react';
 import { UserProfile } from '@/types/auth';
+import { supabase, fetchUserProfile } from '@/lib/supabase';
 
 interface AuthModalProps {
   isOpen: boolean;
@@ -27,43 +28,116 @@ export const AuthModal: React.FC<AuthModalProps> = ({
 
   if (!isOpen) return null;
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setErrorMessage('');
+    setSuccessMessage('');
 
-    if (!email || !email.includes('@')) {
+    const cleanEmail = email.trim().toLowerCase();
+
+    if (!cleanEmail || !cleanEmail.includes('@')) {
       setErrorMessage('Please enter a valid email address.');
       return;
     }
 
-    if (!password || password.length < 4) {
-      setErrorMessage('Password must be at least 4 characters.');
+    if (!password || password.length < 6) {
+      setErrorMessage('Password must be at least 6 characters.');
       return;
     }
 
     setIsLoading(true);
-    setSuccessMessage('Signing in and securing session...');
 
-    setTimeout(() => {
-      const user: UserProfile = {
-        id: `usr_${Date.now().toString(36)}`,
-        name: name.trim() || email.split('@')[0],
-        email: email.trim().toLowerCase(),
-        plan: 'free',
-        isVerified: true,
-      };
+    try {
+      if (supabase) {
+        if (tab === 'signup') {
+          setSuccessMessage('Creating your ChatDocket cloud account...');
+          const { data, error } = await supabase.auth.signUp({
+            email: cleanEmail,
+            password,
+            options: {
+              data: {
+                full_name: name.trim() || cleanEmail.split('@')[0],
+              },
+            },
+          });
 
-      onSuccess(user);
+          if (error) throw error;
+
+          if (data.user && data.session) {
+            const profile = await fetchUserProfile(
+              data.user.id,
+              cleanEmail,
+              name.trim() || cleanEmail.split('@')[0]
+            );
+            onSuccess(profile);
+            onClose();
+            return;
+          } else if (data.user && !data.session) {
+            // Email confirmation required by Supabase settings
+            setIsLoading(false);
+            setSuccessMessage(
+              'Account created! Please check your email inbox and click the confirmation link to activate.'
+            );
+            return;
+          }
+        } else {
+          setSuccessMessage('Verifying credentials with Supabase...');
+          const { data, error } = await supabase.auth.signInWithPassword({
+            email: cleanEmail,
+            password,
+          });
+
+          if (error) throw error;
+
+          if (data.user) {
+            const profile = await fetchUserProfile(
+              data.user.id,
+              data.user.email || cleanEmail,
+              data.user.user_metadata?.full_name
+            );
+            onSuccess(profile);
+            onClose();
+            return;
+          }
+        }
+      } else {
+        // Fallback offline local session when Supabase keys are absent
+        const user: UserProfile = {
+          id: `usr_${Date.now().toString(36)}`,
+          name: name.trim() || cleanEmail.split('@')[0],
+          email: cleanEmail,
+          plan: 'free',
+          isVerified: true,
+        };
+        onSuccess(user);
+        onClose();
+      }
+    } catch (err: any) {
+      setErrorMessage(err.message || 'Authentication failed. Please check your email and password.');
+    } finally {
       setIsLoading(false);
-      setSuccessMessage('');
-      onClose();
-    }, 500);
+    }
   };
 
-  const handleGoogleAuth = () => {
+  const handleGoogleAuth = async () => {
+    setErrorMessage('');
     setIsLoading(true);
-    setSuccessMessage('Authenticating with Google OAuth...');
-    setTimeout(() => {
+    setSuccessMessage('Connecting to Google OAuth...');
+
+    try {
+      if (supabase) {
+        const { error } = await supabase.auth.signInWithOAuth({
+          provider: 'google',
+          options: {
+            redirectTo: typeof window !== 'undefined' ? window.location.origin : undefined,
+          },
+        });
+        if (error) throw error;
+        // Browser will redirect to Google sign-in
+        return;
+      }
+
+      // Offline fallback
       const user: UserProfile = {
         id: `usr_g_${Date.now().toString(36)}`,
         name: name.trim() || 'Alex Harrison',
@@ -73,10 +147,15 @@ export const AuthModal: React.FC<AuthModalProps> = ({
         isVerified: true,
       };
       onSuccess(user);
-      setIsLoading(false);
-      setSuccessMessage('');
       onClose();
-    }, 500);
+    } catch (err: any) {
+      setErrorMessage(
+        err.message?.includes('provider is not enabled')
+          ? 'Google Sign-In is not enabled yet in Supabase. Please sign in with Email & Password below.'
+          : err.message || 'Google Sign-In failed.'
+      );
+      setIsLoading(false);
+    }
   };
 
   const handleQuickDemoLogin = () => {

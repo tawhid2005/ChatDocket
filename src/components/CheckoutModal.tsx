@@ -70,10 +70,29 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
   const handleProcessPayment = (e: React.FormEvent) => {
     e.preventDefault();
 
-    // If real live checkout URL is configured (Gumroad), trigger in-page overlay directly over the page
+    // If real live checkout URL is configured, handle provider-specific 1-click checkout
     if (plan.checkoutUrl) {
-      onClose();
-      openGumroadOverlay(plan.checkoutUrl, user?.email);
+      if (plan.checkoutUrl.includes('gumroad.com')) {
+        onClose();
+        openGumroadOverlay(plan.checkoutUrl, user?.email);
+        return;
+      }
+
+      // Polar.sh, Dodo Payments, Lemon Squeezy, or Stripe 1-click same-tab checkout
+      try {
+        const url = new URL(plan.checkoutUrl);
+        if (user?.email) {
+          url.searchParams.set('email', user.email);
+          url.searchParams.set('customer_email', user.email);
+        }
+        if (user?.id) {
+          url.searchParams.set('metadata[user_id]', user.id);
+          url.searchParams.set('metadata[plan_id]', plan.id);
+        }
+        window.location.href = url.toString();
+      } catch {
+        window.location.href = plan.checkoutUrl;
+      }
       return;
     }
 
@@ -217,26 +236,26 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
               <div className="space-y-4">
                 <div className="p-4 rounded-2xl bg-gradient-to-br from-emerald-500/10 via-emerald-500/5 to-teal-500/5 border border-emerald-500/20 space-y-3">
                   <div className="flex items-center gap-2.5">
-                    <div className="w-8 h-8 rounded-xl bg-pink-500/20 text-pink-400 flex items-center justify-center font-black text-sm">
-                      G
+                    <div className="w-8 h-8 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-black text-sm">
+                      <Lock className="w-4 h-4" />
                     </div>
                     <div>
-                      <h4 className="text-xs font-bold text-white">Official Gumroad Checkout</h4>
-                      <p className="text-[11px] text-slate-400">Global SSL Encrypted Payment Portal</p>
+                      <h4 className="text-xs font-bold text-white">1-Click Global Checkout</h4>
+                      <p className="text-[11px] text-slate-400">256-Bit SSL Verified Merchant Portal</p>
                     </div>
                   </div>
                   <div className="grid grid-cols-2 gap-2 text-[11px] text-slate-300 pt-1">
                     <div className="flex items-center gap-1.5 p-2 rounded-lg bg-black/30 border border-white/5">
                       <CreditCard className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
-                      <span>Credit &amp; Debit Cards</span>
+                      <span>Visa / Mastercard / Amex</span>
                     </div>
                     <div className="flex items-center gap-1.5 p-2 rounded-lg bg-black/30 border border-white/5">
                       <Zap className="w-3.5 h-3.5 text-lime-400 shrink-0" />
-                      <span>PayPal &amp; Apple Pay</span>
+                      <span>Apple Pay / Google Pay</span>
                     </div>
                   </div>
                   <p className="text-[11px] text-slate-400 leading-relaxed">
-                    Clicking below will launch the official SSL-encrypted payment modal right over this page. Enter your card or PayPal, and upon confirmation your subscription and watermark-free PDF export will activate immediately!
+                    Clicking below will launch secure 1-click checkout. Upon confirmation, you will be redirected back automatically with your subscription unlocked in your logged-in account!
                   </p>
                 </div>
 

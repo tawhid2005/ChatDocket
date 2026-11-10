@@ -38,6 +38,7 @@ import {
 } from '@/lib/visaSampler';
 import { downloadForensicCertificate } from '@/lib/certificateGenerator';
 import { generateLicenseKey } from '@/lib/paymentConfig';
+import { supabase, fetchUserProfile } from '@/lib/supabase';
 import { AlertTriangle, RotateCcw, CheckCircle2 } from 'lucide-react';
 
 export default function Home() {
@@ -105,18 +106,66 @@ export default function Home() {
       'I believe that the facts stated in this witness statement, communication schedule, and attached chat exhibits are true. I understand that proceedings for contempt of court or visa refusal may be brought against anyone who makes a false statement in a document verified by a statement of truth.',
   });
 
-  // Load user from localStorage if present
+  // Load user from Supabase session or localStorage if present
   useEffect(() => {
-    try {
-      const saved = localStorage.getItem('cd_user_profile');
-      if (saved) {
-        const parsed = JSON.parse(saved);
-        setUser(parsed);
-        if (parsed.plan !== 'free') {
-          setBrandingConfig((b) => ({ ...b, isPro: true, showWatermark: false }));
-        }
+    const syncSupabaseUser = async () => {
+      if (supabase) {
+        try {
+          const {
+            data: { session },
+          } = await supabase.auth.getSession();
+          if (session?.user) {
+            const profile = await fetchUserProfile(
+              session.user.id,
+              session.user.email || '',
+              session.user.user_metadata?.full_name,
+              session.user.user_metadata?.avatar_url
+            );
+            setUser(profile);
+            localStorage.setItem('cd_user_profile', JSON.stringify(profile));
+            if (profile.plan !== 'free') {
+              setBrandingConfig((b) => ({ ...b, isPro: true, showWatermark: false }));
+            }
+            return;
+          }
+        } catch {}
       }
-    } catch {}
+
+      try {
+        const saved = localStorage.getItem('cd_user_profile');
+        if (saved) {
+          const parsed = JSON.parse(saved);
+          setUser(parsed);
+          if (parsed.plan !== 'free') {
+            setBrandingConfig((b) => ({ ...b, isPro: true, showWatermark: false }));
+          }
+        }
+      } catch {}
+    };
+
+    syncSupabaseUser();
+
+    let authSubscription: { unsubscribe: () => void } | null = null;
+    if (supabase) {
+      const { data } = supabase.auth.onAuthStateChange(async (_event, session) => {
+        if (session?.user) {
+          const profile = await fetchUserProfile(
+            session.user.id,
+            session.user.email || '',
+            session.user.user_metadata?.full_name,
+            session.user.user_metadata?.avatar_url
+          );
+          setUser(profile);
+          try {
+            localStorage.setItem('cd_user_profile', JSON.stringify(profile));
+          } catch {}
+          if (profile.plan !== 'free') {
+            setBrandingConfig((b) => ({ ...b, isPro: true, showWatermark: false }));
+          }
+        }
+      });
+      authSubscription = data.subscription;
+    }
 
     // Check for Lemon Squeezy or Stripe return redirect query params (?checkout=success&plan=...)
     try {
@@ -251,6 +300,9 @@ export default function Home() {
     window.addEventListener('message', handleGumroadSale);
     return () => {
       window.removeEventListener('message', handleGumroadSale);
+      if (authSubscription) {
+        authSubscription.unsubscribe();
+      }
     };
   }, []);
 
@@ -414,7 +466,12 @@ export default function Home() {
     setIsInvoiceOpen(true);
   };
 
-  const handleSignOut = () => {
+  const handleSignOut = async () => {
+    if (supabase) {
+      try {
+        await supabase.auth.signOut();
+      } catch {}
+    }
     setUser(null);
     try {
       localStorage.removeItem('cd_user_profile');
