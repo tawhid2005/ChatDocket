@@ -6,7 +6,7 @@ import { SubscriptionPlan } from '@/types/auth';
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
-    const {
+    let {
       userId,
       email,
       plan = 'visa_pass',
@@ -19,6 +19,49 @@ export async function POST(req: NextRequest) {
       orderId?: string;
       provider?: string;
     } = body;
+
+    // Verify checkout directly with Polar.sh API when POLAR_ACCESS_TOKEN is configured
+    const polarAccessToken = process.env.POLAR_ACCESS_TOKEN;
+    if (polarAccessToken && provider === 'polar') {
+      if (!orderId || orderId.startsWith('PAY-')) {
+        return NextResponse.json(
+          { success: false, error: 'Missing verified Polar checkout ID.' },
+          { status: 400 }
+        );
+      }
+
+      const polarCheck = await fetch(`https://api.polar.sh/v1/checkouts/${orderId}`, {
+        headers: {
+          Authorization: `Bearer ${polarAccessToken}`,
+        },
+        cache: 'no-store',
+      });
+
+      if (!polarCheck.ok) {
+        return NextResponse.json(
+          { success: false, error: 'Unable to verify checkout with Polar.' },
+          { status: 402 }
+        );
+      }
+
+      const checkoutData = await polarCheck.json();
+      if (checkoutData?.status !== 'succeeded' && checkoutData?.status !== 'confirmed') {
+        return NextResponse.json(
+          {
+            success: false,
+            error: `Payment status is "${checkoutData?.status || 'pending'}", not completed yet.`,
+          },
+          { status: 402 }
+        );
+      }
+
+      // Trust Polar's verified metadata & customer email if available
+      userId = checkoutData?.metadata?.user_id || userId;
+      email = checkoutData?.customer_email || checkoutData?.metadata?.user_email || email;
+      if (checkoutData?.metadata?.plan_id) {
+        plan = checkoutData.metadata.plan_id as SubscriptionPlan;
+      }
+    }
 
     const validPlan: SubscriptionPlan = plan === 'agency_pro' ? 'agency_pro' : 'visa_pass';
     const finalOrderId = orderId || `ORD-${Date.now().toString().slice(-8)}`;

@@ -13,6 +13,7 @@ import {
   KeyRound,
   Award,
   Loader2,
+  AlertTriangle,
 } from 'lucide-react';
 import { supabase } from '@/lib/supabase';
 import { SubscriptionPlan, UserProfile } from '@/types/auth';
@@ -22,6 +23,7 @@ function PaymentSuccessContent() {
   const searchParams = useSearchParams();
 
   const [isVerifying, setIsVerifying] = useState(true);
+  const [verifyError, setVerifyError] = useState<string | null>(null);
   const [accountEmail, setAccountEmail] = useState<string>('');
   const [planName, setPlanName] = useState<string>('Visa & Court Single Case Pass');
   const [licenseKey, setLicenseKey] = useState<string>('');
@@ -85,6 +87,11 @@ function PaymentSuccessContent() {
         });
 
         const result = await res.json();
+
+        if (!res.ok || !result.success) {
+          setVerifyError(result.error || 'Payment could not be verified.');
+          return;
+        }
 
         const finalLicense = result.licenseKey || `CDPASS-${Date.now().toString(36).toUpperCase()}`;
         const finalOrderId = result.orderId || urlOrderId;
@@ -168,6 +175,21 @@ function PaymentSuccessContent() {
               <p className="text-xs text-slate-400">
                 Updating your ChatDocket cloud database profile and generating your official license key.
               </p>
+            </div>
+          ) : verifyError ? (
+            <div className="py-8 space-y-4">
+              <div className="w-16 h-16 mx-auto rounded-3xl bg-amber-500/20 text-amber-400 flex items-center justify-center">
+                <AlertTriangle className="w-8 h-8" />
+              </div>
+              <h1 className="text-xl font-black text-white">Payment Verification Notice</h1>
+              <p className="text-xs text-slate-300 max-w-sm mx-auto">{verifyError}</p>
+              <Link
+                href="/"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl bg-white/10 hover:bg-white/20 text-white text-xs font-bold transition"
+              >
+                <span>Return to ChatDocket Workspace</span>
+                <ArrowRight className="w-4 h-4" />
+              </Link>
             </div>
           ) : (
             <>
