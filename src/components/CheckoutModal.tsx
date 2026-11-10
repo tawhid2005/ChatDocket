@@ -67,27 +67,45 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
     }
   };
 
-  const handleProcessPayment = (e: React.FormEvent) => {
+  const handleProcessPayment = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsProcessing(true);
 
-    // If real live checkout URL is configured, handle provider-specific 1-click checkout
+    // 1. Try Dynamic 1-Click Polar.sh Server Checkout Session (works for both Visa Pass & Agency Pro)
+    try {
+      const res = await fetch('/api/payment/create-checkout', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          planId: plan.id,
+          userId: user?.id,
+          userEmail: user?.email,
+        }),
+      });
+
+      const data = await res.json();
+      if (res.ok && data?.url) {
+        window.location.href = data.url;
+        return;
+      }
+    } catch {
+      // Fallback to static URL if API checkout isn't configured yet
+    }
+
+    // 2. Fallback to configured static checkoutUrl
     if (plan.checkoutUrl) {
       if (plan.checkoutUrl.includes('gumroad.com')) {
+        setIsProcessing(false);
         onClose();
         openGumroadOverlay(plan.checkoutUrl, user?.email);
         return;
       }
 
-      // Polar.sh, Dodo Payments, Lemon Squeezy, or Stripe 1-click same-tab checkout
       try {
         const url = new URL(plan.checkoutUrl);
         if (user?.email) {
           url.searchParams.set('email', user.email);
           url.searchParams.set('customer_email', user.email);
-        }
-        if (user?.id) {
-          url.searchParams.set('metadata[user_id]', user.id);
-          url.searchParams.set('metadata[plan_id]', plan.id);
         }
         window.location.href = url.toString();
       } catch {
@@ -95,8 +113,6 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
       }
       return;
     }
-
-    setIsProcessing(true);
 
     setTimeout(() => {
       const licenseKey = generateLicenseKey(planId);
@@ -232,7 +248,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
 
           {/* Right Column: Payment Methods & Action */}
           <form onSubmit={handleProcessPayment} className="space-y-4 flex flex-col justify-between">
-            {plan.checkoutUrl ? (
+            {plan.id !== 'free' ? (
               <div className="space-y-4">
                 <div className="p-4 rounded-2xl bg-gradient-to-br from-emerald-500/10 via-emerald-500/5 to-teal-500/5 border border-emerald-500/20 space-y-3">
                   <div className="flex items-center gap-2.5">
@@ -281,11 +297,10 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
                   <button
                     type="button"
                     onClick={() => setPaymentMethod('card')}
-                    className={`p-2.5 rounded-xl border text-left transition flex items-center gap-2 ${
-                      paymentMethod === 'card'
+                    className={`p-2.5 rounded-xl border text-left transition flex items-center gap-2 ${paymentMethod === 'card'
                         ? 'border-emerald-400 bg-emerald-500/10 text-white font-bold'
                         : 'border-white/[0.08] text-slate-400 bg-white/[0.02]'
-                    }`}
+                      }`}
                   >
                     <CreditCard className="w-4 h-4 text-emerald-400 shrink-0" />
                     <span className="text-xs">Credit Card</span>
@@ -294,11 +309,10 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
                   <button
                     type="button"
                     onClick={() => setPaymentMethod('lemon_squeezy')}
-                    className={`p-2.5 rounded-xl border text-left transition flex items-center gap-2 ${
-                      paymentMethod === 'lemon_squeezy'
+                    className={`p-2.5 rounded-xl border text-left transition flex items-center gap-2 ${paymentMethod === 'lemon_squeezy'
                         ? 'border-yellow-400 bg-yellow-500/10 text-white font-bold'
                         : 'border-white/[0.08] text-slate-400 bg-white/[0.02]'
-                    }`}
+                      }`}
                   >
                     <Globe className="w-4 h-4 text-yellow-400 shrink-0" />
                     <span className="text-xs">Lemon Squeezy</span>
@@ -369,9 +383,9 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
               ) : (
                 <>
                   <span>
-                    {plan.checkoutUrl
-                      ? `Open Payment Popup ($${finalPrice.toFixed(2)})`
-                      : `Pay $${finalPrice.toFixed(2)} & Unlock Instant License`}
+                    {plan.id !== 'free'
+                      ? `Proceed to 1-Click Checkout ($${finalPrice.toFixed(2)})`
+                      : `Unlock Free Plan`}
                   </span>
                   <ArrowRight className="w-4 h-4" />
                 </>
