@@ -139,9 +139,9 @@ export const ControlSidebar: React.FC<ControlSidebarProps> = ({
   };
 
   return (
-    <aside className="no-print w-full lg:w-80 xl:w-96 shrink-0 bg-[#080c16]/95 backdrop-blur-xl border-r border-white/[0.08] flex flex-col lg:h-[calc(100vh-57px)] lg:sticky lg:top-[57px] shadow-2xl z-30 text-slate-300 pb-20 lg:pb-0">
-      {/* 5 Tab Navigation Bar */}
-      <div className="flex border-b border-white/[0.08] bg-black/40 p-1.5 gap-1 shrink-0 overflow-x-auto">
+    <aside className="no-print w-full lg:w-80 xl:w-96 shrink-0 bg-[#080c16]/95 backdrop-blur-xl border-r border-white/[0.08] flex flex-col lg:h-full shadow-2xl z-30 text-slate-300 pb-20 lg:pb-0">
+      {/* 5 Tab Navigation Bar (Always Pinned & Visible) */}
+      <div className="flex border-b border-white/[0.08] bg-[#060913] p-1.5 gap-1 shrink-0">
         <button
           onClick={() => setActiveTab('preset')}
           className={`flex-1 py-2 px-1 rounded-xl text-[10px] sm:text-[11px] font-bold flex flex-col items-center gap-1 transition cursor-pointer ${

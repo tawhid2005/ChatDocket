@@ -227,10 +227,10 @@ export function parseWhatsAppRawText(
   const participantStats: Record<string, ParticipantStats> = {};
   const participantsSet = new Set<string>();
 
-  // Determine dominant date format (DD/MM vs MM/DD)
+  // Determine dominant date format (DD/MM vs MM/DD) by scanning across the file
   let monthFirstVotes = 0;
   let dayFirstVotes = 0;
-  for (let i = 0; i < Math.min(lines.length, 300); i++) {
+  for (let i = 0; i < lines.length; i++) {
     const cleaned = cleanWhatsAppText(lines[i]);
     const match = cleaned.match(MESSAGE_REGEX);
     if (match) {
@@ -239,6 +239,7 @@ export function parseWhatsAppRawText(
         if (parts[0] > 12 && parts[1] <= 12) dayFirstVotes++;
         else if (parts[1] > 12 && parts[0] <= 12) monthFirstVotes++;
       }
+      if (Math.abs(dayFirstVotes - monthFirstVotes) >= 25) break;
     }
   }
   const isMonthFirst = monthFirstVotes > dayFirstVotes;

@@ -76,74 +76,67 @@ export const Navbar: React.FC<NavbarProps> = ({
   };
 
   return (
-    <header className="no-print sticky top-0 z-40 bg-[#060810]/90 backdrop-blur-2xl border-b border-white/[0.08] px-4 lg:px-6 py-2.5 transition-all">
-      <div className="max-w-[1700px] mx-auto flex items-center justify-between gap-2 sm:gap-3">
-        {/* Brand */}
-        <div className="flex items-center gap-2 sm:gap-3 min-w-0">
+    <header className="no-print sticky top-0 z-40 h-14 bg-[#060810]/95 backdrop-blur-2xl border-b border-white/[0.08] px-3 sm:px-5 flex items-center transition-all">
+      <div className="max-w-[1700px] w-full mx-auto flex items-center justify-between gap-2 sm:gap-4">
+        {/* Brand (Always Single Line, Never Crushed) */}
+        <div className="flex items-center gap-2.5 shrink-0 whitespace-nowrap">
           <BrandLogo size="sm" showText={false} className="sm:hidden shrink-0" />
           <BrandLogo size="md" showText={false} className="hidden sm:flex shrink-0" />
-          <div className="min-w-0">
+          <div>
             <div className="flex items-center gap-1.5 sm:gap-2">
-              <span className="font-extrabold text-base sm:text-lg tracking-tight text-white flex items-center gap-1 truncate">
+              <span className="font-extrabold text-base sm:text-lg tracking-tight text-white flex items-center gap-1">
                 Chat<span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-300 to-lime-400">Docket</span>
                 <span className="w-1.5 h-1.5 rounded-full bg-lime-400 shadow-[0_0_8px_#a3e635] animate-pulse shrink-0" />
               </span>
-              <span className="hidden md:inline-block text-[10px] font-extrabold tracking-wider uppercase px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">
-                100% Client-Side
-              </span>
+              {!hasData && (
+                <span className="hidden md:inline-block text-[10px] font-extrabold tracking-wider uppercase px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">
+                  100% Client-Side
+                </span>
+              )}
               {isDemoMode && (
-                <span className="hidden sm:inline-block text-[10px] font-extrabold tracking-wider uppercase px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/40 animate-pulse">
+                <span className="hidden sm:inline-block text-[10px] font-extrabold tracking-wider uppercase px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/40">
                   Demo Mode
                 </span>
               )}
             </div>
-            <p className="text-[11px] text-slate-400 hidden sm:block">
-              WhatsApp to Official Legal &amp; Spouse Visa PDF Exporter
-            </p>
+            {!hasData && (
+              <p className="text-[11px] text-slate-400 hidden lg:block">
+                WhatsApp to Official Legal &amp; Spouse Visa PDF Exporter
+              </p>
+            )}
           </div>
         </div>
 
-        {/* Center: Mode Switcher & Security Badge */}
+        {/* Center: Compact Paper Size Switcher (Desktop Workspace) */}
         {hasData && (
-          <div className="flex items-center gap-3">
-            {/* Paper Size Selector Pill */}
-            <div className="hidden lg:flex items-center bg-slate-900 border border-white/[0.1] rounded-xl p-0.5 text-xs font-bold">
-              <button
-                onClick={() => onPaperSizeChange('a4')}
-                className={`px-2.5 py-1 rounded-lg transition ${
-                  paperSize === 'a4'
-                    ? 'bg-emerald-500 text-slate-950'
-                    : 'text-slate-400 hover:text-white'
-                }`}
-                title="International ISO standard"
-              >
-                A4 (UK/EU/CA)
-              </button>
-              <button
-                onClick={() => onPaperSizeChange('letter')}
-                className={`px-2.5 py-1 rounded-lg transition ${
-                  paperSize === 'letter'
-                    ? 'bg-emerald-500 text-slate-950'
-                    : 'text-slate-400 hover:text-white'
-                }`}
-                title="US Standard (USCIS & US Courts)"
-              >
-                US Letter
-              </button>
-            </div>
-
-            <div
-              className="hidden xl:flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/[0.04] text-slate-300 text-xs font-medium border border-white/[0.08]"
-              title="All zip extraction, parsing, and rendering happens 100% in browser RAM. Zero server uploads."
+          <div className="hidden xl:flex items-center bg-slate-900 border border-white/[0.1] rounded-xl p-0.5 text-xs font-bold shrink-0 whitespace-nowrap">
+            <button
+              onClick={() => onPaperSizeChange('a4')}
+              className={`px-3 py-1 rounded-lg transition cursor-pointer ${
+                paperSize === 'a4'
+                  ? 'bg-emerald-500 text-slate-950'
+                  : 'text-slate-400 hover:text-white'
+              }`}
+              title="International ISO standard (UKVI, Canada, Australia)"
             >
-              <ShieldCheck className="w-4 h-4 text-emerald-400" />
-              <span>Zero-Knowledge RAM Processing</span>
-            </div>
+              A4
+            </button>
+            <button
+              onClick={() => onPaperSizeChange('letter')}
+              className={`px-3 py-1 rounded-lg transition cursor-pointer ${
+                paperSize === 'letter'
+                  ? 'bg-emerald-500 text-slate-950'
+                  : 'text-slate-400 hover:text-white'
+              }`}
+              title="US Standard (USCIS & US Courts)"
+            >
+              US Letter
+            </button>
           </div>
         )}
 
         {/* Right CTA Actions */}
-        <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
+        <div className="flex items-center gap-1.5 sm:gap-2 shrink-0 whitespace-nowrap">
           {/* Upload New File / Reset button when data is loaded */}
           {hasData && (
             <button
@@ -151,17 +144,17 @@ export const Navbar: React.FC<NavbarProps> = ({
               className="flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 text-xs font-bold text-slate-300 hover:text-white bg-white/[0.06] hover:bg-white/[0.12] rounded-xl border border-white/[0.1] transition cursor-pointer"
               title="Return to upload screen and clear current file"
             >
-              <RotateCcw className="w-3.5 h-3.5 text-amber-400" />
-              <span className="hidden sm:inline">Upload New File</span>
+              <RotateCcw className="w-3.5 h-3.5 text-amber-400 shrink-0" />
+              <span className="hidden md:inline">New File</span>
             </button>
           )}
 
           {/* Export Guide */}
           <button
             onClick={onOpenGuide}
-            className="hidden md:flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-slate-300 hover:text-white hover:bg-white/[0.06] rounded-xl border border-white/[0.06] transition cursor-pointer"
+            className="hidden lg:flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-slate-300 hover:text-white hover:bg-white/[0.06] rounded-xl border border-white/[0.06] transition cursor-pointer"
           >
-            <HelpCircle className="w-4 h-4 text-emerald-400" />
+            <HelpCircle className="w-4 h-4 text-emerald-400 shrink-0" />
             <span>How to Export</span>
           </button>
 
@@ -169,11 +162,11 @@ export const Navbar: React.FC<NavbarProps> = ({
           {hasData && (
             <button
               onClick={onOpenWrapped}
-              className="hidden lg:flex items-center gap-1.5 px-3 py-1.5 text-xs font-bold text-pink-300 bg-pink-500/10 hover:bg-pink-500/20 border border-pink-500/30 rounded-xl transition shadow-xs cursor-pointer"
+              className="hidden 2xl:flex items-center gap-1.5 px-3 py-1.5 text-xs font-bold text-pink-300 bg-pink-500/10 hover:bg-pink-500/20 border border-pink-500/30 rounded-xl transition shadow-xs cursor-pointer"
               title="Generate viral Relationship Wrapped infographic"
             >
-              <Sparkles className="w-3.5 h-3.5 text-pink-400" />
-              <span>Relationship Wrapped</span>
+              <Sparkles className="w-3.5 h-3.5 text-pink-400 shrink-0" />
+              <span>Wrapped</span>
             </button>
           )}
 

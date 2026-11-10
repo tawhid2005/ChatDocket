@@ -780,9 +780,9 @@ export default function Home() {
           />
         </main>
       ) : (
-        <main className="flex-1 flex flex-col lg:flex-row relative">
-          {/* Mobile Workspace Tab Bar (< 1024px) */}
-          <div className="no-print lg:hidden sticky top-[52px] z-30 bg-[#080c16]/95 backdrop-blur-xl border-b border-white/[0.08] px-3 py-2 flex items-center gap-2">
+        <main className="flex-1 flex flex-col lg:flex-row relative lg:h-[calc(100vh-56px)] lg:overflow-hidden print:h-auto print:overflow-visible">
+          {/* Mobile Workspace Tab Bar (< 1024px, sits cleanly flush below 56px navbar) */}
+          <div className="no-print lg:hidden sticky top-14 z-30 bg-[#080c16]/95 backdrop-blur-xl border-b border-white/[0.08] px-3 py-2 flex items-center gap-2">
             <button
               type="button"
               onClick={() => setMobileView('preview')}
@@ -810,8 +810,8 @@ export default function Home() {
             </button>
           </div>
 
-          {/* Left Sticky Sidebar Controls (Desktop always visible, Mobile toggled) */}
-          <div className={`${mobileView === 'controls' ? 'block' : 'hidden'} lg:block`}>
+          {/* Left Sticky Sidebar Controls (Always pinned on Desktop, Toggled on Mobile) */}
+          <div className={`${mobileView === 'controls' ? 'block' : 'hidden'} lg:block lg:h-full no-print`}>
             <ControlSidebar
               metadata={metadata}
               filterConfig={filterConfig}
@@ -835,8 +835,12 @@ export default function Home() {
             />
           </div>
 
-          {/* Right Live Document Preview Canvas (Desktop always visible, Mobile toggled) */}
-          <div className={`${mobileView === 'preview' ? 'flex flex-1' : 'hidden'} lg:flex lg:flex-1`}>
+          {/* Right Live Document Preview Canvas (Scrolls independently on Desktop, Full on Print) */}
+          <div
+            className={`${
+              mobileView === 'preview' ? 'flex flex-1' : 'hidden'
+            } lg:flex lg:flex-1 lg:h-full lg:overflow-hidden print:block print:h-auto print:overflow-visible`}
+          >
             <DocumentPreview
               messages={displayMessages}
               calls={calls}

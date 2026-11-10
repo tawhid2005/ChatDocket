@@ -80,6 +80,25 @@ export const DocumentPreview: React.FC<DocumentPreviewProps> = ({
     setMounted(true);
   }, []);
 
+  // Automatically set clean legal filename & suppress website title in PDF save dialog
+  useEffect(() => {
+    let originalTitle = '';
+    const handleBeforePrint = () => {
+      originalTitle = document.title;
+      document.title = brandingConfig.caseReference || 'Official_Communication_Record';
+    };
+    const handleAfterPrint = () => {
+      if (originalTitle) document.title = originalTitle;
+    };
+
+    window.addEventListener('beforeprint', handleBeforePrint);
+    window.addEventListener('afterprint', handleAfterPrint);
+    return () => {
+      window.removeEventListener('beforeprint', handleBeforePrint);
+      window.removeEventListener('afterprint', handleAfterPrint);
+    };
+  }, [brandingConfig.caseReference]);
+
   const p1 = metadata?.participants[0] || brandingConfig.applicantName || 'Applicant';
   const p2 = metadata?.participants[1] || brandingConfig.sponsorName || 'Sponsor';
 
@@ -142,12 +161,12 @@ export const DocumentPreview: React.FC<DocumentPreviewProps> = ({
   const callHoursFormatted = `${Math.floor(totalCallDurationMinutes / 60)}h ${totalCallDurationMinutes % 60}m`;
 
   return (
-    <div className="printable-area w-full flex-1 bg-[#090d16] p-3 sm:p-6 lg:p-8 overflow-y-auto pb-24 lg:pb-8">
-      {/* Dynamic Print Page Size Rule (A4 vs US Letter) */}
+    <div className="printable-area w-full flex-1 bg-[#090d16] p-3 sm:p-6 lg:p-8 lg:h-full lg:overflow-y-auto overflow-y-auto pb-24 lg:pb-8 print:h-auto print:overflow-visible">
+      {/* Dynamic Print Page Size Rule (A4 vs US Letter) & Suppress Browser URL/Time Headers */}
       <style media="print">{`
         @page {
           size: ${brandingConfig.paperSize === 'letter' ? 'letter' : 'A4'} portrait;
-          margin: 10mm 10mm 12mm 10mm;
+          margin: 0mm !important;
         }
       `}</style>
 
