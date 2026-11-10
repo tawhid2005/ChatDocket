@@ -53,15 +53,51 @@ export async function fetchUserProfile(
       .eq('id', userId)
       .single();
 
+    let resolvedPlan: SubscriptionPlan = (data?.plan as SubscriptionPlan) || 'free';
+    let resolvedLicense: string | undefined = data?.license_key || undefined;
+    let resolvedPurchasedAt: string | undefined = data?.purchased_at || undefined;
+
+    // Cross-verify against completed orders tied to this email (guarantees email-bound recovery across devices)
+    if (resolvedPlan === 'free' && email) {
+      const { data: orderMatch } = await supabase
+        .from('orders')
+        .select('plan_id, license_key, created_at')
+        .ilike('user_email', email.trim())
+        .eq('status', 'completed')
+        .order('created_at', { ascending: false })
+        .limit(1)
+        .single();
+
+      if (orderMatch) {
+        resolvedPlan = (orderMatch.plan_id as SubscriptionPlan) || 'visa_pass';
+        resolvedLicense = orderMatch.license_key;
+        resolvedPurchasedAt = orderMatch.created_at;
+
+        // Sync profile row immediately
+        await supabase.from('profiles').upsert(
+          {
+            id: userId,
+            email: email.trim().toLowerCase(),
+            name: data?.name || fallbackName || email.split('@')[0],
+            plan: resolvedPlan,
+            license_key: resolvedLicense,
+            purchased_at: resolvedPurchasedAt,
+            is_verified: true,
+          },
+          { onConflict: 'id' }
+        );
+      }
+    }
+
     if (data && !error) {
       return {
         id: data.id,
         email: data.email || email,
         name: data.name || fallbackName || email.split('@')[0],
         avatarUrl: data.avatar_url || avatarUrl,
-        plan: (data.plan as SubscriptionPlan) || 'free',
-        licenseKey: data.license_key || undefined,
-        purchasedAt: data.purchased_at || undefined,
+        plan: resolvedPlan,
+        licenseKey: resolvedLicense,
+        purchasedAt: resolvedPurchasedAt,
         expiresAt: data.expires_at || undefined,
         isVerified: Boolean(data.is_verified),
       };
@@ -70,10 +106,12 @@ export async function fetchUserProfile(
     // Create default profile if trigger hasn't populated it yet
     const newProfile = {
       id: userId,
-      email,
+      email: email.trim().toLowerCase(),
       name: fallbackName || email.split('@')[0],
       avatar_url: avatarUrl || null,
-      plan: 'free',
+      plan: resolvedPlan,
+      license_key: resolvedLicense || null,
+      purchased_at: resolvedPurchasedAt || null,
       is_verified: true,
     };
 
@@ -81,10 +119,12 @@ export async function fetchUserProfile(
 
     return {
       id: userId,
-      email,
+      email: newProfile.email,
       name: newProfile.name,
       avatarUrl,
-      plan: 'free',
+      plan: resolvedPlan,
+      licenseKey: resolvedLicense,
+      purchasedAt: resolvedPurchasedAt,
       isVerified: true,
     };
   } catch {

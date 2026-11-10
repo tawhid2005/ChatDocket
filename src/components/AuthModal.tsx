@@ -199,8 +199,14 @@ export const AuthModal: React.FC<AuthModalProps> = ({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-xl animate-in fade-in duration-150">
-      <div className="relative max-w-md w-full rounded-3xl overflow-hidden border border-white/[0.12] bg-[#090d16] shadow-2xl text-white">
+    <div
+      className="fixed inset-0 z-50 overflow-y-auto flex items-start sm:items-center justify-center p-4 bg-black/85 backdrop-blur-xl animate-in fade-in duration-150"
+      onClick={onClose}
+    >
+      <div
+        className="relative max-w-md w-full my-auto max-h-[92vh] overflow-y-auto rounded-3xl border border-white/[0.12] bg-[#090d16] shadow-2xl text-white"
+        onClick={(e) => e.stopPropagation()}
+      >
         {/* Ambient glow */}
         <div className="absolute -top-24 -left-24 w-56 h-56 rounded-full bg-emerald-500/15 blur-3xl pointer-events-none" />
         <div className="absolute -bottom-24 -right-24 w-56 h-56 rounded-full bg-cyan-500/15 blur-3xl pointer-events-none" />

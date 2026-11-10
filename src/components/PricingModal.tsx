@@ -26,25 +26,31 @@ export const PricingModal: React.FC<PricingModalProps> = ({
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-xl animate-in fade-in duration-200">
-      <div className="relative max-w-5xl w-full rounded-3xl overflow-hidden border border-white/[0.1] bg-[#070a14] shadow-2xl text-white">
+    <div
+      className="fixed inset-0 z-50 overflow-y-auto bg-black/85 backdrop-blur-xl animate-in fade-in duration-200 p-3 sm:p-6 flex items-start sm:items-center justify-center"
+      onClick={onClose}
+    >
+      <div
+        className="relative max-w-5xl w-full my-auto max-h-[92vh] overflow-y-auto rounded-3xl border border-white/[0.12] bg-[#070a14] shadow-2xl text-white"
+        onClick={(e) => e.stopPropagation()}
+      >
         {/* Ambient background glows */}
         <div className="absolute -top-32 -left-32 w-96 h-96 rounded-full bg-emerald-500/15 blur-3xl pointer-events-none" />
         <div className="absolute -top-32 -right-32 w-96 h-96 rounded-full bg-cyan-500/15 blur-3xl pointer-events-none" />
 
-        {/* Top Header */}
-        <div className="relative z-10 px-6 sm:px-8 pt-6 pb-2 flex items-center justify-between">
-          <div className="flex items-center gap-2">
+        {/* Sticky Top Header (always visible, never cropped) */}
+        <div className="sticky top-0 z-20 px-5 sm:px-8 py-4 bg-[#070a14]/90 backdrop-blur-xl border-b border-white/[0.06] flex items-center justify-between">
+          <div className="flex items-center gap-2.5">
             <div className="w-8 h-8 rounded-xl bg-gradient-to-tr from-emerald-400 to-cyan-400 flex items-center justify-center text-slate-950 font-black">
               <Crown className="w-4 h-4 fill-slate-950" />
             </div>
             <div>
               <span className="font-extrabold text-sm tracking-wide uppercase text-slate-200 block">
-                Chat Docket Pro Licensing
+                ChatDocket Pro Licensing
               </span>
               {user && (
                 <span className="text-[11px] text-emerald-400">
-                  Signed in as: {user.email} (Current Plan: {user.plan.toUpperCase()})
+                  Signed in as: {user.email} (Plan: {user.plan.toUpperCase()})
                 </span>
               )}
             </div>
@@ -52,30 +58,31 @@ export const PricingModal: React.FC<PricingModalProps> = ({
 
           <button
             onClick={onClose}
-            className="p-2 rounded-full bg-white/[0.05] hover:bg-white/[0.1] text-slate-400 hover:text-white transition"
+            className="p-2 rounded-full bg-white/[0.08] hover:bg-white/[0.18] text-slate-300 hover:text-white transition cursor-pointer"
+            aria-label="Close Pricing"
           >
             <X className="w-5 h-5" />
           </button>
         </div>
 
         {/* Hero Section */}
-        <div className="relative z-10 text-center max-w-2xl mx-auto px-4 pt-2 pb-6">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-semibold mb-3">
+        <div className="relative z-10 text-center max-w-2xl mx-auto px-4 pt-5 pb-4">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-semibold mb-2">
             <Sparkles className="w-3.5 h-3.5" />
             <span>Trusted by 28,000+ Visa Applicants &amp; Law Firms</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">
+          <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-white">
             Transparent, Predictable Pricing
           </h2>
-          <p className="mt-2 text-xs sm:text-sm text-slate-400">
+          <p className="mt-1.5 text-xs sm:text-sm text-slate-400">
             Generate 100% white-label, unwatermarked, Bates-numbered PDF dossiers compliant with Home Office, USCIS, and IRCC standards.
           </p>
 
           {/* Toggle Switch */}
-          <div className="mt-6 inline-flex items-center gap-3 p-1 rounded-full bg-white/[0.05] border border-white/[0.08]">
+          <div className="mt-4 inline-flex items-center gap-2 p-1 rounded-full bg-white/[0.05] border border-white/[0.08]">
             <button
               onClick={() => setBillingCycle('single')}
-              className={`px-4 py-1.5 rounded-full text-xs font-bold transition ${
+              className={`px-4 py-1.5 rounded-full text-xs font-bold transition cursor-pointer ${
                 billingCycle === 'single'
                   ? 'bg-white text-slate-950 shadow-md'
                   : 'text-slate-400 hover:text-white'
@@ -85,7 +92,7 @@ export const PricingModal: React.FC<PricingModalProps> = ({
             </button>
             <button
               onClick={() => setBillingCycle('annual')}
-              className={`flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-bold transition ${
+              className={`flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-bold transition cursor-pointer ${
                 billingCycle === 'annual'
                   ? 'bg-gradient-to-r from-emerald-400 to-cyan-400 text-slate-950 shadow-md'
                   : 'text-slate-400 hover:text-white'
@@ -99,25 +106,12 @@ export const PricingModal: React.FC<PricingModalProps> = ({
           </div>
         </div>
 
-        {/* Pro Testing Simulator Banner */}
-        <div className="relative z-10 mx-6 sm:mx-8 mb-6 p-3 rounded-2xl bg-gradient-to-r from-amber-500/10 via-emerald-500/10 to-transparent border border-amber-500/30 flex flex-wrap items-center justify-between gap-3 text-xs">
-          <div className="flex items-center gap-2">
-            <Zap className="w-4 h-4 text-amber-400 shrink-0" />
-            <span className="font-bold text-amber-300">Live Evaluation Switch:</span>
-            <span className="text-slate-300">
-              Test watermark removal and agency white-labeling right now without entering a card.
-            </span>
-          </div>
-          <button
-            onClick={() => onToggleProSimulator(!isPro)}
-            className={`px-4 py-1.5 rounded-xl font-extrabold text-xs transition shadow-sm ${
-              isPro
-                ? 'bg-amber-400 text-slate-950 hover:bg-amber-300'
-                : 'bg-white/[0.08] hover:bg-white/[0.15] text-white border border-white/[0.1]'
-            }`}
-          >
-            {isPro ? 'Pro Active (Click to Revert)' : 'Activate Pro Mode Simulator'}
-          </button>
+        {/* Account-Bound Guarantee Bar */}
+        <div className="relative z-10 mx-5 sm:mx-8 mb-5 p-3 rounded-2xl bg-emerald-500/[0.07] border border-emerald-500/20 flex flex-wrap items-center justify-center gap-2 text-xs text-center">
+          <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />
+          <span className="text-slate-200 font-medium">
+            <strong className="text-emerald-400">Permanent Email-Bound License:</strong> Your subscription is permanently saved to your signed-in account in our cloud database across any browser or device.
+          </span>
         </div>
 
         {/* 3 Translucent Glass Cards */}
@@ -220,10 +214,16 @@ export const PricingModal: React.FC<PricingModalProps> = ({
             </div>
 
             <button
-              onClick={() => onSelectPlan('visa_pass')}
-              className="mt-8 w-full py-2.5 rounded-full bg-gradient-to-r from-emerald-400 to-lime-400 hover:from-emerald-300 hover:to-lime-300 text-slate-950 font-extrabold text-xs shadow-lg shadow-emerald-500/25 active:scale-95 transition flex items-center justify-center gap-1.5"
+              onClick={() => (user?.plan === 'visa_pass' ? onClose() : onSelectPlan('visa_pass'))}
+              className="mt-8 w-full py-2.5 rounded-full bg-gradient-to-r from-emerald-400 to-lime-400 hover:from-emerald-300 hover:to-lime-300 text-slate-950 font-extrabold text-xs shadow-lg shadow-emerald-500/25 active:scale-95 transition flex items-center justify-center gap-1.5 cursor-pointer"
             >
-              <span>{user ? 'Proceed to Checkout ($12)' : 'Sign In & Buy Pass ($12)'}</span>
+              <span>
+                {user?.plan === 'visa_pass'
+                  ? '✓ Active on Your Account'
+                  : user
+                    ? 'Proceed to Checkout ($12)'
+                    : 'Sign In & Buy Pass ($12)'}
+              </span>
               <ArrowRight className="w-3.5 h-3.5" />
             </button>
           </div>
@@ -277,10 +277,16 @@ export const PricingModal: React.FC<PricingModalProps> = ({
             </div>
 
             <button
-              onClick={() => onSelectPlan('agency_pro')}
-              className="mt-8 w-full py-2.5 rounded-full bg-white/[0.08] hover:bg-cyan-500 hover:text-slate-950 text-white font-bold text-xs transition border border-white/[0.1] active:scale-95 flex items-center justify-center gap-1.5"
+              onClick={() => (user?.plan === 'agency_pro' ? onClose() : onSelectPlan('agency_pro'))}
+              className="mt-8 w-full py-2.5 rounded-full bg-white/[0.08] hover:bg-cyan-500 hover:text-slate-950 text-white font-bold text-xs transition border border-white/[0.1] active:scale-95 flex items-center justify-center gap-1.5 cursor-pointer"
             >
-              <span>{user ? 'Subscribe Agency Pro ($39)' : 'Sign In & Subscribe ($39)'}</span>
+              <span>
+                {user?.plan === 'agency_pro'
+                  ? '✓ Active on Your Account'
+                  : user
+                    ? 'Subscribe Agency Pro ($39)'
+                    : 'Sign In & Subscribe ($39)'}
+              </span>
               <ArrowRight className="w-3.5 h-3.5" />
             </button>
           </div>

@@ -110,17 +110,22 @@ export async function POST(req: NextRequest) {
         });
       }
 
-      // Update user profile in Supabase
+      // Update or insert user profile in Supabase (guarantees subscription persists permanently on account)
       if (targetUserId) {
         const { data: prof, error: profErr } = await supabaseAdmin
           .from('profiles')
-          .update({
-            plan: validPlan,
-            license_key: licenseKey,
-            purchased_at: nowIso,
-            updated_at: nowIso,
-          })
-          .eq('id', targetUserId)
+          .upsert(
+            {
+              id: targetUserId,
+              email: targetEmail || 'customer@chatdocket.com',
+              plan: validPlan,
+              license_key: licenseKey,
+              purchased_at: nowIso,
+              updated_at: nowIso,
+              is_verified: true,
+            },
+            { onConflict: 'id' }
+          )
           .select()
           .single();
 

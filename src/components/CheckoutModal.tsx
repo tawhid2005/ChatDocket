@@ -141,8 +141,14 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-xl animate-in fade-in duration-150">
-      <div className="relative max-w-2xl w-full rounded-3xl overflow-hidden border border-white/[0.1] bg-[#070a14] shadow-2xl text-white">
+    <div
+      className="fixed inset-0 z-50 overflow-y-auto flex items-start sm:items-center justify-center p-4 bg-black/85 backdrop-blur-xl animate-in fade-in duration-150"
+      onClick={onClose}
+    >
+      <div
+        className="relative max-w-2xl w-full my-auto max-h-[92vh] overflow-y-auto rounded-3xl border border-white/[0.1] bg-[#070a14] shadow-2xl text-white"
+        onClick={(e) => e.stopPropagation()}
+      >
         {/* Top Header */}
         <div className="p-6 border-b border-white/[0.08] flex items-center justify-between bg-white/[0.02]">
           <div className="flex items-center gap-2.5">
