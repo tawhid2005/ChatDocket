@@ -83,8 +83,14 @@ export const RelationshipWrappedModal: React.FC<RelationshipWrappedModalProps> =
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/70 backdrop-blur-md animate-in fade-in duration-150">
-      <div className="relative max-w-md w-full rounded-3xl overflow-hidden shadow-2xl border border-pink-500/30 bg-gradient-to-b from-slate-950 via-purple-950 to-slate-950 text-white p-6 sm:p-7">
+    <div
+      className="fixed inset-0 z-50 overflow-y-auto flex items-start sm:items-center justify-center p-4 bg-slate-900/70 backdrop-blur-md animate-in fade-in duration-150"
+      onClick={onClose}
+    >
+      <div
+        className="relative max-w-md w-full my-auto max-h-[92vh] overflow-y-auto rounded-3xl shadow-2xl border border-pink-500/30 bg-gradient-to-b from-slate-950 via-purple-950 to-slate-950 text-white p-6 sm:p-7"
+        onClick={(e) => e.stopPropagation()}
+      >
         {/* Glow backdrop effect */}
         <div className="absolute -top-24 -left-24 w-56 h-56 rounded-full bg-pink-500/20 blur-3xl pointer-events-none" />
         <div className="absolute -bottom-24 -right-24 w-56 h-56 rounded-full bg-indigo-500/20 blur-3xl pointer-events-none" />

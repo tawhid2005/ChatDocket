@@ -34,8 +34,14 @@ export const TranslationModal: React.FC<TranslationModalProps> = ({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-xl animate-in fade-in duration-150">
-      <div className="bg-[#0b0f19] rounded-3xl shadow-2xl max-w-lg w-full overflow-hidden border border-white/[0.1] text-white">
+    <div
+      className="fixed inset-0 z-50 overflow-y-auto flex items-start sm:items-center justify-center p-4 bg-black/80 backdrop-blur-xl animate-in fade-in duration-150"
+      onClick={onClose}
+    >
+      <div
+        className="bg-[#0b0f19] rounded-3xl shadow-2xl max-w-lg w-full my-auto max-h-[92vh] overflow-y-auto border border-white/[0.1] text-white"
+        onClick={(e) => e.stopPropagation()}
+      >
         {/* Header */}
         <div className="flex items-center justify-between px-6 py-5 border-b border-white/[0.08] bg-white/[0.02]">
           <div className="flex items-center gap-2.5">

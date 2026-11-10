@@ -144,67 +144,67 @@ export const ControlSidebar: React.FC<ControlSidebarProps> = ({
       <div className="flex border-b border-white/[0.08] bg-black/40 p-1.5 gap-1 shrink-0 overflow-x-auto">
         <button
           onClick={() => setActiveTab('preset')}
-          className={`flex-1 py-2 px-1 rounded-xl text-[11px] font-bold flex flex-col items-center gap-1 transition ${
+          className={`flex-1 py-2 px-1 rounded-xl text-[10px] sm:text-[11px] font-bold flex flex-col items-center gap-1 transition cursor-pointer ${
             activeTab === 'preset'
               ? 'bg-gradient-to-r from-emerald-500 to-lime-400 text-slate-950 shadow-md font-extrabold'
               : 'text-slate-400 hover:text-white hover:bg-white/[0.04]'
           }`}
-          title="Mode & Presets"
+          title="Select Visa Embassy or Case Type"
         >
           <Briefcase className="w-3.5 h-3.5" />
-          <span>Preset</span>
+          <span>Visa / Case</span>
         </button>
 
         <button
           onClick={() => setActiveTab('filter')}
-          className={`flex-1 py-2 px-1 rounded-xl text-[11px] font-bold flex flex-col items-center gap-1 transition ${
+          className={`flex-1 py-2 px-1 rounded-xl text-[10px] sm:text-[11px] font-bold flex flex-col items-center gap-1 transition cursor-pointer ${
             activeTab === 'filter'
               ? 'bg-gradient-to-r from-emerald-500 to-lime-400 text-slate-950 shadow-md font-extrabold'
               : 'text-slate-400 hover:text-white hover:bg-white/[0.04]'
           }`}
-          title="Smart Sampling & Filters"
+          title="Filter Dates, Pages & Search"
         >
           <Filter className="w-3.5 h-3.5" />
-          <span>Sampling</span>
+          <span>Filter</span>
         </button>
 
         <button
           onClick={() => setActiveTab('privacy')}
-          className={`flex-1 py-2 px-1 rounded-xl text-[11px] font-bold flex flex-col items-center gap-1 transition ${
+          className={`flex-1 py-2 px-1 rounded-xl text-[10px] sm:text-[11px] font-bold flex flex-col items-center gap-1 transition cursor-pointer ${
             activeTab === 'privacy'
               ? 'bg-gradient-to-r from-emerald-500 to-lime-400 text-slate-950 shadow-md font-extrabold'
               : 'text-slate-400 hover:text-white hover:bg-white/[0.04]'
           }`}
-          title="Privacy & Redaction"
+          title="Hide Sensitive Phone Numbers & Messages"
         >
           <EyeOff className="w-3.5 h-3.5" />
-          <span>Privacy</span>
+          <span>Hide Info</span>
         </button>
 
         <button
           onClick={() => setActiveTab('theme')}
-          className={`flex-1 py-2 px-1 rounded-xl text-[11px] font-bold flex flex-col items-center gap-1 transition ${
+          className={`flex-1 py-2 px-1 rounded-xl text-[10px] sm:text-[11px] font-bold flex flex-col items-center gap-1 transition cursor-pointer ${
             activeTab === 'theme'
               ? 'bg-gradient-to-r from-emerald-500 to-lime-400 text-slate-950 shadow-md font-extrabold'
               : 'text-slate-400 hover:text-white hover:bg-white/[0.04]'
           }`}
-          title="Theme & Layout"
+          title="Design Theme & Sections"
         >
           <Palette className="w-3.5 h-3.5" />
-          <span>Layout</span>
+          <span>Style</span>
         </button>
 
         <button
           onClick={() => setActiveTab('agency')}
-          className={`flex-1 py-2 px-1 rounded-xl text-[11px] font-bold flex flex-col items-center gap-1 transition ${
+          className={`flex-1 py-2 px-1 rounded-xl text-[10px] sm:text-[11px] font-bold flex flex-col items-center gap-1 transition cursor-pointer ${
             activeTab === 'agency'
               ? 'bg-gradient-to-r from-emerald-500 to-lime-400 text-slate-950 shadow-md font-extrabold'
               : 'text-slate-400 hover:text-white hover:bg-white/[0.04]'
           }`}
-          title="Agency White-Label & Bates"
+          title="Applicant / Sponsor Names, Bates ID & Case Ref"
         >
           <FileCheck className="w-3.5 h-3.5" />
-          <span>Agency</span>
+          <span>Names &amp; ID</span>
         </button>
       </div>
 
@@ -213,10 +213,15 @@ export const ControlSidebar: React.FC<ControlSidebarProps> = ({
         {/* ================= TAB 1: PRESET & MODE ================= */}
         {activeTab === 'preset' && (
           <div className="space-y-4">
+            <div className="p-2.5 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-[11px] text-emerald-200 leading-relaxed">
+              <strong className="text-emerald-400 block mb-0.5">Quick 3-Step Guide:</strong>
+              1. Pick your Visa/Case preset below • 2. Check names in <strong>Names &amp; ID</strong> • 3. Click <strong>Print / Save PDF</strong>.
+            </div>
+
             <div>
-              <h3 className="font-extrabold text-white text-sm mb-1">Export Mode &amp; Presets</h3>
+              <h3 className="font-extrabold text-white text-sm mb-1">1. Choose Document Purpose</h3>
               <p className="text-slate-400 text-[11px]">
-                Choose an embassy or court preset to automatically configure sampling and layout.
+                Select your visa or legal category to auto-configure the official PDF style.
               </p>
             </div>
 

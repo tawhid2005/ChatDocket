@@ -22,8 +22,14 @@ export const InvoiceModal: React.FC<InvoiceModalProps> = ({ isOpen, onClose, ord
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-xl animate-in fade-in duration-150">
-      <div className="relative max-w-lg w-full rounded-3xl overflow-hidden border border-emerald-500/30 bg-[#090d16] shadow-2xl text-white">
+    <div
+      className="fixed inset-0 z-50 overflow-y-auto flex items-start sm:items-center justify-center p-4 bg-black/85 backdrop-blur-xl animate-in fade-in duration-150"
+      onClick={onClose}
+    >
+      <div
+        className="relative max-w-lg w-full my-auto max-h-[92vh] overflow-y-auto rounded-3xl border border-emerald-500/30 bg-[#090d16] shadow-2xl text-white"
+        onClick={(e) => e.stopPropagation()}
+      >
         {/* Header */}
         <div className="p-6 bg-gradient-to-r from-emerald-500/20 via-teal-500/10 to-transparent border-b border-white/[0.08] flex items-center justify-between">
           <div className="flex items-center gap-2.5">
