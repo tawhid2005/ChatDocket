@@ -21,6 +21,9 @@ import {
   Printer,
   Check,
   BadgeCheck,
+  Crown,
+  ArrowRight,
+  Lock,
 } from 'lucide-react';
 import {
   BarChart,
@@ -50,7 +53,12 @@ interface DocumentPreviewProps {
   onToggleRedactMessage: (id: string) => void;
   onOpenTranslationModal?: (msg: ParsedMessage) => void;
   onDownloadCertificate?: () => void;
+  onOpenPricing?: () => void;
 }
+
+const FREE_MESSAGE_LIMIT = 20;
+const FREE_CALL_LIMIT = 6;
+const FREE_MEDIA_LIMIT = 4;
 
 export const DocumentPreview: React.FC<DocumentPreviewProps> = ({
   messages,
@@ -63,6 +71,7 @@ export const DocumentPreview: React.FC<DocumentPreviewProps> = ({
   onToggleRedactMessage,
   onOpenTranslationModal,
   onDownloadCertificate,
+  onOpenPricing,
 }) => {
   const [mounted, setMounted] = useState(false);
   const [zoomScale, setZoomScale] = useState<number>(1);
@@ -95,10 +104,25 @@ export const DocumentPreview: React.FC<DocumentPreviewProps> = ({
     return messages.filter((m) => m.isMedia && (m.mediaBlobUrl || m.mediaFileName));
   }, [messages]);
 
+  // Enforce Free Preview limits vs Pro Unlimited Plan
+  const visibleMessages = useMemo(() => {
+    return brandingConfig.isPro ? messages : messages.slice(0, FREE_MESSAGE_LIMIT);
+  }, [messages, brandingConfig.isPro]);
+
+  const visibleCalls = useMemo(() => {
+    return brandingConfig.isPro ? calls : calls.slice(0, FREE_CALL_LIMIT);
+  }, [calls, brandingConfig.isPro]);
+
+  const visibleMedia = useMemo(() => {
+    return brandingConfig.isPro ? mediaItems : mediaItems.slice(0, FREE_MEDIA_LIMIT);
+  }, [mediaItems, brandingConfig.isPro]);
+
+  const isMessageLimitReached = !brandingConfig.isPro && messages.length > FREE_MESSAGE_LIMIT;
+
   // Non-English messages requiring translation
   const hasTranslations = useMemo(() => {
-    return messages.some((m) => !!m.translation);
-  }, [messages]);
+    return visibleMessages.some((m) => !!m.translation);
+  }, [visibleMessages]);
 
   // Calculate total call duration approximation
   const totalCallDurationMinutes = useMemo(() => {
@@ -118,33 +142,50 @@ export const DocumentPreview: React.FC<DocumentPreviewProps> = ({
   const callHoursFormatted = `${Math.floor(totalCallDurationMinutes / 60)}h ${totalCallDurationMinutes % 60}m`;
 
   return (
-    <div className="printable-area w-full flex-1 bg-[#090d16] p-4 sm:p-6 lg:p-8 overflow-y-auto">
+    <div className="printable-area w-full flex-1 bg-[#090d16] p-3 sm:p-6 lg:p-8 overflow-y-auto pb-24 lg:pb-8">
+      {/* Dynamic Print Page Size Rule (A4 vs US Letter) */}
+      <style media="print">{`
+        @page {
+          size: ${brandingConfig.paperSize === 'letter' ? 'letter' : 'A4'} portrait;
+          margin: 10mm 10mm 12mm 10mm;
+        }
+      `}</style>
+
       {/* Top Floating Studio Toolbar */}
-      <div className="no-print max-w-[210mm] mx-auto mb-4 flex flex-wrap items-center justify-between text-xs text-slate-400 bg-white/[0.03] border border-white/[0.08] px-4 py-2.5 rounded-2xl backdrop-blur-md gap-3">
+      <div className="no-print max-w-[210mm] mx-auto mb-4 flex flex-wrap items-center justify-between text-xs text-slate-400 bg-white/[0.03] border border-white/[0.08] px-3 sm:px-4 py-2.5 rounded-2xl backdrop-blur-md gap-2 sm:gap-3">
         <div className="flex items-center gap-2">
           <span className="w-2 h-2 rounded-full bg-emerald-400" />
-          <span className="font-bold text-slate-200">A4 Live Document Canvas</span>
-          <span className="text-[10px] text-slate-500 font-mono hidden sm:inline">210mm × 297mm (Vector A4)</span>
+          <span className="font-bold text-slate-200">
+            {brandingConfig.paperSize === 'letter' ? 'US Letter' : 'A4'} Live Preview
+          </span>
+          <span className="text-[10px] text-slate-500 font-mono hidden sm:inline">
+            {brandingConfig.paperSize === 'letter' ? '8.5" × 11" (USCIS Standard)' : '210mm × 297mm (Vector A4)'}
+          </span>
+          {!brandingConfig.isPro && (
+            <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-amber-500/15 text-amber-300 border border-amber-500/30">
+              Free Preview ({visibleMessages.length}/{messages.length} msgs)
+            </span>
+          )}
         </div>
 
         <div className="flex items-center gap-2">
-          {/* Zoom controls */}
-          <div className="flex items-center bg-slate-900 border border-white/[0.1] rounded-xl p-0.5 text-[11px] font-bold">
+          {/* Zoom controls (desktop) */}
+          <div className="hidden sm:flex items-center bg-slate-900 border border-white/[0.1] rounded-xl p-0.5 text-[11px] font-bold">
             <button
               onClick={() => setZoomScale(0.85)}
-              className={`px-2 py-0.5 rounded-lg transition ${zoomScale === 0.85 ? 'bg-emerald-500 text-slate-950' : 'text-slate-400 hover:text-white'}`}
+              className={`px-2 py-0.5 rounded-lg transition cursor-pointer ${zoomScale === 0.85 ? 'bg-emerald-500 text-slate-950' : 'text-slate-400 hover:text-white'}`}
             >
               85%
             </button>
             <button
               onClick={() => setZoomScale(1)}
-              className={`px-2 py-0.5 rounded-lg transition ${zoomScale === 1 ? 'bg-emerald-500 text-slate-950' : 'text-slate-400 hover:text-white'}`}
+              className={`px-2 py-0.5 rounded-lg transition cursor-pointer ${zoomScale === 1 ? 'bg-emerald-500 text-slate-950' : 'text-slate-400 hover:text-white'}`}
             >
               100%
             </button>
             <button
               onClick={() => setZoomScale(1.15)}
-              className={`px-2 py-0.5 rounded-lg transition ${zoomScale === 1.15 ? 'bg-emerald-500 text-slate-950' : 'text-slate-400 hover:text-white'}`}
+              className={`px-2 py-0.5 rounded-lg transition cursor-pointer ${zoomScale === 1.15 ? 'bg-emerald-500 text-slate-950' : 'text-slate-400 hover:text-white'}`}
             >
               115%
             </button>
@@ -154,7 +195,7 @@ export const DocumentPreview: React.FC<DocumentPreviewProps> = ({
           {onDownloadCertificate && (
             <button
               onClick={onDownloadCertificate}
-              className="flex items-center gap-1.5 px-3 py-1 bg-white/[0.06] hover:bg-white/[0.12] text-slate-200 font-semibold rounded-xl border border-white/[0.1] text-xs transition"
+              className="flex items-center gap-1.5 px-2.5 sm:px-3 py-1 bg-white/[0.06] hover:bg-white/[0.12] text-slate-200 font-semibold rounded-xl border border-white/[0.1] text-xs transition cursor-pointer"
               title="Download official forensic hash certificate (.txt)"
             >
               <FileText className="w-3.5 h-3.5 text-emerald-400" />
@@ -165,7 +206,7 @@ export const DocumentPreview: React.FC<DocumentPreviewProps> = ({
           {/* Print button */}
           <button
             onClick={() => window.print()}
-            className="flex items-center gap-1.5 px-3.5 py-1 bg-gradient-to-r from-emerald-400 to-lime-400 text-slate-950 font-black rounded-xl hover:opacity-90 transition text-xs shadow-md shadow-emerald-500/20 active:scale-95"
+            className="flex items-center gap-1.5 px-3 sm:px-3.5 py-1.5 bg-gradient-to-r from-emerald-400 to-lime-400 text-slate-950 font-black rounded-xl hover:opacity-90 transition text-xs shadow-md shadow-emerald-500/20 active:scale-95 cursor-pointer"
           >
             <Printer className="w-3.5 h-3.5" />
             <span>Print PDF</span>
@@ -179,11 +220,11 @@ export const DocumentPreview: React.FC<DocumentPreviewProps> = ({
           transformOrigin: 'top center',
           transition: 'transform 0.15s ease-out',
         }}
-        className="max-w-[210mm] mx-auto space-y-8"
+        className="print-reset-transform max-w-[210mm] mx-auto space-y-6 sm:space-y-8"
       >
         {/* ================= SECTION 1: COVER PAGE ================= */}
         {brandingConfig.showCoverPage && (
-          <div className="a4-page-preview p-8 sm:p-12 relative flex flex-col justify-between border border-slate-300 page-break-after">
+          <div className="a4-page-preview p-5 sm:p-10 lg:p-12 relative flex flex-col justify-between border border-slate-300 page-break-after rounded-xl sm:rounded-none">
             <div>
               {/* Top Legal / Law Firm Header */}
               <div className="border-b-2 border-slate-900 pb-4 mb-6 flex justify-between items-start">
@@ -378,7 +419,11 @@ export const DocumentPreview: React.FC<DocumentPreviewProps> = ({
 
               {/* Page footer / Bates */}
               <div className="flex justify-between items-center text-[10px] text-slate-400 mt-6 pt-2 border-t border-slate-100">
-                <span>Chat Docket • Legal &amp; Visa PDF Exporter</span>
+                <span>
+                  {brandingConfig.isPro
+                    ? brandingConfig.caseReference || 'Confidential Evidentiary Dossier'
+                    : 'Free Preview • Upgrade for Official Watermark-Free Submission'}
+                </span>
                 <span className="font-mono font-bold text-slate-700">
                   {brandingConfig.batesPrefix}
                   {String(brandingConfig.startingBatesNumber).padStart(4, '0')}
@@ -390,9 +435,9 @@ export const DocumentPreview: React.FC<DocumentPreviewProps> = ({
 
         {/* ================= SECTION 2: CALL LOG SUMMARY TABLE ================= */}
         {brandingConfig.showCallSummaryTable && calls.length > 0 && (
-          <div className="a4-page-preview p-8 sm:p-12 relative flex flex-col justify-between border border-slate-300 page-break-after">
+          <div className="a4-page-preview p-5 sm:p-10 lg:p-12 relative flex flex-col justify-between border border-slate-300 page-break-after rounded-xl sm:rounded-none">
             <div>
-              <div className="border-b border-slate-300 pb-3 mb-6 flex justify-between items-center">
+              <div className="border-b border-slate-300 pb-3 mb-5 flex flex-wrap justify-between items-center gap-2">
                 <div>
                   <h2 className="text-base sm:text-lg font-bold text-slate-900 uppercase">
                     Call Log Summary Schedule
@@ -402,12 +447,12 @@ export const DocumentPreview: React.FC<DocumentPreviewProps> = ({
                   </p>
                 </div>
                 <div className="text-right font-mono text-xs text-slate-500">
-                  {calls.length} Total Calls Logged
+                  {visibleCalls.length} of {calls.length} Calls
                 </div>
               </div>
 
-              <div className="border border-slate-200 rounded-xl overflow-hidden mb-6 text-xs">
-                <table className="w-full text-left">
+              <div className="border border-slate-200 rounded-xl overflow-x-auto mb-6 text-xs">
+                <table className="w-full text-left min-w-[480px]">
                   <thead className="bg-slate-100 text-slate-700 font-semibold border-b border-slate-200 text-[11px]">
                     <tr>
                       <th className="py-2.5 px-3">Date &amp; Time</th>
@@ -418,7 +463,7 @@ export const DocumentPreview: React.FC<DocumentPreviewProps> = ({
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-slate-100">
-                    {calls.map((call, idx) => (
+                    {visibleCalls.map((call, idx) => (
                       <tr key={call.id || idx} className="hover:bg-slate-50/50">
                         <td className="py-2 px-3 font-medium text-slate-900 whitespace-nowrap">
                           {call.rawTimestamp}
@@ -532,10 +577,10 @@ export const DocumentPreview: React.FC<DocumentPreviewProps> = ({
         )}
 
         {/* ================= SECTION 4: PHOTO EVIDENCE GALLERY ================= */}
-        {brandingConfig.showPhotoGrid && mediaItems.length > 0 && (
-          <div className="a4-page-preview p-8 sm:p-12 relative flex flex-col justify-between border border-slate-300 page-break-after">
+        {brandingConfig.showPhotoGrid && visibleMedia.length > 0 && (
+          <div className="a4-page-preview p-5 sm:p-10 lg:p-12 relative flex flex-col justify-between border border-slate-300 page-break-after rounded-xl sm:rounded-none">
             <div>
-              <div className="border-b border-slate-300 pb-3 mb-6 flex justify-between items-center">
+              <div className="border-b border-slate-300 pb-3 mb-6 flex flex-wrap justify-between items-center gap-2">
                 <div>
                   <h2 className="text-base sm:text-lg font-bold text-slate-900 uppercase flex items-center gap-2">
                     <ImageIcon className="w-5 h-5 text-emerald-600" />
@@ -545,11 +590,13 @@ export const DocumentPreview: React.FC<DocumentPreviewProps> = ({
                     Photographic attachments extracted directly from WhatsApp communication stream
                   </p>
                 </div>
-                <span className="font-mono text-xs text-slate-500">{mediaItems.length} Photographs</span>
+                <span className="font-mono text-xs text-slate-500">
+                  {visibleMedia.length} of {mediaItems.length} Photos
+                </span>
               </div>
 
-              <div className="grid grid-cols-2 gap-4">
-                {mediaItems.map((item, idx) => (
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {visibleMedia.map((item, idx) => (
                   <div
                     key={item.id}
                     className="photo-evidence-item bg-white border border-slate-200 rounded-xl overflow-hidden shadow-2xs p-3 space-y-2"
@@ -600,15 +647,15 @@ export const DocumentPreview: React.FC<DocumentPreviewProps> = ({
         )}
 
         {/* ================= SECTION 5: MESSAGES STREAM (WHATSAPP OR LEGAL TABLE) ================= */}
-        <div className="a4-page-preview p-6 sm:p-10 border border-slate-300">
-          <div className="border-b border-slate-300 pb-3 mb-6 flex justify-between items-center text-xs">
+        <div className="a4-page-preview p-4 sm:p-10 border border-slate-300 rounded-xl sm:rounded-none">
+          <div className="border-b border-slate-300 pb-3 mb-6 flex flex-wrap justify-between items-center gap-2 text-xs">
             <div>
               <span className="font-extrabold text-slate-900 uppercase">
                 {brandingConfig.lawFirmName ? `${brandingConfig.lawFirmName} • ` : ''}
                 {brandingConfig.exhibitLetter || 'Exhibit A'} — Chat Logs
               </span>
               <span className="text-slate-500 ml-2">
-                ({messages.length} Messages Displayed)
+                ({visibleMessages.length} of {messages.length} Messages Shown)
               </span>
             </div>
             <div className="text-right font-mono text-[11px] text-slate-600">
@@ -633,7 +680,7 @@ export const DocumentPreview: React.FC<DocumentPreviewProps> = ({
                 brandingConfig.layout === 'two_column' ? 'two-column-layout' : ''
               }`}
             >
-              {messages.map((msg, index) => {
+              {visibleMessages.map((msg, index) => {
                 const isApplicant = msg.sender === p1;
                 const isRedacted = msg.isRedacted;
 
@@ -776,8 +823,8 @@ export const DocumentPreview: React.FC<DocumentPreviewProps> = ({
               })}
             </div>
           ) : (
-            <div className="border border-slate-300 rounded-xl overflow-hidden text-xs">
-              <table className="w-full text-left border-collapse">
+            <div className="border border-slate-300 rounded-xl overflow-x-auto text-xs">
+              <table className="w-full text-left border-collapse min-w-[520px]">
                 <thead className="bg-slate-100 text-slate-900 font-bold border-b border-slate-300 text-[10px] uppercase tracking-wider">
                   <tr>
                     <th className="py-2 px-2.5 w-14">Line #</th>
@@ -787,7 +834,7 @@ export const DocumentPreview: React.FC<DocumentPreviewProps> = ({
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-slate-200">
-                  {messages.map((msg, index) => {
+                  {visibleMessages.map((msg, index) => {
                     const isRedacted = msg.isRedacted;
 
                     return (
@@ -837,12 +884,45 @@ export const DocumentPreview: React.FC<DocumentPreviewProps> = ({
             </div>
           )}
 
+          {/* Free Plan Limit Upgrade Prompt (Screen Only — Never Prints Inside Official PDF) */}
+          {isMessageLimitReached && (
+            <div className="no-print mt-8 p-6 rounded-2xl bg-gradient-to-br from-slate-950 via-slate-900 to-emerald-950 border-2 border-emerald-400/60 text-white shadow-2xl space-y-4 text-center">
+              <div className="w-12 h-12 mx-auto rounded-2xl bg-gradient-to-tr from-emerald-400 to-lime-400 text-slate-950 flex items-center justify-center shadow-lg shadow-emerald-500/30">
+                <Lock className="w-6 h-6 stroke-[2.5]" />
+              </div>
+
+              <div className="space-y-1">
+                <span className="inline-block px-3 py-0.5 rounded-full bg-amber-500/20 border border-amber-400/40 text-amber-300 text-[10px] font-extrabold uppercase tracking-wider">
+                  Free 5-Page Preview Limit Reached
+                </span>
+                <h3 className="text-lg sm:text-xl font-black text-white">
+                  {messages.length - visibleMessages.length} More Messages Ready to Export
+                </h3>
+                <p className="text-xs text-slate-300 max-w-md mx-auto leading-relaxed">
+                  You are previewing {visibleMessages.length} of {messages.length} parsed messages. Upgrade to unlock the complete unwatermarked dossier, all {calls.length} call records, and full photo exhibits for embassy submission.
+                </p>
+              </div>
+
+              {onOpenPricing && (
+                <button
+                  type="button"
+                  onClick={onOpenPricing}
+                  className="mx-auto px-6 py-3 rounded-xl bg-gradient-to-r from-emerald-400 to-lime-400 hover:from-emerald-300 hover:to-lime-300 text-slate-950 font-black text-xs sm:text-sm shadow-xl shadow-emerald-500/30 transition active:scale-95 inline-flex items-center gap-2 cursor-pointer"
+                >
+                  <Crown className="w-4 h-4 fill-slate-950" />
+                  <span>Unlock Full Watermark-Free PDF ($12)</span>
+                  <ArrowRight className="w-4 h-4" />
+                </button>
+              )}
+            </div>
+          )}
+
           {/* Watermark and Page Footer */}
           <div className="mt-8 pt-4 border-t border-slate-200 flex flex-col sm:flex-row justify-between items-center text-[10px] text-slate-400 gap-2 avoid-break">
             <div>
               {!brandingConfig.isPro ? (
                 <span className="font-semibold text-amber-700 bg-amber-50 px-2 py-0.5 rounded border border-amber-200/70">
-                  Exported via ChatDocket (Free Verification Preview) • Upgrade for Official Watermark-Free Docket
+                  Free Verification Preview ({visibleMessages.length}/{messages.length} Msgs) • Upgrade for Full Unwatermarked Dossier
                 </span>
               ) : (
                 <span>Official Forensic Chat Record • Verifiable via SHA-256 Digest</span>

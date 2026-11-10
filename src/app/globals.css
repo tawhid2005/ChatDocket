@@ -75,10 +75,11 @@
   background: #334155;
 }
 
-/* Screen A4 Sheet Representation */
+/* Screen A4 Sheet Representation (Responsive on mobile, crisp A4 on desktop/print) */
 .a4-page-preview {
-  width: 210mm;
-  min-height: 297mm;
+  width: 100%;
+  max-width: 210mm;
+  min-height: auto;
   background: #ffffff;
   color: #0f172a;
   box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 255, 255, 0.1);
@@ -86,11 +87,23 @@
   box-sizing: border-box;
 }
 
-/* Screen Two-Column A4 Layout */
+@media (min-width: 768px) {
+  .a4-page-preview {
+    min-height: 297mm;
+  }
+}
+
+/* Screen Two-Column A4 Layout (1 column on phones, 2 columns on desktop & print) */
 .two-column-layout {
-  column-count: 2;
-  column-gap: 8mm;
-  column-rule: 1px dashed #cbd5e1;
+  column-count: 1;
+}
+
+@media (min-width: 640px) {
+  .two-column-layout {
+    column-count: 2;
+    column-gap: 8mm;
+    column-rule: 1px dashed #cbd5e1;
+  }
 }
 
 /* Redaction Strike/Block styling */
@@ -151,15 +164,35 @@
     padding: 0 !important;
     box-shadow: none !important;
     background: #ffffff !important;
+    overflow: visible !important;
+  }
+
+  .print-reset-transform {
+    transform: none !important;
   }
 
   .a4-page-preview {
     width: 100% !important;
+    max-width: 100% !important;
     min-height: auto !important;
     box-shadow: none !important;
+    border: none !important;
     margin: 0 !important;
     padding: 0 !important;
     color: #000000 !important;
+  }
+
+  table {
+    page-break-inside: auto !important;
+  }
+
+  thead {
+    display: table-header-group !important;
+  }
+
+  tr {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
   }
 
   .page-break-before {

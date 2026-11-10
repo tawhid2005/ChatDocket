@@ -39,7 +39,15 @@ import {
 import { downloadForensicCertificate } from '@/lib/certificateGenerator';
 import { generateLicenseKey } from '@/lib/paymentConfig';
 import { supabase, fetchUserProfile } from '@/lib/supabase';
-import { AlertTriangle, RotateCcw, CheckCircle2 } from 'lucide-react';
+import {
+  AlertTriangle,
+  RotateCcw,
+  CheckCircle2,
+  Printer,
+  Settings,
+  FileText,
+  Crown,
+} from 'lucide-react';
 
 export default function Home() {
   const [messages, setMessages] = useState<ParsedMessage[]>([]);
@@ -50,6 +58,7 @@ export default function Home() {
   const [isRedactionMode, setIsRedactionMode] = useState(false);
   const [isDemoMode, setIsDemoMode] = useState(false);
   const [uploadError, setUploadError] = useState<string | null>(null);
+  const [mobileView, setMobileView] = useState<'preview' | 'controls'>('preview');
 
   // User Authentication & Subscription States
   const [user, setUser] = useState<UserProfile | null>(null);
@@ -772,42 +781,98 @@ export default function Home() {
         </main>
       ) : (
         <main className="flex-1 flex flex-col lg:flex-row relative">
-          {/* Left Sticky Sidebar Controls */}
-          <ControlSidebar
-            metadata={metadata}
-            filterConfig={filterConfig}
-            brandingConfig={brandingConfig}
-            gapAnnotations={gapAnnotations}
-            isRedactionMode={isRedactionMode}
-            redactedCount={redactedCount}
-            onFilterChange={handleFilterChange}
-            onBrandingChange={handleBrandingChange}
-            onToggleRedactionMode={setIsRedactionMode}
-            onAutoRedact={handleAutoRedact}
-            onRedactKeyword={handleRedactKeyword}
-            onClearRedactions={handleClearRedactions}
-            onAddGapAnnotation={handleAddGapAnnotation}
-            onRemoveGapAnnotation={handleRemoveGapAnnotation}
-            onOpenPricing={() => setIsPricingOpen(true)}
-            onApplyVisaPreset={handleApplyVisaPreset}
-            onDownloadCertificate={handleDownloadCertificate}
-            onReset={handleReset}
-            messages={displayMessages}
-          />
+          {/* Mobile Workspace Tab Bar (< 1024px) */}
+          <div className="no-print lg:hidden sticky top-[52px] z-30 bg-[#080c16]/95 backdrop-blur-xl border-b border-white/[0.08] px-3 py-2 flex items-center gap-2">
+            <button
+              type="button"
+              onClick={() => setMobileView('preview')}
+              className={`flex-1 py-2 px-3 rounded-xl text-xs font-bold flex items-center justify-center gap-1.5 transition cursor-pointer ${
+                mobileView === 'preview'
+                  ? 'bg-gradient-to-r from-emerald-500 to-lime-400 text-slate-950 font-black shadow-md'
+                  : 'bg-white/[0.05] text-slate-300 border border-white/[0.08]'
+              }`}
+            >
+              <FileText className="w-3.5 h-3.5" />
+              <span>Document Preview</span>
+            </button>
 
-          {/* Right Live A4 Document Preview Canvas */}
-          <DocumentPreview
-            messages={displayMessages}
-            calls={calls}
-            metadata={metadata}
-            gapAnnotations={gapAnnotations}
-            filterConfig={filterConfig}
-            brandingConfig={brandingConfig}
-            isRedactionMode={isRedactionMode}
-            onToggleRedactMessage={handleToggleRedactMessage}
-            onOpenTranslationModal={(msg) => setSelectedMsgForTranslation(msg)}
-            onDownloadCertificate={handleDownloadCertificate}
-          />
+            <button
+              type="button"
+              onClick={() => setMobileView('controls')}
+              className={`flex-1 py-2 px-3 rounded-xl text-xs font-bold flex items-center justify-center gap-1.5 transition cursor-pointer ${
+                mobileView === 'controls'
+                  ? 'bg-gradient-to-r from-emerald-500 to-lime-400 text-slate-950 font-black shadow-md'
+                  : 'bg-white/[0.05] text-slate-300 border border-white/[0.08]'
+              }`}
+            >
+              <Settings className="w-3.5 h-3.5" />
+              <span>Customize &amp; Filters</span>
+            </button>
+          </div>
+
+          {/* Left Sticky Sidebar Controls (Desktop always visible, Mobile toggled) */}
+          <div className={`${mobileView === 'controls' ? 'block' : 'hidden'} lg:block`}>
+            <ControlSidebar
+              metadata={metadata}
+              filterConfig={filterConfig}
+              brandingConfig={brandingConfig}
+              gapAnnotations={gapAnnotations}
+              isRedactionMode={isRedactionMode}
+              redactedCount={redactedCount}
+              onFilterChange={handleFilterChange}
+              onBrandingChange={handleBrandingChange}
+              onToggleRedactionMode={setIsRedactionMode}
+              onAutoRedact={handleAutoRedact}
+              onRedactKeyword={handleRedactKeyword}
+              onClearRedactions={handleClearRedactions}
+              onAddGapAnnotation={handleAddGapAnnotation}
+              onRemoveGapAnnotation={handleRemoveGapAnnotation}
+              onOpenPricing={() => setIsPricingOpen(true)}
+              onApplyVisaPreset={handleApplyVisaPreset}
+              onDownloadCertificate={handleDownloadCertificate}
+              onReset={handleReset}
+              messages={displayMessages}
+            />
+          </div>
+
+          {/* Right Live Document Preview Canvas (Desktop always visible, Mobile toggled) */}
+          <div className={`${mobileView === 'preview' ? 'flex flex-1' : 'hidden'} lg:flex lg:flex-1`}>
+            <DocumentPreview
+              messages={displayMessages}
+              calls={calls}
+              metadata={metadata}
+              gapAnnotations={gapAnnotations}
+              filterConfig={filterConfig}
+              brandingConfig={brandingConfig}
+              isRedactionMode={isRedactionMode}
+              onToggleRedactMessage={handleToggleRedactMessage}
+              onOpenTranslationModal={(msg) => setSelectedMsgForTranslation(msg)}
+              onDownloadCertificate={handleDownloadCertificate}
+              onOpenPricing={() => setIsPricingOpen(true)}
+            />
+          </div>
+
+          {/* Mobile Sticky Bottom Action Bar (< 1024px) */}
+          <div className="no-print lg:hidden fixed bottom-0 inset-x-0 z-40 bg-[#060810]/95 backdrop-blur-xl border-t border-white/[0.1] px-3 py-2.5 flex items-center gap-2 shadow-2xl">
+            {!brandingConfig.isPro && (
+              <button
+                type="button"
+                onClick={() => setIsPricingOpen(true)}
+                className="flex-1 py-2.5 px-3 rounded-xl bg-amber-400/15 border border-amber-400/40 text-amber-300 font-extrabold text-xs flex items-center justify-center gap-1.5 cursor-pointer active:scale-95 transition"
+              >
+                <Crown className="w-3.5 h-3.5 text-amber-400 fill-amber-400" />
+                <span>Unlock Full ($12)</span>
+              </button>
+            )}
+            <button
+              type="button"
+              onClick={() => window.print()}
+              className="flex-1 py-2.5 px-4 rounded-xl bg-gradient-to-r from-emerald-500 to-lime-400 text-slate-950 font-black text-xs flex items-center justify-center gap-1.5 shadow-lg shadow-emerald-500/25 cursor-pointer active:scale-95 transition"
+            >
+              <Printer className="w-4 h-4" />
+              <span>{brandingConfig.isPro ? 'Export Official PDF' : 'Save Preview PDF'}</span>
+            </button>
+          </div>
         </main>
       )}
 

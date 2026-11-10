@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useRef, useState } from 'react';
+import Link from 'next/link';
 import {
   UploadCloud,
   FileArchive,
@@ -96,15 +97,15 @@ export const OnboardingGuide: React.FC<OnboardingGuideProps> = ({
   ];
 
   return (
-    <div className="w-full max-w-5xl mx-auto py-8 px-4 sm:px-6 space-y-12">
+    <div className="w-full max-w-5xl mx-auto py-4 sm:py-8 px-2 sm:px-6 space-y-8 sm:space-y-12">
       {/* ================= HERO HEADER ================= */}
-      <div className="text-center space-y-3">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-xs font-semibold text-emerald-400">
-          <ShieldCheck className="w-4 h-4 text-emerald-400" />
-          <span>Zero Server Uploads • 100% In-Browser Memory Privacy</span>
+      <div className="text-center space-y-2.5 sm:space-y-3">
+        <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-[11px] sm:text-xs font-semibold text-emerald-400">
+          <ShieldCheck className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-emerald-400 shrink-0" />
+          <span>Zero Server Uploads • 100% Private Browser RAM</span>
         </div>
 
-        <h1 className="text-3xl sm:text-5xl font-black text-white tracking-tight">
+        <h1 className="text-2xl sm:text-5xl font-black text-white tracking-tight leading-tight px-1">
           WhatsApp Chat to Official{' '}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-300 to-lime-400">
             Legal &amp; Spouse Visa
@@ -112,8 +113,8 @@ export const OnboardingGuide: React.FC<OnboardingGuideProps> = ({
           PDF
         </h1>
 
-        <p className="text-xs sm:text-sm text-slate-300 max-w-xl mx-auto">
-          Upload your exported WhatsApp <code>.zip</code> or <code>.txt</code> file below. No report will be generated until your file is uploaded.
+        <p className="text-xs sm:text-sm text-slate-300 max-w-xl mx-auto px-2">
+          Upload your exported WhatsApp <code>.zip</code> or <code>.txt</code> file below or try our live demo to create embassy-approved PDF packets in seconds.
         </p>
       </div>
 
@@ -553,6 +554,19 @@ export const OnboardingGuide: React.FC<OnboardingGuideProps> = ({
           })}
         </div>
       </div>
+
+      {/* ================= CLEAN FOOTER WITH PRIVACY & TERMS ================= */}
+      <footer className="max-w-5xl mx-auto pt-8 pb-4 border-t border-white/[0.08] flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500">
+        <span>© {new Date().getFullYear()} ChatDocket • 100% Client-Side WhatsApp Legal &amp; Visa Exporter</span>
+        <div className="flex items-center gap-5 font-semibold text-slate-400">
+          <Link href="/privacy" className="hover:text-emerald-400 transition">
+            Privacy Policy
+          </Link>
+          <Link href="/terms" className="hover:text-emerald-400 transition">
+            Terms of Service
+          </Link>
+        </div>
+      </footer>
     </div>
   );
 };
