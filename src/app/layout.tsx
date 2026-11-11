@@ -6,11 +6,11 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://chatdocketofficial.
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: 'ChatDocket — WhatsApp Chat to PDF for Spouse Visa & Court Evidence',
+    default: 'ChatDocket — WhatsApp Chat to PDF for Spouse Visa & Court',
     template: '%s | ChatDocket',
   },
   description:
-    'Convert exported WhatsApp chats into court-ready legal exhibits and embassy-compliant spouse visa packets (UK Home Office Appendix FM, US USCIS I-130, Canada IRCC, Australia Partner Visa 820/801). 100% client-side, private, with Bates numbering and SHA-256 integrity.',
+    'Convert WhatsApp .zip & .txt chats into official spouse visa & court PDFs (UKVI, USCIS, IRCC, DHA) with Bates stamps & SHA-256—100% private.',
   keywords: [
     'whatsapp chat to pdf for visa',
     'whatsapp chat proof for spouse visa',

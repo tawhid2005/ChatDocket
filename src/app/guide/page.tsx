@@ -4,9 +4,9 @@ import Link from 'next/link';
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://chatdocketofficial.vercel.app';
 
 export const metadata: Metadata = {
-  title: 'Immigration & Court WhatsApp Evidence Guides | ChatDocket',
+  title: 'Immigration & Court WhatsApp Evidence Guides',
   description:
-    'Official country-by-country guides for formatting WhatsApp chat history into embassy-compliant spouse visa and court evidence PDFs: UK Home Office Appendix FM, US USCIS I-130, Canada IRCC IMM 5289, and Australia Partner Visa 820/801.',
+    'Country-by-country guides to format WhatsApp chat history into official spouse visa & court PDFs for UKVI, USCIS, Canada IRCC & Australia DHA.',
   alternates: {
     canonical: `${siteUrl}/guide`,
   },

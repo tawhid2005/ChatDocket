@@ -4,9 +4,9 @@ import Link from 'next/link';
 const siteUrl = 'https://chatdocketofficial.vercel.app';
 
 export const metadata: Metadata = {
-  title: 'WhatsApp Chat Proof for USCIS I-130 & CR1 Visa — Step-by-Step Guide',
+  title: 'WhatsApp Chat Proof for USCIS I-130 & CR1 Visa',
   description:
-    'How to prepare WhatsApp chat logs as corroborating evidence for a USCIS I-130 petition or CR1 spouse visa. Format chat exports into Bates-numbered PDF exhibits accepted by USCIS.',
+    'Format WhatsApp chat logs into Bates-numbered PDF exhibits for USCIS I-130 & CR1 petitions with call schedules & timestamps. 100% local privacy.',
   keywords: [
     'USCIS I-130 whatsapp chat logs',
     'whatsapp proof for I-130 petition',

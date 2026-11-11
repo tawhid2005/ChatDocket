@@ -4,9 +4,9 @@ import Link from 'next/link';
 const siteUrl = 'https://chatdocketofficial.vercel.app';
 
 export const metadata: Metadata = {
-  title: 'WhatsApp Chat Evidence for Canada IRCC Spousal Sponsorship — 10-Page Guide',
+  title: 'WhatsApp Chat Evidence for Canada IRCC (IMM 5289)',
   description:
-    'How to prepare WhatsApp chat history as evidence for a Canada IRCC spousal sponsorship application (IMM 5289). Meet the 10-page guideline with smart sampling. 100% private, no data upload.',
+    "Meet Canada IRCC's 10-page communication limit using smart WhatsApp chat sampling, call logs, and bilingual support. 100% private in browser.",
   keywords: [
     'Canada IRCC whatsapp chat history',
     'whatsapp evidence Canada spousal sponsorship',

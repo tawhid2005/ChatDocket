@@ -4,9 +4,9 @@ import Link from 'next/link';
 const siteUrl = 'https://chatdocketofficial.vercel.app';
 
 export const metadata: Metadata = {
-  title: 'WhatsApp Proof for Australia Partner Visa 820/801 — Step-by-Step Guide',
+  title: 'WhatsApp Proof for Australia Partner Visa 820/801',
   description:
-    'How to prepare WhatsApp chat history as evidence of a genuine relationship for an Australia DHA Partner Visa (subclass 820/801 or 309/100). Smart-sampled, Bates-numbered PDF — 100% private.',
+    'Convert WhatsApp exports into Australia DHA Subclass 820/801 relationship evidence PDFs with call logs & Bates stamps—100% private, zero uploads.',
   keywords: [
     'Australia partner visa 820 801 whatsapp proof',
     'whatsapp evidence Australia partner visa',

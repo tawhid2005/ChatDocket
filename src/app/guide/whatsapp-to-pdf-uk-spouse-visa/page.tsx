@@ -4,9 +4,9 @@ import Link from 'next/link';
 const siteUrl = 'https://chatdocketofficial.vercel.app';
 
 export const metadata: Metadata = {
-  title: 'WhatsApp Chat to PDF for UK Spouse Visa (Appendix FM) — Step-by-Step Guide',
+  title: 'WhatsApp Chat to PDF for UK Spouse Visa (UKVI)',
   description:
-    'Learn how to convert your WhatsApp chat history into a compliant PDF for a UK Spouse Visa application under Appendix FM. Free tool, 100% private, Bates-numbered evidence packets ready for the Home Office.',
+    'Convert WhatsApp chats into UK Home Office Appendix FM spouse visa PDFs with smart sampling, call logs & Bates numbers. 100% private in browser.',
   keywords: [
     'UK spouse visa whatsapp evidence',
     'whatsapp chat proof for spouse visa UK',
