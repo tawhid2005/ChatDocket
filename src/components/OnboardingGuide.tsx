@@ -470,52 +470,82 @@ export const OnboardingGuide: React.FC<OnboardingGuideProps> = ({
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          <div className="p-4 rounded-3xl bg-white/[0.02] border border-white/[0.08] hover:border-emerald-500/40 transition space-y-2">
-            <div className="text-2xl">💑</div>
-            <h4 className="text-sm font-bold text-white">Spouse &amp; Fiancé Visas</h4>
-            <p className="text-xs text-slate-400 leading-relaxed">
-              UK Home Office Appendix FM, USCIS I-130, IRCC Canada spousal sponsorship. Proof of genuine &amp; subsisting relationship.
-            </p>
+          <div className="p-4 rounded-3xl bg-white/[0.02] border border-white/[0.08] hover:border-emerald-500/40 transition flex flex-col justify-between space-y-2">
+            <div>
+              <div className="text-2xl mb-1">💑</div>
+              <h4 className="text-sm font-bold text-white">Spouse &amp; Fiancé Visas</h4>
+              <p className="text-xs text-slate-400 leading-relaxed mt-1">
+                UK Home Office Appendix FM, USCIS I-130, IRCC Canada spousal sponsorship. Proof of genuine &amp; subsisting relationship.
+              </p>
+            </div>
+            <Link href="/guide" className="text-xs font-semibold text-emerald-400 hover:text-emerald-300 pt-2 inline-flex items-center gap-1">
+              Explore 4 Visa Guides &rarr;
+            </Link>
           </div>
 
-          <div className="p-4 rounded-3xl bg-white/[0.02] border border-white/[0.08] hover:border-indigo-500/40 transition space-y-2">
-            <div className="text-2xl">⚖️</div>
-            <h4 className="text-sm font-bold text-white">Civil Court Litigation</h4>
-            <p className="text-xs text-slate-400 leading-relaxed">
-              Bates stamped forensic exhibits (`Exhibit A - Page 001`), line-by-line numbering, and cryptographic SHA-256 evidence integrity.
-            </p>
+          <div className="p-4 rounded-3xl bg-white/[0.02] border border-white/[0.08] hover:border-indigo-500/40 transition flex flex-col justify-between space-y-2">
+            <div>
+              <div className="text-2xl mb-1">⚖️</div>
+              <h4 className="text-sm font-bold text-white">Civil Court Litigation</h4>
+              <p className="text-xs text-slate-400 leading-relaxed mt-1">
+                Bates stamped forensic exhibits (`Exhibit A - Page 001`), line-by-line numbering, and cryptographic SHA-256 evidence integrity.
+              </p>
+            </div>
+            <Link href="/guide/whatsapp-chat-court-evidence-bates-stamping" className="text-xs font-semibold text-indigo-400 hover:text-indigo-300 pt-2 inline-flex items-center gap-1">
+              Read Bates Stamping Guide &rarr;
+            </Link>
           </div>
 
-          <div className="p-4 rounded-3xl bg-white/[0.02] border border-white/[0.08] hover:border-rose-500/40 transition space-y-2">
-            <div className="text-2xl">👨‍👩‍👧</div>
-            <h4 className="text-sm font-bold text-white">Family Court &amp; Child Custody</h4>
-            <p className="text-xs text-slate-400 leading-relaxed">
-              Document co-parenting discussions, child support promises, harassment logs, and highlight missed voice &amp; video calls.
-            </p>
+          <div className="p-4 rounded-3xl bg-white/[0.02] border border-white/[0.08] hover:border-rose-500/40 transition flex flex-col justify-between space-y-2">
+            <div>
+              <div className="text-2xl mb-1">👨‍👩‍👧</div>
+              <h4 className="text-sm font-bold text-white">Family Court &amp; Child Custody</h4>
+              <p className="text-xs text-slate-400 leading-relaxed mt-1">
+                Document co-parenting discussions, child support promises, harassment logs, and highlight missed voice &amp; video calls.
+              </p>
+            </div>
+            <Link href="/guide/whatsapp-evidence-child-custody-family-court" className="text-xs font-semibold text-rose-400 hover:text-rose-300 pt-2 inline-flex items-center gap-1">
+              Family Court Guide &rarr;
+            </Link>
           </div>
 
-          <div className="p-4 rounded-3xl bg-white/[0.02] border border-white/[0.08] hover:border-amber-500/40 transition space-y-2">
-            <div className="text-2xl">🏠</div>
-            <h4 className="text-sm font-bold text-white">Landlord &amp; Tenant Disputes</h4>
-            <p className="text-xs text-slate-400 leading-relaxed">
-              Security deposit deductions, mold/repair notices, rent payment confirmations, and lease agreement text exchanges.
-            </p>
+          <div className="p-4 rounded-3xl bg-white/[0.02] border border-white/[0.08] hover:border-amber-500/40 transition flex flex-col justify-between space-y-2">
+            <div>
+              <div className="text-2xl mb-1">🏠</div>
+              <h4 className="text-sm font-bold text-white">Landlord &amp; Tenant Disputes</h4>
+              <p className="text-xs text-slate-400 leading-relaxed mt-1">
+                Security deposit deductions, mold/repair notices, rent payment confirmations, and lease agreement text exchanges.
+              </p>
+            </div>
+            <Link href="/guide/whatsapp-chat-proof-landlord-tenant-dispute" className="text-xs font-semibold text-amber-400 hover:text-amber-300 pt-2 inline-flex items-center gap-1">
+              Tenancy Dispute Guide &rarr;
+            </Link>
           </div>
 
-          <div className="p-4 rounded-3xl bg-white/[0.02] border border-white/[0.08] hover:border-cyan-500/40 transition space-y-2">
-            <div className="text-2xl">💼</div>
-            <h4 className="text-sm font-bold text-white">Freelancer &amp; Client Contracts</h4>
-            <p className="text-xs text-slate-400 leading-relaxed">
-              Document client approvals on WhatsApp, scope change authorizations, deliverable acceptance, and unpaid invoice discussions.
-            </p>
+          <div className="p-4 rounded-3xl bg-white/[0.02] border border-white/[0.08] hover:border-cyan-500/40 transition flex flex-col justify-between space-y-2">
+            <div>
+              <div className="text-2xl mb-1">💼</div>
+              <h4 className="text-sm font-bold text-white">Freelancer &amp; Client Contracts</h4>
+              <p className="text-xs text-slate-400 leading-relaxed mt-1">
+                Document client approvals on WhatsApp, scope change authorizations, deliverable acceptance, and unpaid invoice discussions.
+              </p>
+            </div>
+            <Link href="/guide/whatsapp-evidence-freelancer-contract-dispute" className="text-xs font-semibold text-cyan-400 hover:text-cyan-300 pt-2 inline-flex items-center gap-1">
+              Freelancer Evidence Guide &rarr;
+            </Link>
           </div>
 
-          <div className="p-4 rounded-3xl bg-white/[0.02] border border-white/[0.08] hover:border-pink-500/40 transition space-y-2">
-            <div className="text-2xl">🎁</div>
-            <h4 className="text-sm font-bold text-white">Romantic Keepsake &amp; Gift Book</h4>
-            <p className="text-xs text-slate-400 leading-relaxed">
-              Print your entire love story as an anniversary keepsake photobook with full-color photos, call streaks, and romantic dedication cover.
-            </p>
+          <div className="p-4 rounded-3xl bg-white/[0.02] border border-white/[0.08] hover:border-pink-500/40 transition flex flex-col justify-between space-y-2">
+            <div>
+              <div className="text-2xl mb-1">📱</div>
+              <h4 className="text-sm font-bold text-white">Export Tutorials (iOS &amp; Android)</h4>
+              <p className="text-xs text-slate-400 leading-relaxed mt-1">
+                Complete walkthrough on exporting WhatsApp chats with photos, voice notes, and call stamps as .zip or .txt files.
+              </p>
+            </div>
+            <Link href="/guide/how-to-export-whatsapp-chat-iphone-android" className="text-xs font-semibold text-pink-400 hover:text-pink-300 pt-2 inline-flex items-center gap-1">
+              Read Export Tutorial &rarr;
+            </Link>
           </div>
         </div>
       </section>

@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://chatdocketofficial.vercel.app';
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://chatdocket.xyz';
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -29,6 +29,10 @@ export const metadata: Metadata = {
     'Offline private WhatsApp PDF exporter without server upload',
     'WhatsApp zip to PDF with photos and voice call logs',
     'Legal redaction tool for WhatsApp chat',
+    'whatsapp chat evidence child custody family court',
+    'whatsapp proof landlord tenant deposit dispute',
+    'whatsapp agreement evidence unpaid invoices freelancer',
+    'whatsapp message court exhibit generator',
   ],
   authors: [{ name: 'ChatDocket Legal Tech', url: siteUrl }],
   creator: 'ChatDocket',

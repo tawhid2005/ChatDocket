@@ -39,7 +39,7 @@ export async function POST(req: NextRequest) {
     const origin =
       req.headers.get('origin') ||
       process.env.NEXT_PUBLIC_SITE_URL ||
-      'https://chatdocketofficial.vercel.app';
+      'https://chatdocket.xyz';
 
     const successUrl = `${origin}/payment-success?plan=${validPlan}&checkout_id={CHECKOUT_ID}&provider=polar${
       userEmail ? `&email=${encodeURIComponent(userEmail)}` : ''

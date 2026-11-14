@@ -4,12 +4,12 @@ import type { Metadata } from 'next';
 import { Scale, ArrowLeft } from 'lucide-react';
 import { BrandLogo } from '@/components/BrandLogo';
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://chatdocketofficial.vercel.app';
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://chatdocket.xyz';
 
 export const metadata: Metadata = {
   title: 'Terms of Service & 30-Day Guarantee',
   description:
-    'Terms of Service and Refund Policy for ChatDocket WhatsApp Chat to Legal & Spouse Visa PDF Exporter.',
+    'Terms of Service and 30-Day Money-Back Guarantee for ChatDocket WhatsApp Chat to Legal & Spouse Visa PDF Exporter. Fair, transparent usage terms.',
   alternates: {
     canonical: `${siteUrl}/terms`,
   },

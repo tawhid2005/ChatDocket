@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 
-const siteUrl = 'https://chatdocketofficial.vercel.app';
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://chatdocket.xyz';
 
 export const metadata: Metadata = {
   title: 'WhatsApp Proof for Australia Partner Visa 820/801',
