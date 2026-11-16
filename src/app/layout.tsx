@@ -303,6 +303,15 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdFaqSchema) }}
         />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              if (typeof window !== 'undefined' && window.location.hostname === 'chatdocketofficial.vercel.app') {
+                window.location.replace('https://www.chatdocket.xyz' + window.location.pathname + window.location.search + window.location.hash);
+              }
+            `,
+          }}
+        />
         <meta name="theme-color" content="#060810" />
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-capable" content="yes" />

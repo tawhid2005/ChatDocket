@@ -117,6 +117,12 @@ export default function Home() {
 
   // Load user from Supabase session or localStorage if present
   useEffect(() => {
+    // If landing on legacy vercel domain (e.g. after OAuth callback), preserve tokens/hash and forward to custom domain
+    if (typeof window !== 'undefined' && window.location.hostname === 'chatdocketofficial.vercel.app') {
+      window.location.replace(`https://www.chatdocket.xyz${window.location.pathname}${window.location.search}${window.location.hash}`);
+      return;
+    }
+
     const syncSupabaseUser = async () => {
       if (supabase) {
         try {

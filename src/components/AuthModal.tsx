@@ -48,6 +48,11 @@ export const AuthModal: React.FC<AuthModalProps> = ({
     setIsLoading(true);
 
     try {
+      const redirectOrigin =
+        typeof window !== 'undefined' && window.location.origin
+          ? window.location.origin
+          : (process.env.NEXT_PUBLIC_SITE_URL || 'https://www.chatdocket.xyz');
+
       if (supabase) {
         if (tab === 'signup') {
           setSuccessMessage('Creating your ChatDocket cloud account...');
@@ -55,6 +60,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
             email: cleanEmail,
             password,
             options: {
+              emailRedirectTo: `${redirectOrigin}/`,
               data: {
                 full_name: name.trim() || cleanEmail.split('@')[0],
               },
@@ -148,10 +154,15 @@ export const AuthModal: React.FC<AuthModalProps> = ({
           } catch {}
         }
 
+        const redirectTarget =
+          typeof window !== 'undefined' && window.location.origin
+            ? `${window.location.origin}/`
+            : (process.env.NEXT_PUBLIC_SITE_URL || 'https://www.chatdocket.xyz/');
+
         const { error } = await supabase.auth.signInWithOAuth({
           provider: 'google',
           options: {
-            redirectTo: typeof window !== 'undefined' ? window.location.origin : undefined,
+            redirectTo: redirectTarget,
           },
         });
         if (error) throw error;
