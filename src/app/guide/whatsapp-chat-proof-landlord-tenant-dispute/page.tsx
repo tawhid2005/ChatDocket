@@ -1,32 +1,13 @@
-import type { Metadata } from 'next';
 import Link from 'next/link';
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://chatdocket.xyz';
+import { pageMetadata, siteUrl } from '@/lib/seo';
 
-export const metadata: Metadata = {
-  title: 'WhatsApp Proof for Landlord & Tenant Cases',
-  description:
-    'Export WhatsApp chat evidence for tenancy deposit disputes, repair notices, and rent agreements. Generate Bates-stamped PDFs locally.',
-  keywords: [
-    'whatsapp proof landlord tenant dispute',
-    'whatsapp chat evidence tenancy deposit return',
-    'landlord repair notice whatsapp evidence',
-    'whatsapp message proof for small claims housing',
-    'eviction notice whatsapp chat log proof',
-    'tenant landlord message exhibit bates stamped',
-    'rent increase agreement whatsapp proof',
-  ],
-  alternates: {
-    canonical: `${siteUrl}/guide/whatsapp-chat-proof-landlord-tenant-dispute`,
-  },
-  openGraph: {
-    title: 'WhatsApp Proof for Landlord & Tenant Cases',
-    description:
-      'Export WhatsApp chat evidence for tenancy deposit disputes, repair notices, and rent agreements. Generate Bates-stamped PDFs locally.',
-    url: `${siteUrl}/guide/whatsapp-chat-proof-landlord-tenant-dispute`,
-    type: 'article',
-  },
-};
+export const metadata = pageMetadata(
+  '/guide/whatsapp-chat-proof-landlord-tenant-dispute',
+  'WhatsApp Proof for Landlord & Tenant Cases',
+  'Export WhatsApp chat evidence for tenancy deposit disputes, repair notices, and rent agreements. Generate Bates-stamped PDFs locally.',
+  'article',
+);
 
 const jsonLdArticle = {
   '@context': 'https://schema.org',
@@ -42,7 +23,6 @@ const jsonLdArticle = {
     logo: { '@type': 'ImageObject', url: `${siteUrl}/icon.svg` },
   },
   datePublished: '2026-11-01',
-  dateModified: new Date().toISOString().split('T')[0],
   inLanguage: 'en',
 };
 

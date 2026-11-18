@@ -2,7 +2,10 @@ import type { Metadata } from 'next';
 import React from 'react';
 
 export const metadata: Metadata = {
-  title: 'Payment Confirmation — ChatDocket',
+  title: 'Payment Confirmation',
+  alternates: { canonical: null },
+  openGraph: null,
+  twitter: null,
   robots: {
     index: false,
     follow: false,

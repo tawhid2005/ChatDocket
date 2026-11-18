@@ -75,24 +75,24 @@ export const OnboardingGuide: React.FC<OnboardingGuideProps> = ({
 
   const faqs = [
     {
-      q: 'How does Chat Docket ensure 100% privacy without server uploads?',
-      a: 'Chat Docket operates on a zero-knowledge WebAssembly client architecture. Your exported WhatsApp .zip and .txt files are decrypted, parsed, and converted to vector A4 PDFs strictly within your browser’s local RAM. Not a single character, phone number, or photo ever touches an external server.',
+      q: 'Where does ChatDocket process my chat?',
+      a: 'ChatDocket opens exported ZIP and TXT files and builds the document preview in your browser.',
     },
     {
-      q: 'Why do immigration caseworkers reject raw WhatsApp .txt or screenshot dumps?',
-      a: 'Caseworkers at UKVI, USCIS, and IRCC process dozens of cases a day. Submitting 600 uncurated pages of daily chatter or unorganized screenshot folders frustrates adjudicators. Immigration guidelines (such as IRCC IMM 5289) require an organized, chronological PDF of key milestones (10 to 25 pages) showing continuous contact.',
+      q: 'How can I make a chat export easier to review?',
+      a: 'Use a date range, keep names and timestamps visible, and make a note of which messages you selected. Check the instructions for the application you are completing.',
     },
     {
-      q: 'Does this comply with the Canada IRCC 10-page maximum communication rule?',
-      a: 'Yes! Chat Docket provides a dedicated Canada IRCC preset that automatically samples multi-year chat histories into an embassy-compliant 10-15 page dossier, prioritizing travel planning, call schedules, and relationship milestones.',
+      q: 'How do I check the Canada IRCC 10-page maximum?',
+      a: 'Use the Canada preset as a starting point. Open the saved PDF and count the pages together with any other proof of communication you plan to submit.',
     },
     {
       q: 'Can I redact sensitive banking numbers, phone numbers, and intimate messages?',
-      a: 'Yes. With our Interactive 1-Click Redaction tool, you can simply click on any message or photo to immediately mask it with an official [REDACTED] black-out bar. You can also use our 1-click bulk PII redaction for phone numbers, email addresses, and financial account numbers.',
+      a: 'Yes. With our Interactive 1-Click Redaction tool, you can simply click on any message or photo to immediately mask it with a [REDACTED] bar. You can also use our 1-click bulk PII redaction for phone numbers, email addresses, and financial account numbers.',
     },
     {
       q: 'How do certified translations work for foreign language chats (Banglish, Urdu, Spanish, Tagalog)?',
-      a: 'Both UKVI and USCIS reject machine translations. Chat Docket allows you to add certified English translations directly beneath original foreign language bubbles in italics, and automatically includes a legal Translator Certification block.',
+      a: 'ChatDocket lets you place a translation next to the original message and add a translator information block. Use the translation and certification requirements for your application.',
     },
   ];
 
@@ -106,15 +106,14 @@ export const OnboardingGuide: React.FC<OnboardingGuideProps> = ({
         </div>
 
         <h1 className="text-2xl sm:text-5xl font-black text-white tracking-tight leading-tight px-1">
-          WhatsApp Chat to Official{' '}
+          WhatsApp Chat to PDF{' '}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-300 to-lime-400">
-            Legal &amp; Spouse Visa
-          </span>{' '}
-          PDF
+            for Visa &amp; Court
+          </span>
         </h1>
 
         <p className="text-xs sm:text-sm text-slate-300 max-w-xl mx-auto px-2">
-          Upload your exported WhatsApp <code>.zip</code> or <code>.txt</code> file below or try our live demo to create embassy-approved PDF packets in seconds.
+          Open an exported WhatsApp <code>.zip</code> or <code>.txt</code> file to preview a PDF with names, dates, and message history.
         </p>
       </div>
 
@@ -618,9 +617,9 @@ export const OnboardingGuide: React.FC<OnboardingGuideProps> = ({
 
         <div className="bg-[#a3e635] text-slate-950 rounded-3xl p-6 shadow-xl shadow-lime-500/20">
           <div className="text-sm font-extrabold text-slate-900 mb-2">02.</div>
-          <h3 className="text-base font-black text-slate-950 mb-1.5">Smart Embassy Sampling</h3>
+          <h3 className="text-base font-black text-slate-950 mb-1.5">Message Sampling</h3>
           <p className="text-xs text-slate-900 font-medium leading-relaxed">
-            Condenses thousands of messages into an official 15-25 page packet (UK Home Office, USCIS) or 10 pages (Canada IRCC) with call tables and gap explanations.
+            Select messages across a date range and review the resulting page count before saving the PDF.
           </p>
         </div>
 
@@ -644,7 +643,7 @@ export const OnboardingGuide: React.FC<OnboardingGuideProps> = ({
             Frequently Asked Questions
           </h2>
           <p className="text-xs text-slate-400">
-            Everything you need to know about embassy compliance, privacy, and evidence rules.
+            Answers about chat privacy, translations, and document preparation.
           </p>
         </div>
 

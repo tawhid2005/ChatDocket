@@ -1,0 +1,3521 @@
+{
+  "capturedAt": "2026-11-18T08:15:42.709Z",
+  "audience": [
+    "People exporting WhatsApp chats",
+    "Visa applicants preparing relationship records",
+    "People organizing court or dispute exhibits"
+  ],
+  "sitemap": {
+    "status": 200,
+    "locations": [
+      "https://www.chatdocket.xyz",
+      "https://www.chatdocket.xyz/guide",
+      "https://www.chatdocket.xyz/guide/whatsapp-to-pdf-uk-spouse-visa",
+      "https://www.chatdocket.xyz/guide/whatsapp-chat-proof-uscis-i130",
+      "https://www.chatdocket.xyz/guide/whatsapp-evidence-canada-ircc",
+      "https://www.chatdocket.xyz/guide/whatsapp-proof-australia-partner-visa",
+      "https://www.chatdocket.xyz/guide/whatsapp-chat-court-evidence-bates-stamping",
+      "https://www.chatdocket.xyz/guide/whatsapp-evidence-child-custody-family-court",
+      "https://www.chatdocket.xyz/guide/whatsapp-chat-proof-landlord-tenant-dispute",
+      "https://www.chatdocket.xyz/guide/whatsapp-evidence-freelancer-contract-dispute",
+      "https://www.chatdocket.xyz/guide/how-to-export-whatsapp-chat-iphone-android",
+      "https://www.chatdocket.xyz/guide/whatsapp-chat-to-pdf-with-photos",
+      "https://www.chatdocket.xyz/privacy",
+      "https://www.chatdocket.xyz/terms"
+    ],
+    "lastmodCount": 3
+  },
+  "robots": {
+    "status": 200,
+    "text": "User-Agent: *\nAllow: /\nDisallow: /api/\n\nSitemap: https://www.chatdocket.xyz/sitemap.xml\n"
+  },
+  "pages": [
+    {
+      "url": "http://127.0.0.1:4174/",
+      "finalUrl": "http://127.0.0.1:4174/",
+      "status": 200,
+      "title": "WhatsApp Chat to PDF for Visa Court | ChatDocket",
+      "canonical": [
+        "https://www.chatdocket.xyz"
+      ],
+      "description": "Convert exported WhatsApp TXT or ZIP chats into a PDF. Preview messages, choose a date range and add Bates numbering for visa or court documents.",
+      "robots": "index, follow",
+      "openGraph": {
+        "og:title": "WhatsApp Chat to PDF for Visa &amp; Court | ChatDocket",
+        "og:description": "Convert exported WhatsApp TXT or ZIP chats into a PDF. Preview messages, choose a date range and add Bates numbering for visa or court documents.",
+        "og:url": "https://www.chatdocket.xyz",
+        "og:site_name": "ChatDocket",
+        "og:image": "https://www.chatdocket.xyz/opengraph-image?dfe3e2a8eddedbf5",
+        "og:image:type": "image/png",
+        "og:image:width": "1200",
+        "og:image:height": "630",
+        "og:image:alt": "ChatDocket — WhatsApp Chat to PDF for Visa and Court",
+        "og:type": "website"
+      },
+      "twitter": {
+        "twitter:card": "summary_large_image",
+        "twitter:title": "WhatsApp Chat to PDF for Visa &amp; Court | ChatDocket",
+        "twitter:description": "Convert exported WhatsApp TXT or ZIP chats into a PDF. Preview messages, choose a date range and add Bates numbering for visa or court documents.",
+        "twitter:image": "https://www.chatdocket.xyz/opengraph-image"
+      },
+      "headings": [
+        {
+          "level": 1,
+          "text": "WhatsApp Chat to PDF for Visa Court"
+        },
+        {
+          "level": 2,
+          "text": "Upload WhatsApp .ZIP or .TXT File(s)"
+        },
+        {
+          "level": 2,
+          "text": "Embassy Compliant Presets Official Formatting Guides"
+        },
+        {
+          "level": 3,
+          "text": "How to get the .ZIP file from your phone"
+        },
+        {
+          "level": 2,
+          "text": "One Tool, Endless Evidentiary Memory Use Cases"
+        },
+        {
+          "level": 4,
+          "text": "Spouse Fiancé Visas"
+        },
+        {
+          "level": 4,
+          "text": "Civil Court Litigation"
+        },
+        {
+          "level": 4,
+          "text": "Family Court Child Custody"
+        },
+        {
+          "level": 4,
+          "text": "Landlord Tenant Disputes"
+        },
+        {
+          "level": 4,
+          "text": "Freelancer Client Contracts"
+        },
+        {
+          "level": 4,
+          "text": "Export Tutorials (iOS Android)"
+        },
+        {
+          "level": 2,
+          "text": "Manual Screenshots vs. Copy-Paste vs. ChatDocket"
+        },
+        {
+          "level": 3,
+          "text": "Universal Extraction"
+        },
+        {
+          "level": 3,
+          "text": "Message Sampling"
+        },
+        {
+          "level": 3,
+          "text": "Vector A4 PDF Output"
+        },
+        {
+          "level": 2,
+          "text": "Frequently Asked Questions"
+        },
+        {
+          "level": 2,
+          "text": "How to convert a WhatsApp chat to PDF"
+        },
+        {
+          "level": 2,
+          "text": "WhatsApp PDF questions"
+        }
+      ],
+      "wordCount": 1106,
+      "internalLinkCount": 19,
+      "internalLinks": [
+        "/guide",
+        "/guide/whatsapp-to-pdf-uk-spouse-visa",
+        "/guide/whatsapp-chat-proof-uscis-i130",
+        "/guide/whatsapp-evidence-canada-ircc",
+        "/guide/whatsapp-proof-australia-partner-visa",
+        "/guide/whatsapp-chat-court-evidence-bates-stamping",
+        "/guide/whatsapp-evidence-child-custody-family-court",
+        "/guide/whatsapp-chat-proof-landlord-tenant-dispute",
+        "/guide/whatsapp-evidence-freelancer-contract-dispute",
+        "/guide/how-to-export-whatsapp-chat-iphone-android",
+        "/privacy",
+        "/terms",
+        "/guide/whatsapp-chat-to-pdf-with-photos"
+      ],
+      "images": {
+        "total": 0,
+        "withAlt": 0,
+        "withDimensions": 0
+      },
+      "graph": [
+        {
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          "name": "ChatDocket",
+          "url": "https://www.chatdocket.xyz",
+          "description": "Browser-based WhatsApp chat PDF converter and evidence formatting guides.",
+          "inLanguage": "en"
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "ChatDocket",
+          "url": "https://www.chatdocket.xyz",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://www.chatdocket.xyz/icon.svg"
+          },
+          "sameAs": [
+            "https://github.com/tawhid2005/ChatDocket"
+          ],
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "support@chatdocket.com",
+            "contactType": "customer support",
+            "availableLanguage": "English"
+          }
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          "name": "ChatDocket",
+          "url": "https://www.chatdocket.xyz/",
+          "applicationCategory": "UtilitiesApplication",
+          "operatingSystem": "Web",
+          "description": "Browser-based converter for exported WhatsApp TXT and ZIP files with a PDF preview."
+        }
+      ],
+      "frequentTerms": {
+        "chat": 23,
+        "whatsapp": 23,
+        "export": 20,
+        "open": 9,
+        "photos": 9,
+        "guide": 9,
+        "files": 8,
+        "chatdocket": 8,
+        "visa": 7,
+        "file": 7,
+        "messages": 7,
+        "preview": 6,
+        "bates": 6,
+        "choose": 6,
+        "read": 6,
+        "court": 5,
+        "ircc": 5,
+        "click": 5,
+        "guides": 5,
+        "save": 5,
+        "page": 5,
+        "review": 5,
+        "numbers": 5,
+        "spouse": 4,
+        "browser": 4,
+        "exported": 4,
+        "names": 4,
+        "message": 4,
+        "upload": 4,
+        "demo": 4,
+        "sha-": 4,
+        "sample": 4,
+        "privacy": 4,
+        "canada": 4,
+        "android": 4,
+        "call": 4,
+        "evidence": 4,
+        "document": 4,
+        "voice": 4,
+        "stamps": 4
+      },
+      "features": {
+        "tables": 1,
+        "orderedLists": 1,
+        "unorderedLists": 0,
+        "forms": 0
+      }
+    },
+    {
+      "url": "http://127.0.0.1:4174/guide",
+      "finalUrl": "http://127.0.0.1:4174/guide",
+      "status": 200,
+      "title": "WhatsApp Export, Visa Court Evidence Guides | ChatDocket",
+      "canonical": [
+        "https://www.chatdocket.xyz/guide"
+      ],
+      "description": "Learn to export WhatsApp chats on iPhone and Android and format messages, photos and call entries for visa and court document bundles.",
+      "robots": "index, follow",
+      "openGraph": {
+        "og:title": "WhatsApp Export, Visa &amp; Court Evidence Guides",
+        "og:description": "Learn to export WhatsApp chats on iPhone and Android and format messages, photos and call entries for visa and court document bundles.",
+        "og:url": "https://www.chatdocket.xyz/guide",
+        "og:site_name": "ChatDocket",
+        "og:image": "https://www.chatdocket.xyz/opengraph-image",
+        "og:image:width": "1200",
+        "og:image:height": "630",
+        "og:image:alt": "ChatDocket WhatsApp PDF converter",
+        "og:type": "website"
+      },
+      "twitter": {
+        "twitter:card": "summary_large_image",
+        "twitter:title": "WhatsApp Export, Visa &amp; Court Evidence Guides",
+        "twitter:description": "Learn to export WhatsApp chats on iPhone and Android and format messages, photos and call entries for visa and court document bundles.",
+        "twitter:image": "https://www.chatdocket.xyz/opengraph-image"
+      },
+      "headings": [
+        {
+          "level": 1,
+          "text": "WhatsApp Legal Visa Evidence Guides"
+        },
+        {
+          "level": 2,
+          "text": "💑 Spouse, Partner Fiancé Visa Petitions"
+        },
+        {
+          "level": 3,
+          "text": "WhatsApp Chat to PDF for UK Spouse Visa (Appendix FM)"
+        },
+        {
+          "level": 3,
+          "text": "WhatsApp Chat Proof for USCIS I-130 CR1/IR1 Petitions"
+        },
+        {
+          "level": 3,
+          "text": "WhatsApp Evidence for Canada IRCC Spousal Sponsorship (IMM 5289)"
+        },
+        {
+          "level": 3,
+          "text": "WhatsApp Proof for Australia Partner Visa (Subclass 820 / 801)"
+        },
+        {
+          "level": 2,
+          "text": "⚖️ Civil Court, Family Law Contract Disputes"
+        },
+        {
+          "level": 3,
+          "text": "WhatsApp Chat as Court Evidence — Bates Stamping Guide"
+        },
+        {
+          "level": 3,
+          "text": "WhatsApp Evidence for Child Custody Family Court"
+        },
+        {
+          "level": 3,
+          "text": "WhatsApp Proof for Landlord Tenant Disputes"
+        },
+        {
+          "level": 3,
+          "text": "WhatsApp Proof for Freelancer Contract Disputes"
+        },
+        {
+          "level": 2,
+          "text": "📱 Technical Device Tutorials"
+        },
+        {
+          "level": 3,
+          "text": "How to Export WhatsApp Chat on iPhone and Android"
+        },
+        {
+          "level": 2,
+          "text": "Ready to Format Your WhatsApp Evidence?"
+        }
+      ],
+      "wordCount": 518,
+      "internalLinkCount": 21,
+      "internalLinks": [
+        "/",
+        "/guide/whatsapp-to-pdf-uk-spouse-visa",
+        "/guide/whatsapp-chat-proof-uscis-i130",
+        "/guide/whatsapp-evidence-canada-ircc",
+        "/guide/whatsapp-proof-australia-partner-visa",
+        "/guide/whatsapp-chat-court-evidence-bates-stamping",
+        "/guide/whatsapp-evidence-child-custody-family-court",
+        "/guide/whatsapp-chat-proof-landlord-tenant-dispute",
+        "/guide/whatsapp-evidence-freelancer-contract-dispute",
+        "/guide/how-to-export-whatsapp-chat-iphone-android",
+        "/guide",
+        "/guide/whatsapp-chat-to-pdf-with-photos",
+        "/privacy",
+        "/terms"
+      ],
+      "images": {
+        "total": 0,
+        "withAlt": 0,
+        "withDimensions": 0
+      },
+      "graph": [
+        {
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          "name": "ChatDocket",
+          "url": "https://www.chatdocket.xyz",
+          "description": "Browser-based WhatsApp chat PDF converter and evidence formatting guides.",
+          "inLanguage": "en"
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "ChatDocket",
+          "url": "https://www.chatdocket.xyz",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://www.chatdocket.xyz/icon.svg"
+          },
+          "sameAs": [
+            "https://github.com/tawhid2005/ChatDocket"
+          ],
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "support@chatdocket.com",
+            "contactType": "customer support",
+            "availableLanguage": "English"
+          }
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "CollectionPage",
+          "name": "Immigration & Legal WhatsApp Evidence Guides Hub",
+          "description": "Country and case-specific guidelines for exporting and formatting WhatsApp chat history as visa, family court, and commercial litigation PDF exhibits.",
+          "url": "https://www.chatdocket.xyz/guide",
+          "inLanguage": "en",
+          "hasPart": [
+            {
+              "@type": "Article",
+              "headline": "WhatsApp Chat to PDF for UK Spouse Visa (Appendix FM)",
+              "url": "https://www.chatdocket.xyz/guide/whatsapp-to-pdf-uk-spouse-visa"
+            },
+            {
+              "@type": "Article",
+              "headline": "WhatsApp Chat Proof for USCIS I-130 & CR1/IR1 Petitions",
+              "url": "https://www.chatdocket.xyz/guide/whatsapp-chat-proof-uscis-i130"
+            },
+            {
+              "@type": "Article",
+              "headline": "WhatsApp Evidence for Canada IRCC Spousal Sponsorship (IMM 5289)",
+              "url": "https://www.chatdocket.xyz/guide/whatsapp-evidence-canada-ircc"
+            },
+            {
+              "@type": "Article",
+              "headline": "WhatsApp Proof for Australia Partner Visa (Subclass 820 / 801)",
+              "url": "https://www.chatdocket.xyz/guide/whatsapp-proof-australia-partner-visa"
+            },
+            {
+              "@type": "Article",
+              "headline": "WhatsApp Chat as Court Evidence — Bates Stamping Guide",
+              "url": "https://www.chatdocket.xyz/guide/whatsapp-chat-court-evidence-bates-stamping"
+            },
+            {
+              "@type": "Article",
+              "headline": "WhatsApp Evidence for Child Custody & Family Court",
+              "url": "https://www.chatdocket.xyz/guide/whatsapp-evidence-child-custody-family-court"
+            },
+            {
+              "@type": "Article",
+              "headline": "WhatsApp Proof for Landlord & Tenant Disputes",
+              "url": "https://www.chatdocket.xyz/guide/whatsapp-chat-proof-landlord-tenant-dispute"
+            },
+            {
+              "@type": "Article",
+              "headline": "WhatsApp Proof for Freelancer & Contract Disputes",
+              "url": "https://www.chatdocket.xyz/guide/whatsapp-evidence-freelancer-contract-dispute"
+            },
+            {
+              "@type": "Article",
+              "headline": "How to Export WhatsApp Chat on iPhone and Android",
+              "url": "https://www.chatdocket.xyz/guide/how-to-export-whatsapp-chat-iphone-android"
+            }
+          ]
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://www.chatdocket.xyz"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Guides",
+              "item": "https://www.chatdocket.xyz/guide"
+            }
+          ]
+        }
+      ],
+      "frequentTerms": {
+        "whatsapp": 22,
+        "guide": 11,
+        "complete": 10,
+        "read": 9,
+        "court": 8,
+        "evidence": 8,
+        "chat": 8,
+        "visa": 6,
+        "format": 6,
+        "export": 5,
+        "proof": 5,
+        "uscis": 4,
+        "call": 4,
+        "family": 4,
+        "disputes": 4,
+        "android": 4,
+        "canada": 3,
+        "australia": 3,
+        "legal": 3,
+        "messages": 3,
+        "instructions": 3,
+        "ircc": 3,
+        "logs": 3,
+        "bates": 3,
+        "tenancy": 3,
+        "device": 3,
+        "tutorials": 3,
+        "chatdocket": 2,
+        "free": 2,
+        "official": 2,
+        "immigration": 2,
+        "guides": 2,
+        "learn": 2,
+        "spouse": 2,
+        "partner": 2,
+        "petitions": 2,
+        "ukvi": 2,
+        "united": 2,
+        "home": 2,
+        "appendix": 2
+      },
+      "features": {
+        "tables": 0,
+        "orderedLists": 0,
+        "unorderedLists": 0,
+        "forms": 0
+      }
+    },
+    {
+      "url": "http://127.0.0.1:4174/guide/whatsapp-to-pdf-uk-spouse-visa",
+      "finalUrl": "http://127.0.0.1:4174/guide/whatsapp-to-pdf-uk-spouse-visa",
+      "status": 200,
+      "title": "WhatsApp Chat to PDF for UK Spouse Visa (UKVI) | ChatDocket",
+      "canonical": [
+        "https://www.chatdocket.xyz/guide/whatsapp-to-pdf-uk-spouse-visa"
+      ],
+      "description": "Convert WhatsApp chats into UK Home Office Appendix FM spouse visa PDFs with smart sampling, call logs &amp; Bates numbers. 100% private in browser.",
+      "robots": "index, follow",
+      "openGraph": {
+        "og:title": "WhatsApp Chat to PDF for UK Spouse Visa (UKVI)",
+        "og:description": "Convert WhatsApp chats into UK Home Office Appendix FM spouse visa PDFs with smart sampling, call logs &amp; Bates numbers. 100% private in browser.",
+        "og:url": "https://www.chatdocket.xyz/guide/whatsapp-to-pdf-uk-spouse-visa",
+        "og:site_name": "ChatDocket",
+        "og:image": "https://www.chatdocket.xyz/opengraph-image",
+        "og:image:width": "1200",
+        "og:image:height": "630",
+        "og:image:alt": "ChatDocket WhatsApp PDF converter",
+        "og:type": "article"
+      },
+      "twitter": {
+        "twitter:card": "summary_large_image",
+        "twitter:title": "WhatsApp Chat to PDF for UK Spouse Visa (UKVI)",
+        "twitter:description": "Convert WhatsApp chats into UK Home Office Appendix FM spouse visa PDFs with smart sampling, call logs &amp; Bates numbers. 100% private in browser.",
+        "twitter:image": "https://www.chatdocket.xyz/opengraph-image"
+      },
+      "headings": [
+        {
+          "level": 1,
+          "text": "How to Convert WhatsApp Chat to PDF for a UK Spouse Visa Application"
+        },
+        {
+          "level": 2,
+          "text": "Does the UK Home Office Accept WhatsApp Chat as Visa Evidence?"
+        },
+        {
+          "level": 2,
+          "text": "Step-by-Step: Export Your WhatsApp Chat (iOS Android)"
+        },
+        {
+          "level": 3,
+          "text": "On iPhone (iOS)"
+        },
+        {
+          "level": 3,
+          "text": "On Android"
+        },
+        {
+          "level": 2,
+          "text": "How ChatDocket Formats WhatsApp Chat for UK Visa Evidence"
+        },
+        {
+          "level": 2,
+          "text": "Manual Screenshots vs. ChatDocket: A Comparison"
+        },
+        {
+          "level": 2,
+          "text": "Tips for Strengthening Your UK Spouse Visa Application"
+        },
+        {
+          "level": 2,
+          "text": "Frequently Asked Questions"
+        },
+        {
+          "level": 2,
+          "text": "Generate Your UK Spouse Visa WhatsApp Evidence Now"
+        },
+        {
+          "level": 2,
+          "text": "Related Immigration Evidence Guides"
+        }
+      ],
+      "wordCount": 861,
+      "internalLinkCount": 18,
+      "internalLinks": [
+        "/",
+        "/guide/whatsapp-to-pdf-uk-spouse-visa",
+        "/guide/whatsapp-chat-proof-uscis-i130",
+        "/guide/whatsapp-evidence-canada-ircc",
+        "/guide/whatsapp-proof-australia-partner-visa",
+        "/guide",
+        "/guide/whatsapp-chat-to-pdf-with-photos",
+        "/privacy",
+        "/terms"
+      ],
+      "images": {
+        "total": 0,
+        "withAlt": 0,
+        "withDimensions": 0
+      },
+      "graph": [
+        {
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          "name": "ChatDocket",
+          "url": "https://www.chatdocket.xyz",
+          "description": "Browser-based WhatsApp chat PDF converter and evidence formatting guides.",
+          "inLanguage": "en"
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "ChatDocket",
+          "url": "https://www.chatdocket.xyz",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://www.chatdocket.xyz/icon.svg"
+          },
+          "sameAs": [
+            "https://github.com/tawhid2005/ChatDocket"
+          ],
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "support@chatdocket.com",
+            "contactType": "customer support",
+            "availableLanguage": "English"
+          }
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "Article",
+          "headline": "How to Convert WhatsApp Chat to PDF for a UK Spouse Visa Application",
+          "description": "Complete guide on preparing WhatsApp chat history as compliant evidence for a UK Spouse Visa (Appendix FM) using ChatDocket.",
+          "url": "https://www.chatdocket.xyz/guide/whatsapp-to-pdf-uk-spouse-visa",
+          "author": {
+            "@type": "Organization",
+            "name": "ChatDocket"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "ChatDocket",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://www.chatdocket.xyz/icon.svg"
+            }
+          },
+          "datePublished": "2026-11-01",
+          "inLanguage": "en"
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Does the UK Home Office accept WhatsApp chats as evidence for a Spouse Visa?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Under Appendix FM of the Immigration Rules, the Home Office accepts digital communication records — including WhatsApp message exports — as evidence of a genuine and subsisting relationship. The chats should be presented in a clear, paginated, chronological format with dates visible."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How many pages of WhatsApp chat should I include for a UK Spouse Visa?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "UKVI caseworkers prefer concise, representative evidence. A 15–25 page sampled PDF covering your full relationship timeline is typically ideal — ChatDocket's UK Home Office preset automatically produces this using smart sampling (approx. 3 messages per week)."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can I export WhatsApp media (photos) for UK visa evidence?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. When you export a WhatsApp chat with media on Android or iPhone, photos are included in the .zip archive. ChatDocket renders these inline in the PDF or as a photo grid appendix, clearly labelled with timestamps."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is ChatDocket safe for sensitive immigration documents?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "100% safe. All processing is entirely client-side — your zip file is parsed and your PDF is generated inside your browser. No data is ever uploaded to a server, making it ideal for sensitive immigration documents."
+              }
+            }
+          ]
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://www.chatdocket.xyz"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Guides",
+              "item": "https://www.chatdocket.xyz/guide"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "UK Spouse Visa WhatsApp Guide",
+              "item": "https://www.chatdocket.xyz/guide/whatsapp-to-pdf-uk-spouse-visa"
+            }
+          ]
+        }
+      ],
+      "frequentTerms": {
+        "whatsapp": 25,
+        "chatdocket": 14,
+        "visa": 14,
+        "evidence": 14,
+        "relationship": 9,
+        "spouse": 8,
+        "chat": 8,
+        "home": 7,
+        "export": 7,
+        "page": 7,
+        "appendix": 6,
+        "include": 6,
+        "photos": 5,
+        "free": 4,
+        "office": 4,
+        "document": 4,
+        "upload": 4,
+        "immigration": 4,
+        "cover": 4,
+        "media": 4,
+        "canada": 3,
+        "australia": 3,
+        "guides": 3,
+        "guide": 3,
+        "application": 3,
+        "history": 3,
+        "format": 3,
+        "generate": 3,
+        "processing": 3,
+        "accept": 3,
+        "under": 3,
+        "communication": 3,
+        "including": 3,
+        "partner": 3,
+        "screenshots": 3,
+        "paginated": 3,
+        "covering": 3,
+        "timeline": 3,
+        "call": 3,
+        "summary": 3
+      },
+      "features": {
+        "tables": 1,
+        "orderedLists": 4,
+        "unorderedLists": 2,
+        "forms": 0
+      }
+    },
+    {
+      "url": "http://127.0.0.1:4174/guide/whatsapp-chat-proof-uscis-i130",
+      "finalUrl": "http://127.0.0.1:4174/guide/whatsapp-chat-proof-uscis-i130",
+      "status": 200,
+      "title": "WhatsApp Chat Proof for USCIS I-130 CR1 Visa | ChatDocket",
+      "canonical": [
+        "https://www.chatdocket.xyz/guide/whatsapp-chat-proof-uscis-i130"
+      ],
+      "description": "Format WhatsApp chat logs into Bates-numbered PDF exhibits for USCIS I-130 &amp; CR1 petitions with call schedules &amp; timestamps. 100% local privacy.",
+      "robots": "index, follow",
+      "openGraph": {
+        "og:title": "WhatsApp Chat Proof for USCIS I-130 &amp; CR1 Visa",
+        "og:description": "Format WhatsApp chat logs into Bates-numbered PDF exhibits for USCIS I-130 &amp; CR1 petitions with call schedules &amp; timestamps. 100% local privacy.",
+        "og:url": "https://www.chatdocket.xyz/guide/whatsapp-chat-proof-uscis-i130",
+        "og:site_name": "ChatDocket",
+        "og:image": "https://www.chatdocket.xyz/opengraph-image",
+        "og:image:width": "1200",
+        "og:image:height": "630",
+        "og:image:alt": "ChatDocket WhatsApp PDF converter",
+        "og:type": "article"
+      },
+      "twitter": {
+        "twitter:card": "summary_large_image",
+        "twitter:title": "WhatsApp Chat Proof for USCIS I-130 &amp; CR1 Visa",
+        "twitter:description": "Format WhatsApp chat logs into Bates-numbered PDF exhibits for USCIS I-130 &amp; CR1 petitions with call schedules &amp; timestamps. 100% local privacy.",
+        "twitter:image": "https://www.chatdocket.xyz/opengraph-image"
+      },
+      "headings": [
+        {
+          "level": 1,
+          "text": "How to Use WhatsApp Chat Logs as USCIS I-130 Evidence of a Bona Fide Marriage"
+        },
+        {
+          "level": 2,
+          "text": "Does USCIS Accept WhatsApp Chat Logs for I-130 Petitions?"
+        },
+        {
+          "level": 2,
+          "text": "Step-by-Step: Preparing WhatsApp Evidence for USCIS I-130"
+        },
+        {
+          "level": 3,
+          "text": "Step 1 — Export Your WhatsApp Chat"
+        },
+        {
+          "level": 3,
+          "text": "Step 2 — Upload to ChatDocket"
+        },
+        {
+          "level": 3,
+          "text": "Step 3 — Apply the USCIS I-130 Preset"
+        },
+        {
+          "level": 3,
+          "text": "Step 4 — Download and Label the Exhibit"
+        },
+        {
+          "level": 2,
+          "text": "Manual Screenshots vs. ChatDocket for USCIS Evidence"
+        },
+        {
+          "level": 2,
+          "text": "What Other Evidence Should You Include with I-130?"
+        },
+        {
+          "level": 2,
+          "text": "Frequently Asked Questions — USCIS WhatsApp Evidence"
+        },
+        {
+          "level": 2,
+          "text": "Create Your USCIS I-130 WhatsApp Exhibit Now"
+        },
+        {
+          "level": 2,
+          "text": "Related Immigration Evidence Guides"
+        }
+      ],
+      "wordCount": 789,
+      "internalLinkCount": 18,
+      "internalLinks": [
+        "/",
+        "/guide/whatsapp-to-pdf-uk-spouse-visa",
+        "/guide/whatsapp-chat-proof-uscis-i130",
+        "/guide/whatsapp-evidence-canada-ircc",
+        "/guide/whatsapp-proof-australia-partner-visa",
+        "/guide",
+        "/guide/whatsapp-chat-to-pdf-with-photos",
+        "/privacy",
+        "/terms"
+      ],
+      "images": {
+        "total": 0,
+        "withAlt": 0,
+        "withDimensions": 0
+      },
+      "graph": [
+        {
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          "name": "ChatDocket",
+          "url": "https://www.chatdocket.xyz",
+          "description": "Browser-based WhatsApp chat PDF converter and evidence formatting guides.",
+          "inLanguage": "en"
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "ChatDocket",
+          "url": "https://www.chatdocket.xyz",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://www.chatdocket.xyz/icon.svg"
+          },
+          "sameAs": [
+            "https://github.com/tawhid2005/ChatDocket"
+          ],
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "support@chatdocket.com",
+            "contactType": "customer support",
+            "availableLanguage": "English"
+          }
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "Article",
+          "headline": "How to Use WhatsApp Chat Logs as Evidence for a USCIS I-130 or CR1 Visa Petition",
+          "description": "Complete guide to formatting WhatsApp exports into Bates-numbered USCIS exhibit packets for I-130 and CR1 spousal petitions.",
+          "url": "https://www.chatdocket.xyz/guide/whatsapp-chat-proof-uscis-i130",
+          "author": {
+            "@type": "Organization",
+            "name": "ChatDocket"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "ChatDocket",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://www.chatdocket.xyz/icon.svg"
+            }
+          },
+          "datePublished": "2026-11-01",
+          "inLanguage": "en"
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Does USCIS accept WhatsApp chat logs as evidence for I-130?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. USCIS accepts digital communication history — including WhatsApp exports — as secondary corroborating evidence of a bona fide marriage. It should be presented in a clear, paginated, chronological format alongside primary evidence like joint bank statements."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What evidence do I need for a USCIS I-130 bona fide marriage?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "USCIS looks for joint bank accounts, joint lease or mortgage, insurance policies listing both spouses, children's birth certificates, photos, and communication history. WhatsApp chat exports formatted as a dated, paginated PDF can serve as strong communication history evidence."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How should I format WhatsApp chats for a USCIS I-130 exhibit?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "USCIS expects exhibits to be clearly labeled (e.g., \"Exhibit A: WhatsApp Communication Log\"), paginated, and dated. ChatDocket automatically adds Bates numbering, a cover page, and a chronological call log table to your WhatsApp export."
+              }
+            }
+          ]
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://www.chatdocket.xyz"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Guides",
+              "item": "https://www.chatdocket.xyz/guide"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "USCIS I-130 WhatsApp Evidence Guide",
+              "item": "https://www.chatdocket.xyz/guide/whatsapp-chat-proof-uscis-i130"
+            }
+          ]
+        }
+      ],
+      "frequentTerms": {
+        "uscis": 20,
+        "whatsapp": 20,
+        "evidence": 18,
+        "chatdocket": 15,
+        "chat": 14,
+        "exhibit": 8,
+        "marriage": 6,
+        "communication": 6,
+        "relationship": 6,
+        "visa": 5,
+        "immigration": 5,
+        "export": 5,
+        "data": 5,
+        "browser": 4,
+        "secondary": 4,
+        "history": 4,
+        "step": 4,
+        "page": 4,
+        "primary": 4,
+        "joint": 4,
+        "canada": 3,
+        "australia": 3,
+        "free": 3,
+        "guides": 3,
+        "logs": 3,
+        "bona": 3,
+        "fide": 3,
+        "genuine": 3,
+        "corroborating": 3,
+        "continuous": 3,
+        "minutes": 3,
+        "adjudicators": 3,
+        "digital": 3,
+        "under": 3,
+        "petition": 3,
+        "bates-numbered": 3,
+        "period": 3,
+        "messages": 3,
+        "call": 3,
+        "sensitive": 3
+      },
+      "features": {
+        "tables": 1,
+        "orderedLists": 1,
+        "unorderedLists": 2,
+        "forms": 0
+      }
+    },
+    {
+      "url": "http://127.0.0.1:4174/guide/whatsapp-evidence-canada-ircc",
+      "finalUrl": "http://127.0.0.1:4174/guide/whatsapp-evidence-canada-ircc",
+      "status": 200,
+      "title": "WhatsApp Chat Evidence for Canada IRCC (IMM 5289) | ChatDocket",
+      "canonical": [
+        "https://www.chatdocket.xyz/guide/whatsapp-evidence-canada-ircc"
+      ],
+      "description": "Prepare WhatsApp messages for Canadian spousal sponsorship, check the 10-page proof-of-communication limit, and review translation requirements.",
+      "robots": "index, follow",
+      "openGraph": {
+        "og:title": "WhatsApp Chat Evidence for Canada IRCC (IMM 5289)",
+        "og:description": "Prepare WhatsApp messages for Canadian spousal sponsorship, check the 10-page proof-of-communication limit, and review translation requirements.",
+        "og:url": "https://www.chatdocket.xyz/guide/whatsapp-evidence-canada-ircc",
+        "og:site_name": "ChatDocket",
+        "og:image": "https://www.chatdocket.xyz/opengraph-image",
+        "og:image:width": "1200",
+        "og:image:height": "630",
+        "og:image:alt": "ChatDocket WhatsApp PDF converter",
+        "og:type": "article"
+      },
+      "twitter": {
+        "twitter:card": "summary_large_image",
+        "twitter:title": "WhatsApp Chat Evidence for Canada IRCC (IMM 5289)",
+        "twitter:description": "Prepare WhatsApp messages for Canadian spousal sponsorship, check the 10-page proof-of-communication limit, and review translation requirements.",
+        "twitter:image": "https://www.chatdocket.xyz/opengraph-image"
+      },
+      "headings": [
+        {
+          "level": 1,
+          "text": "How to Prepare WhatsApp Chat Evidence for Canada IRCC Spousal Sponsorship (IMM 5289)"
+        },
+        {
+          "level": 2,
+          "text": "Understanding IRCC s 10-Page Communication History Guideline"
+        },
+        {
+          "level": 2,
+          "text": "Step-by-Step: Create a 10-Page IRCC WhatsApp Evidence PDF"
+        },
+        {
+          "level": 3,
+          "text": "Step 1 — Export the WhatsApp Chat"
+        },
+        {
+          "level": 3,
+          "text": "Step 2 — Upload to ChatDocket"
+        },
+        {
+          "level": 3,
+          "text": "Step 3 — Select the Canada IRCC Preset"
+        },
+        {
+          "level": 3,
+          "text": "Step 4 — Review, Redact, and Download"
+        },
+        {
+          "level": 2,
+          "text": "Manual Selection vs. ChatDocket for IRCC 10-Page Limit"
+        },
+        {
+          "level": 2,
+          "text": "What Else Does IRCC Require for Spousal Sponsorship?"
+        },
+        {
+          "level": 2,
+          "text": "Frequently Asked Questions — IRCC WhatsApp Evidence"
+        },
+        {
+          "level": 2,
+          "text": "Generate Your IRCC-Ready WhatsApp Evidence PDF Now"
+        },
+        {
+          "level": 2,
+          "text": "Related Immigration Evidence Guides"
+        }
+      ],
+      "wordCount": 766,
+      "internalLinkCount": 18,
+      "internalLinks": [
+        "/",
+        "/guide/whatsapp-to-pdf-uk-spouse-visa",
+        "/guide/whatsapp-chat-proof-uscis-i130",
+        "/guide/whatsapp-evidence-canada-ircc",
+        "/guide/whatsapp-proof-australia-partner-visa",
+        "/guide",
+        "/guide/whatsapp-chat-to-pdf-with-photos",
+        "/privacy",
+        "/terms"
+      ],
+      "images": {
+        "total": 0,
+        "withAlt": 0,
+        "withDimensions": 0
+      },
+      "graph": [
+        {
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          "name": "ChatDocket",
+          "url": "https://www.chatdocket.xyz",
+          "description": "Browser-based WhatsApp chat PDF converter and evidence formatting guides.",
+          "inLanguage": "en"
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "ChatDocket",
+          "url": "https://www.chatdocket.xyz",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://www.chatdocket.xyz/icon.svg"
+          },
+          "sameAs": [
+            "https://github.com/tawhid2005/ChatDocket"
+          ],
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "support@chatdocket.com",
+            "contactType": "customer support",
+            "availableLanguage": "English"
+          }
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "Article",
+          "headline": "How to Prepare WhatsApp Chat Evidence for Canada IRCC Spousal Sponsorship (IMM 5289)",
+          "description": "Complete guide to meeting the IRCC 10-page communication history guideline using ChatDocket's smart sampling for Canadian spousal sponsorship applications.",
+          "url": "https://www.chatdocket.xyz/guide/whatsapp-evidence-canada-ircc",
+          "author": {
+            "@type": "Organization",
+            "name": "ChatDocket"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "ChatDocket",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://www.chatdocket.xyz/icon.svg"
+            }
+          },
+          "datePublished": "2026-11-01",
+          "dateModified": "2026-11-18",
+          "inLanguage": "en"
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://www.chatdocket.xyz"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Guides",
+              "item": "https://www.chatdocket.xyz/guide"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Canada IRCC WhatsApp Evidence Guide",
+              "item": "https://www.chatdocket.xyz/guide/whatsapp-evidence-canada-ircc"
+            }
+          ]
+        }
+      ],
+      "frequentTerms": {
+        "ircc": 21,
+        "whatsapp": 18,
+        "chatdocket": 12,
+        "evidence": 12,
+        "communication": 12,
+        "page": 11,
+        "canada": 8,
+        "chat": 8,
+        "count": 8,
+        "proof": 7,
+        "messages": 7,
+        "history": 7,
+        "relationship": 7,
+        "pages": 6,
+        "check": 6,
+        "export": 5,
+        "maximum": 4,
+        "records": 4,
+        "saved": 4,
+        "other": 4,
+        "step": 4,
+        "visa": 3,
+        "australia": 3,
+        "free": 3,
+        "guides": 3,
+        "spousal": 3,
+        "sponsorship": 3,
+        "guide": 3,
+        "representative": 3,
+        "preview": 3,
+        "browser": 3,
+        "preset": 3,
+        "sample": 3,
+        "final": 3,
+        "open": 3,
+        "adjust": 3,
+        "application": 3,
+        "documents": 3,
+        "never": 3,
+        "server": 3
+      },
+      "features": {
+        "tables": 1,
+        "orderedLists": 1,
+        "unorderedLists": 1,
+        "forms": 0
+      }
+    },
+    {
+      "url": "http://127.0.0.1:4174/guide/whatsapp-proof-australia-partner-visa",
+      "finalUrl": "http://127.0.0.1:4174/guide/whatsapp-proof-australia-partner-visa",
+      "status": 200,
+      "title": "WhatsApp Proof for Australia Partner Visa 820/801 | ChatDocket",
+      "canonical": [
+        "https://www.chatdocket.xyz/guide/whatsapp-proof-australia-partner-visa"
+      ],
+      "description": "Convert WhatsApp exports into Australia DHA Subclass 820/801 relationship evidence PDFs with call logs &amp; Bates stamps—100% private, zero uploads.",
+      "robots": "index, follow",
+      "openGraph": {
+        "og:title": "WhatsApp Proof for Australia Partner Visa 820/801",
+        "og:description": "Convert WhatsApp exports into Australia DHA Subclass 820/801 relationship evidence PDFs with call logs &amp; Bates stamps—100% private, zero uploads.",
+        "og:url": "https://www.chatdocket.xyz/guide/whatsapp-proof-australia-partner-visa",
+        "og:site_name": "ChatDocket",
+        "og:image": "https://www.chatdocket.xyz/opengraph-image",
+        "og:image:width": "1200",
+        "og:image:height": "630",
+        "og:image:alt": "ChatDocket WhatsApp PDF converter",
+        "og:type": "article"
+      },
+      "twitter": {
+        "twitter:card": "summary_large_image",
+        "twitter:title": "WhatsApp Proof for Australia Partner Visa 820/801",
+        "twitter:description": "Convert WhatsApp exports into Australia DHA Subclass 820/801 relationship evidence PDFs with call logs &amp; Bates stamps—100% private, zero uploads.",
+        "twitter:image": "https://www.chatdocket.xyz/opengraph-image"
+      },
+      "headings": [
+        {
+          "level": 1,
+          "text": "How to Prepare WhatsApp Chat Evidence for an Australia Partner Visa (Subclass 820/801)"
+        },
+        {
+          "level": 2,
+          "text": "Does DHA Accept WhatsApp as Evidence for a Partner Visa?"
+        },
+        {
+          "level": 2,
+          "text": "Step-by-Step: Export WhatsApp for Australian DHA Submission"
+        },
+        {
+          "level": 3,
+          "text": "Step 1 — Export the WhatsApp Chat"
+        },
+        {
+          "level": 3,
+          "text": "Step 2 — Upload to ChatDocket"
+        },
+        {
+          "level": 3,
+          "text": "Step 3 — Apply the Australia Partner Visa Preset"
+        },
+        {
+          "level": 3,
+          "text": "Step 4 — Redact PII and Download"
+        },
+        {
+          "level": 2,
+          "text": "Manual Screenshots vs. ChatDocket for Australian Partner Visa"
+        },
+        {
+          "level": 2,
+          "text": "Tips for a Strong Australian Partner Visa Application"
+        },
+        {
+          "level": 2,
+          "text": "Frequently Asked Questions — Australia Partner Visa WhatsApp Evidence"
+        },
+        {
+          "level": 2,
+          "text": "Create Your Australia Partner Visa WhatsApp Evidence Now"
+        },
+        {
+          "level": 2,
+          "text": "Related Immigration Evidence Guides"
+        }
+      ],
+      "wordCount": 913,
+      "internalLinkCount": 18,
+      "internalLinks": [
+        "/",
+        "/guide/whatsapp-to-pdf-uk-spouse-visa",
+        "/guide/whatsapp-chat-proof-uscis-i130",
+        "/guide/whatsapp-evidence-canada-ircc",
+        "/guide/whatsapp-proof-australia-partner-visa",
+        "/guide",
+        "/guide/whatsapp-chat-to-pdf-with-photos",
+        "/privacy",
+        "/terms"
+      ],
+      "images": {
+        "total": 0,
+        "withAlt": 0,
+        "withDimensions": 0
+      },
+      "graph": [
+        {
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          "name": "ChatDocket",
+          "url": "https://www.chatdocket.xyz",
+          "description": "Browser-based WhatsApp chat PDF converter and evidence formatting guides.",
+          "inLanguage": "en"
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "ChatDocket",
+          "url": "https://www.chatdocket.xyz",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://www.chatdocket.xyz/icon.svg"
+          },
+          "sameAs": [
+            "https://github.com/tawhid2005/ChatDocket"
+          ],
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "support@chatdocket.com",
+            "contactType": "customer support",
+            "availableLanguage": "English"
+          }
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "Article",
+          "headline": "How to Prepare WhatsApp Chat Evidence for an Australia Partner Visa (Subclass 820/801)",
+          "description": "Complete guide to formatting WhatsApp exports as genuine relationship evidence for Australia DHA Partner Visa applications (subclass 820/801 and 309/100).",
+          "url": "https://www.chatdocket.xyz/guide/whatsapp-proof-australia-partner-visa",
+          "author": {
+            "@type": "Organization",
+            "name": "ChatDocket"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "ChatDocket",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://www.chatdocket.xyz/icon.svg"
+            }
+          },
+          "datePublished": "2026-11-01",
+          "inLanguage": "en"
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Does the Australian DHA accept WhatsApp chats as evidence for a Partner Visa?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. The Department of Home Affairs (DHA) accepts digital communication records as evidence of a genuine and continuing relationship under the partner visa criteria. WhatsApp exports, when presented as a clear, paginated, chronological PDF, can support all four relationship aspects DHA evaluates: financial, household, social, and commitment."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What are the four aspects of a genuine relationship for Australian Partner Visa?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "DHA evaluates the genuineness of a relationship across four aspects: (1) Financial — joint accounts, shared expenses; (2) Nature of household — shared living arrangements; (3) Social — recognition as a couple by others; (4) Commitment — future plans, communication history. WhatsApp evidence primarily supports the commitment and social aspects."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How do I export WhatsApp chats for an Australian visa application?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "On iPhone: open the chat → tap the contact name → Export Chat → Attach Media. On Android: open the chat → ⋮ → More → Export Chat. Upload the .zip file to ChatDocket, select the Australia Partner Visa preset, and download your Bates-numbered PDF."
+              }
+            }
+          ]
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://www.chatdocket.xyz"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Guides",
+              "item": "https://www.chatdocket.xyz/guide"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Australia Partner Visa WhatsApp Guide",
+              "item": "https://www.chatdocket.xyz/guide/whatsapp-proof-australia-partner-visa"
+            }
+          ]
+        }
+      ],
+      "frequentTerms": {
+        "whatsapp": 26,
+        "evidence": 20,
+        "visa": 19,
+        "partner": 18,
+        "chatdocket": 14,
+        "relationship": 14,
+        "australia": 9,
+        "communication": 8,
+        "chat": 7,
+        "history": 7,
+        "aspects": 7,
+        "australian": 6,
+        "subclass": 5,
+        "genuine": 5,
+        "commitment": 5,
+        "social": 5,
+        "page": 5,
+        "couple": 4,
+        "browser": 4,
+        "period": 4,
+        "export": 4,
+        "step": 4,
+        "manual": 4,
+        "under": 4,
+        "canada": 3,
+        "free": 3,
+        "home": 3,
+        "guides": 3,
+        "continuing": 3,
+        "four": 3,
+        "financial": 3,
+        "shared": 3,
+        "entire": 3,
+        "include": 3,
+        "upload": 3,
+        "messages": 3,
+        "full": 3,
+        "cover": 3,
+        "call": 3,
+        "professional": 3
+      },
+      "features": {
+        "tables": 1,
+        "orderedLists": 2,
+        "unorderedLists": 1,
+        "forms": 0
+      }
+    },
+    {
+      "url": "http://127.0.0.1:4174/guide/whatsapp-chat-court-evidence-bates-stamping",
+      "finalUrl": "http://127.0.0.1:4174/guide/whatsapp-chat-court-evidence-bates-stamping",
+      "status": 200,
+      "title": "WhatsApp Chat as Court Evidence — Bates Stamping Guide | ChatDocket",
+      "canonical": [
+        "https://www.chatdocket.xyz/guide/whatsapp-chat-court-evidence-bates-stamping"
+      ],
+      "description": "Format exported WhatsApp messages as a numbered PDF exhibit, preserve the original file, and understand what a SHA-256 hash can verify.",
+      "robots": "index, follow",
+      "openGraph": {
+        "og:title": "WhatsApp Chat as Court Evidence — Bates Stamping Guide",
+        "og:description": "Format exported WhatsApp messages as a numbered PDF exhibit, preserve the original file, and understand what a SHA-256 hash can verify.",
+        "og:url": "https://www.chatdocket.xyz/guide/whatsapp-chat-court-evidence-bates-stamping",
+        "og:site_name": "ChatDocket",
+        "og:image": "https://www.chatdocket.xyz/opengraph-image",
+        "og:image:width": "1200",
+        "og:image:height": "630",
+        "og:image:alt": "ChatDocket WhatsApp PDF converter",
+        "og:type": "article"
+      },
+      "twitter": {
+        "twitter:card": "summary_large_image",
+        "twitter:title": "WhatsApp Chat as Court Evidence — Bates Stamping Guide",
+        "twitter:description": "Format exported WhatsApp messages as a numbered PDF exhibit, preserve the original file, and understand what a SHA-256 hash can verify.",
+        "twitter:image": "https://www.chatdocket.xyz/opengraph-image"
+      },
+      "headings": [
+        {
+          "level": 1,
+          "text": "How to Submit WhatsApp Chat as Admissible Court Evidence with Bates Stamping"
+        },
+        {
+          "level": 2,
+          "text": "The Legal Challenge: Proving Authenticity Integrity"
+        },
+        {
+          "level": 2,
+          "text": "Why Screenshots Fail vs. Professional Forensic Formatting"
+        },
+        {
+          "level": 2,
+          "text": "Step-by-Step: Preparing a Court-Admissible WhatsApp Exhibit"
+        },
+        {
+          "level": 2,
+          "text": "Frequently Asked Questions"
+        },
+        {
+          "level": 2,
+          "text": "Generate Your Court-Admissible Exhibit Packet"
+        },
+        {
+          "level": 2,
+          "text": "Related Legal Evidence Guides"
+        }
+      ],
+      "wordCount": 683,
+      "internalLinkCount": 18,
+      "internalLinks": [
+        "/",
+        "/guide/whatsapp-to-pdf-uk-spouse-visa",
+        "/guide/whatsapp-chat-proof-uscis-i130",
+        "/guide/whatsapp-evidence-canada-ircc",
+        "/guide/whatsapp-proof-australia-partner-visa",
+        "/guide",
+        "/guide/whatsapp-evidence-child-custody-family-court",
+        "/guide/whatsapp-chat-proof-landlord-tenant-dispute",
+        "/guide/whatsapp-evidence-freelancer-contract-dispute",
+        "/guide/whatsapp-chat-to-pdf-with-photos",
+        "/privacy",
+        "/terms"
+      ],
+      "images": {
+        "total": 0,
+        "withAlt": 0,
+        "withDimensions": 0
+      },
+      "graph": [
+        {
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          "name": "ChatDocket",
+          "url": "https://www.chatdocket.xyz",
+          "description": "Browser-based WhatsApp chat PDF converter and evidence formatting guides.",
+          "inLanguage": "en"
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "ChatDocket",
+          "url": "https://www.chatdocket.xyz",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://www.chatdocket.xyz/icon.svg"
+          },
+          "sameAs": [
+            "https://github.com/tawhid2005/ChatDocket"
+          ],
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "support@chatdocket.com",
+            "contactType": "customer support",
+            "availableLanguage": "English"
+          }
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "Article",
+          "headline": "How to Submit WhatsApp Chat Logs as Admissible Court Evidence with Bates Stamping",
+          "description": "Complete legal practitioner and litigant guide to formatting WhatsApp message history into admissible court exhibits with Bates stamping, cryptographic SHA-256 hash integrity, and statutory statements of truth.",
+          "url": "https://www.chatdocket.xyz/guide/whatsapp-chat-court-evidence-bates-stamping",
+          "author": {
+            "@type": "Organization",
+            "name": "ChatDocket"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "ChatDocket",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://www.chatdocket.xyz/icon.svg"
+            }
+          },
+          "datePublished": "2026-11-01",
+          "inLanguage": "en"
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Are WhatsApp messages admissible as evidence in civil court?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. WhatsApp messages are widely admissible as electronic documentary evidence in civil courts (under UK CPR Part 32/33, US Federal Rules of Evidence Rule 901/902, and similar Commonwealth statutes), provided their authenticity and provenance can be established with clear timestamps, sender identification, and an intact chain of custody."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What is Bates numbering and why is it mandatory for court bundles?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Bates numbering is a sequential page-identification system (e.g., EXHIBIT-0001, EXHIBIT-0002) used by judges, solicitors, and barristers to cite specific pages during hearings and cross-examinations. Unpaginated screenshot piles are frequently rejected by court clerks."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How does SHA-256 cryptographic hashing prove chat integrity?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "A cryptographic SHA-256 hash creates a unique 64-character digital fingerprint of the original raw WhatsApp export file. If even a single comma or emoji is altered, the hash changes completely. ChatDocket computes this hash locally using the browser Web Crypto API and stamps it onto every page."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can I redact sensitive personal information before filing in court?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Court rules require redaction of non-material personal data like credit card numbers, national insurance/SSN numbers, and home addresses. ChatDocket provides 1-click bulk PII redaction and interactive black-out bars that preserve surrounding context without wiping out the entire dialogue."
+              }
+            }
+          ]
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://www.chatdocket.xyz"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Guides",
+              "item": "https://www.chatdocket.xyz/guide"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Court Evidence & Bates Stamping Guide",
+              "item": "https://www.chatdocket.xyz/guide/whatsapp-chat-court-evidence-bates-stamping"
+            }
+          ]
+        }
+      ],
+      "frequentTerms": {
+        "court": 11,
+        "whatsapp": 9,
+        "chatdocket": 8,
+        "evidence": 8,
+        "bates": 7,
+        "hash": 7,
+        "legal": 6,
+        "exhibit": 6,
+        "civil": 5,
+        "rules": 5,
+        "part": 4,
+        "numbering": 4,
+        "sha-": 4,
+        "cryptographic": 4,
+        "numbers": 4,
+        "export": 4,
+        "browser": 4,
+        "guides": 3,
+        "stamping": 3,
+        "chat": 3,
+        "admissible": 3,
+        "screenshots": 3,
+        "authenticity": 3,
+        "messages": 3,
+        "under": 3,
+        "records": 3,
+        "forensic": 3,
+        "phone": 3,
+        "exhibit-": 3,
+        "custody": 3,
+        "download": 3,
+        "file": 3,
+        "certificate": 3,
+        "click": 3,
+        "free": 2,
+        "litigation": 2,
+        "exhibits": 2,
+        "judges": 2,
+        "barristers": 2,
+        "clerks": 2
+      },
+      "features": {
+        "tables": 1,
+        "orderedLists": 2,
+        "unorderedLists": 0,
+        "forms": 0
+      }
+    },
+    {
+      "url": "http://127.0.0.1:4174/guide/whatsapp-evidence-child-custody-family-court",
+      "finalUrl": "http://127.0.0.1:4174/guide/whatsapp-evidence-child-custody-family-court",
+      "status": 200,
+      "title": "WhatsApp Evidence for Child Custody Family Court | ChatDocket",
+      "canonical": [
+        "https://www.chatdocket.xyz/guide/whatsapp-evidence-child-custody-family-court"
+      ],
+      "description": "Document co-parenting communication, missed call logs, and child welfare messages for family court proceedings. 100% private in-browser tool.",
+      "robots": "index, follow",
+      "openGraph": {
+        "og:title": "WhatsApp Evidence for Child Custody &amp; Family Court",
+        "og:description": "Document co-parenting communication, missed call logs, and child welfare messages for family court proceedings. 100% private in-browser tool.",
+        "og:url": "https://www.chatdocket.xyz/guide/whatsapp-evidence-child-custody-family-court",
+        "og:site_name": "ChatDocket",
+        "og:image": "https://www.chatdocket.xyz/opengraph-image",
+        "og:image:width": "1200",
+        "og:image:height": "630",
+        "og:image:alt": "ChatDocket WhatsApp PDF converter",
+        "og:type": "article"
+      },
+      "twitter": {
+        "twitter:card": "summary_large_image",
+        "twitter:title": "WhatsApp Evidence for Child Custody &amp; Family Court",
+        "twitter:description": "Document co-parenting communication, missed call logs, and child welfare messages for family court proceedings. 100% private in-browser tool.",
+        "twitter:image": "https://www.chatdocket.xyz/opengraph-image"
+      },
+      "headings": [
+        {
+          "level": 1,
+          "text": "How to Submit WhatsApp Evidence for Child Custody Family Court"
+        },
+        {
+          "level": 2,
+          "text": "What Family Court Judges Look For in Digital Messages"
+        },
+        {
+          "level": 2,
+          "text": "Best Practices When Formatting WhatsApp Chats for Court"
+        },
+        {
+          "level": 2,
+          "text": "Frequently Asked Questions"
+        },
+        {
+          "level": 2,
+          "text": "Export Your Family Court WhatsApp Evidence"
+        },
+        {
+          "level": 2,
+          "text": "Related Legal Evidence Guides"
+        }
+      ],
+      "wordCount": 494,
+      "internalLinkCount": 18,
+      "internalLinks": [
+        "/",
+        "/guide/whatsapp-to-pdf-uk-spouse-visa",
+        "/guide/whatsapp-chat-proof-uscis-i130",
+        "/guide/whatsapp-evidence-canada-ircc",
+        "/guide/whatsapp-proof-australia-partner-visa",
+        "/guide",
+        "/guide/whatsapp-chat-court-evidence-bates-stamping",
+        "/guide/whatsapp-chat-proof-landlord-tenant-dispute",
+        "/guide/how-to-export-whatsapp-chat-iphone-android",
+        "/guide/whatsapp-chat-to-pdf-with-photos",
+        "/privacy",
+        "/terms"
+      ],
+      "images": {
+        "total": 0,
+        "withAlt": 0,
+        "withDimensions": 0
+      },
+      "graph": [
+        {
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          "name": "ChatDocket",
+          "url": "https://www.chatdocket.xyz",
+          "description": "Browser-based WhatsApp chat PDF converter and evidence formatting guides.",
+          "inLanguage": "en"
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "ChatDocket",
+          "url": "https://www.chatdocket.xyz",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://www.chatdocket.xyz/icon.svg"
+          },
+          "sameAs": [
+            "https://github.com/tawhid2005/ChatDocket"
+          ],
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "support@chatdocket.com",
+            "contactType": "customer support",
+            "availableLanguage": "English"
+          }
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "Article",
+          "headline": "How to Document WhatsApp Evidence for Child Custody & Family Court Hearings",
+          "description": "Practical legal guide for parents and family solicitors on exporting and formatting WhatsApp chats, missed calls, and agreements for custody proceedings.",
+          "url": "https://www.chatdocket.xyz/guide/whatsapp-evidence-child-custody-family-court",
+          "author": {
+            "@type": "Organization",
+            "name": "ChatDocket"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "ChatDocket",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://www.chatdocket.xyz/icon.svg"
+            }
+          },
+          "datePublished": "2026-11-01",
+          "inLanguage": "en"
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Are WhatsApp messages admissible in family court child custody disputes?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Family court judges routinely review WhatsApp messages to evaluate co-parenting cooperation, respect for court-ordered visitation schedules, child maintenance agreements, and allegations of hostile or alienating behavior."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Why do family courts reject screenshot folders from parents?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Selective screenshots lack context, timestamps, and verifiable authenticity. Family court judges often view cherry-picked screenshots with skepticism because hostile messages might have been provoked by unshown preceding dialogue."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How do I highlight missed voice and video calls with my child?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "ChatDocket automatically parses WhatsApp call records, highlighting missed calls, call durations, and exact times on a dedicated Call Summary Schedule. This provides objective proof of attempted contact."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is it completely private when parsing sensitive family discussions?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. ChatDocket operates 100% locally inside your browser RAM. No family messages, children names, photos, or audio recordings are uploaded to external servers or logged in any cloud database."
+              }
+            }
+          ]
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://www.chatdocket.xyz"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Guides",
+              "item": "https://www.chatdocket.xyz/guide"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Family Court & Custody WhatsApp Evidence",
+              "item": "https://www.chatdocket.xyz/guide/whatsapp-evidence-child-custody-family-court"
+            }
+          ]
+        }
+      ],
+      "frequentTerms": {
+        "family": 14,
+        "court": 12,
+        "child": 10,
+        "whatsapp": 8,
+        "call": 8,
+        "chatdocket": 6,
+        "evidence": 6,
+        "messages": 6,
+        "custody": 5,
+        "missed": 4,
+        "guides": 3,
+        "co-parenting": 3,
+        "visitation": 3,
+        "judges": 3,
+        "orders": 3,
+        "contact": 3,
+        "schedule": 3,
+        "voice": 3,
+        "calls": 3,
+        "screenshots": 3,
+        "browser": 3,
+        "export": 3,
+        "free": 2,
+        "records": 2,
+        "disputes": 2,
+        "courts": 2,
+        "parents": 2,
+        "cooperation": 2,
+        "reasonable": 2,
+        "respect": 2,
+        "attempted": 2,
+        "video": 2,
+        "chats": 2,
+        "durations": 2,
+        "bates": 2,
+        "stamping": 2,
+        "context": 2,
+        "hostile": 2,
+        "dedicated": 2,
+        "summary": 2
+      },
+      "features": {
+        "tables": 0,
+        "orderedLists": 1,
+        "unorderedLists": 1,
+        "forms": 0
+      }
+    },
+    {
+      "url": "http://127.0.0.1:4174/guide/whatsapp-chat-proof-landlord-tenant-dispute",
+      "finalUrl": "http://127.0.0.1:4174/guide/whatsapp-chat-proof-landlord-tenant-dispute",
+      "status": 200,
+      "title": "WhatsApp Proof for Landlord Tenant Cases | ChatDocket",
+      "canonical": [
+        "https://www.chatdocket.xyz/guide/whatsapp-chat-proof-landlord-tenant-dispute"
+      ],
+      "description": "Export WhatsApp chat evidence for tenancy deposit disputes, repair notices, and rent agreements. Generate Bates-stamped PDFs locally.",
+      "robots": "index, follow",
+      "openGraph": {
+        "og:title": "WhatsApp Proof for Landlord &amp; Tenant Cases",
+        "og:description": "Export WhatsApp chat evidence for tenancy deposit disputes, repair notices, and rent agreements. Generate Bates-stamped PDFs locally.",
+        "og:url": "https://www.chatdocket.xyz/guide/whatsapp-chat-proof-landlord-tenant-dispute",
+        "og:site_name": "ChatDocket",
+        "og:image": "https://www.chatdocket.xyz/opengraph-image",
+        "og:image:width": "1200",
+        "og:image:height": "630",
+        "og:image:alt": "ChatDocket WhatsApp PDF converter",
+        "og:type": "article"
+      },
+      "twitter": {
+        "twitter:card": "summary_large_image",
+        "twitter:title": "WhatsApp Proof for Landlord &amp; Tenant Cases",
+        "twitter:description": "Export WhatsApp chat evidence for tenancy deposit disputes, repair notices, and rent agreements. Generate Bates-stamped PDFs locally.",
+        "twitter:image": "https://www.chatdocket.xyz/opengraph-image"
+      },
+      "headings": [
+        {
+          "level": 1,
+          "text": "How to Submit WhatsApp Evidence for Landlord Tenant Disputes"
+        },
+        {
+          "level": 2,
+          "text": "Common Landlord-Tenant Disputes Resolved with WhatsApp Proof"
+        },
+        {
+          "level": 3,
+          "text": "1. Deposit Return Deduction Disputes"
+        },
+        {
+          "level": 3,
+          "text": "2. Disrepair Heating Outages"
+        },
+        {
+          "level": 3,
+          "text": "3. Unauthorised Entry Quiet Enjoyment"
+        },
+        {
+          "level": 3,
+          "text": "4. Rent Payment Grace Period Agreements"
+        },
+        {
+          "level": 2,
+          "text": "Why Adjudicators Reject Loose Smartphone Screenshots"
+        },
+        {
+          "level": 2,
+          "text": "4 Steps to Generate Admissible Housing Evidence"
+        },
+        {
+          "level": 3,
+          "text": "Prepare Your Tenancy Dispute Exhibit in 2 Minutes"
+        },
+        {
+          "level": 2,
+          "text": "Frequently Asked Questions"
+        },
+        {
+          "level": 3,
+          "text": "Can WhatsApp messages be used in a tenancy deposit dispute (TDS, DPS, MyDeposits)?"
+        },
+        {
+          "level": 3,
+          "text": "How do I prove I notified my landlord about damp, mould, or broken heating?"
+        },
+        {
+          "level": 3,
+          "text": "Are phone screenshots enough for small claims court or housing tribunal?"
+        },
+        {
+          "level": 3,
+          "text": "Will my landlord see my private data when I submit the PDF?"
+        }
+      ],
+      "wordCount": 605,
+      "internalLinkCount": 15,
+      "internalLinks": [
+        "/",
+        "/guide/whatsapp-to-pdf-uk-spouse-visa",
+        "/guide/whatsapp-chat-proof-uscis-i130",
+        "/guide/whatsapp-evidence-canada-ircc",
+        "/guide/whatsapp-proof-australia-partner-visa",
+        "/guide",
+        "/guide/whatsapp-chat-to-pdf-with-photos",
+        "/privacy",
+        "/terms"
+      ],
+      "images": {
+        "total": 0,
+        "withAlt": 0,
+        "withDimensions": 0
+      },
+      "graph": [
+        {
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          "name": "ChatDocket",
+          "url": "https://www.chatdocket.xyz",
+          "description": "Browser-based WhatsApp chat PDF converter and evidence formatting guides.",
+          "inLanguage": "en"
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "ChatDocket",
+          "url": "https://www.chatdocket.xyz",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://www.chatdocket.xyz/icon.svg"
+          },
+          "sameAs": [
+            "https://github.com/tawhid2005/ChatDocket"
+          ],
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "support@chatdocket.com",
+            "contactType": "customer support",
+            "availableLanguage": "English"
+          }
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "Article",
+          "headline": "How to Use WhatsApp Chat History in Landlord-Tenant Disputes & Deposit Tribunals",
+          "description": "Complete practical guide to preparing WhatsApp messages as legal evidence for tenancy deposit protection schemes, small claims court, repair defaults, and housing tribunals.",
+          "url": "https://www.chatdocket.xyz/guide/whatsapp-chat-proof-landlord-tenant-dispute",
+          "author": {
+            "@type": "Organization",
+            "name": "ChatDocket"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "ChatDocket",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://www.chatdocket.xyz/icon.svg"
+            }
+          },
+          "datePublished": "2026-11-01",
+          "inLanguage": "en"
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Can WhatsApp messages be used in a tenancy deposit dispute (TDS, DPS, MyDeposits)?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Tenancy deposit adjudicators routinely accept WhatsApp message threads as evidence of repair notifications, move-in condition agreements, check-out discussions, and return promises, provided the export is complete and chronological."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How do I prove I notified my landlord about damp, mould, or broken heating?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Export your entire WhatsApp message thread with attached media (photos of damage, videos, timestamps) and compile it into a paginated PDF with Bates numbering and an integrity hash. This demonstrates continuous notice without missing or cherry-picked messages."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Are phone screenshots enough for small claims court or housing tribunal?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Screenshots are easily disputed because they lack metadata, can be cropped, and do not prove continuous context. A formatted WhatsApp export PDF with SHA-256 verification and chronological message continuity is significantly more persuasive and legally defensible."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Will my landlord see my private data when I submit the PDF?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "ChatDocket runs 100% locally in your browser RAM. Your chats are never uploaded to any remote server, and you can redact sensitive details like bank accounts or personal phone numbers prior to PDF export."
+              }
+            }
+          ]
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://www.chatdocket.xyz"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Guides",
+              "item": "https://www.chatdocket.xyz/guide"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Landlord & Tenant Dispute Evidence",
+              "item": "https://www.chatdocket.xyz/guide/whatsapp-chat-proof-landlord-tenant-dispute"
+            }
+          ]
+        }
+      ],
+      "frequentTerms": {
+        "whatsapp": 11,
+        "landlord": 9,
+        "chatdocket": 7,
+        "evidence": 7,
+        "export": 7,
+        "deposit": 6,
+        "screenshots": 6,
+        "tenancy": 5,
+        "messages": 5,
+        "dispute": 4,
+        "housing": 4,
+        "message": 4,
+        "prove": 4,
+        "tribunal": 3,
+        "tenant": 3,
+        "disputes": 3,
+        "return": 3,
+        "payment": 3,
+        "agreements": 3,
+        "adjudicators": 3,
+        "claims": 3,
+        "browser": 3,
+        "free": 2,
+        "guides": 2,
+        "landlord-tenant": 2,
+        "submit": 2,
+        "conditions": 2,
+        "formatted": 2,
+        "provide": 2,
+        "proof": 2,
+        "client-side": 2,
+        "privacy": 2,
+        "zero": 2,
+        "server": 2,
+        "move-in": 2,
+        "written": 2,
+        "promises": 2,
+        "disrepair": 2,
+        "heating": 2,
+        "date": 2
+      },
+      "features": {
+        "tables": 0,
+        "orderedLists": 2,
+        "unorderedLists": 1,
+        "forms": 0
+      }
+    },
+    {
+      "url": "http://127.0.0.1:4174/guide/whatsapp-evidence-freelancer-contract-dispute",
+      "finalUrl": "http://127.0.0.1:4174/guide/whatsapp-evidence-freelancer-contract-dispute",
+      "status": 200,
+      "title": "WhatsApp Proof for Freelancer Contract Cases | ChatDocket",
+      "canonical": [
+        "https://www.chatdocket.xyz/guide/whatsapp-evidence-freelancer-contract-dispute"
+      ],
+      "description": "Prove client approvals, scope changes, and unpaid invoices using formatted WhatsApp chat PDF exhibits with Bates stamps and hash verification.",
+      "robots": "index, follow",
+      "openGraph": {
+        "og:title": "WhatsApp Proof for Freelancer &amp; Contract Cases",
+        "og:description": "Prove client approvals, scope changes, and unpaid invoices using formatted WhatsApp chat PDF exhibits with Bates stamps and hash verification.",
+        "og:url": "https://www.chatdocket.xyz/guide/whatsapp-evidence-freelancer-contract-dispute",
+        "og:site_name": "ChatDocket",
+        "og:image": "https://www.chatdocket.xyz/opengraph-image",
+        "og:image:width": "1200",
+        "og:image:height": "630",
+        "og:image:alt": "ChatDocket WhatsApp PDF converter",
+        "og:type": "article"
+      },
+      "twitter": {
+        "twitter:card": "summary_large_image",
+        "twitter:title": "WhatsApp Proof for Freelancer &amp; Contract Cases",
+        "twitter:description": "Prove client approvals, scope changes, and unpaid invoices using formatted WhatsApp chat PDF exhibits with Bates stamps and hash verification.",
+        "twitter:image": "https://www.chatdocket.xyz/opengraph-image"
+      },
+      "headings": [
+        {
+          "level": 1,
+          "text": "How Freelancers Agencies Prove Unpaid Invoices with WhatsApp"
+        },
+        {
+          "level": 2,
+          "text": "Essential Contract Disputes Solved by WhatsApp Exhibits"
+        },
+        {
+          "level": 3,
+          "text": "1. Scope Creep Additional Deliverables"
+        },
+        {
+          "level": 3,
+          "text": "2. Milestone Acceptance Final Sign-Off"
+        },
+        {
+          "level": 3,
+          "text": "3. Verbal Informal Agreement Terms"
+        },
+        {
+          "level": 3,
+          "text": "4. Admission of Debt Payment Promises"
+        },
+        {
+          "level": 2,
+          "text": "How Courts Evaluate Digital Business Communications"
+        },
+        {
+          "level": 2,
+          "text": "Quick 3-Step Guide to Prepare Your Invoice Evidence"
+        },
+        {
+          "level": 3,
+          "text": "Recover Your Unpaid Invoices with Indisputable Proof"
+        },
+        {
+          "level": 2,
+          "text": "Frequently Asked Questions"
+        },
+        {
+          "level": 3,
+          "text": "Are WhatsApp messages legally binding as a business contract?"
+        },
+        {
+          "level": 3,
+          "text": "How do I prove a client approved extra work or scope changes via WhatsApp?"
+        },
+        {
+          "level": 3,
+          "text": "Can I submit WhatsApp PDF exhibits to Small Claims Court or debt collectors?"
+        },
+        {
+          "level": 3,
+          "text": "Are my confidential client files or NDA-protected messages safe?"
+        }
+      ],
+      "wordCount": 602,
+      "internalLinkCount": 15,
+      "internalLinks": [
+        "/",
+        "/guide/whatsapp-to-pdf-uk-spouse-visa",
+        "/guide/whatsapp-chat-proof-uscis-i130",
+        "/guide/whatsapp-evidence-canada-ircc",
+        "/guide/whatsapp-proof-australia-partner-visa",
+        "/guide",
+        "/guide/whatsapp-chat-to-pdf-with-photos",
+        "/privacy",
+        "/terms"
+      ],
+      "images": {
+        "total": 0,
+        "withAlt": 0,
+        "withDimensions": 0
+      },
+      "graph": [
+        {
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          "name": "ChatDocket",
+          "url": "https://www.chatdocket.xyz",
+          "description": "Browser-based WhatsApp chat PDF converter and evidence formatting guides.",
+          "inLanguage": "en"
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "ChatDocket",
+          "url": "https://www.chatdocket.xyz",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://www.chatdocket.xyz/icon.svg"
+          },
+          "sameAs": [
+            "https://github.com/tawhid2005/ChatDocket"
+          ],
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "support@chatdocket.com",
+            "contactType": "customer support",
+            "availableLanguage": "English"
+          }
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "Article",
+          "headline": "How Freelancers & Agencies Win Unpaid Invoice Disputes with WhatsApp Evidence",
+          "description": "Comprehensive legal guide on using WhatsApp client message logs to prove contract formation, milestone approvals, scope modifications, and debt recovery in small claims court.",
+          "url": "https://www.chatdocket.xyz/guide/whatsapp-evidence-freelancer-contract-dispute",
+          "author": {
+            "@type": "Organization",
+            "name": "ChatDocket"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "ChatDocket",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://www.chatdocket.xyz/icon.svg"
+            }
+          },
+          "datePublished": "2026-11-01",
+          "inLanguage": "en"
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Are WhatsApp messages legally binding as a business contract?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. In the UK, US, Canada, Australia, and most jurisdictions, contracts do not require formal legal parchment to be enforceable. Mutual offer, acceptance, and consideration communicated over WhatsApp constitute a binding contract under commercial law."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How do I prove a client approved extra work or scope changes via WhatsApp?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Export the complete WhatsApp chat containing your price quote, delivery links, and the client’s explicit confirmation (e.g., \"looks good, go ahead\", \"approved\"). ChatDocket packages these messages into a sequentially numbered PDF exhibit with exact timestamps."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can I submit WhatsApp PDF exhibits to Small Claims Court or debt collectors?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. ChatDocket produces courtroom-standard PDF documents complete with sequential Bates stamping (e.g., BATES-0001), cover sheets, message statistics, and a statutory Statement of Truth compliant with civil evidence standards."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Are my confidential client files or NDA-protected messages safe?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Absolutely. ChatDocket runs completely client-side in your local browser sandbox. Your proprietary chat logs, client files, and invoices are never sent to our servers or stored in any cloud database."
+              }
+            }
+          ]
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://www.chatdocket.xyz"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Guides",
+              "item": "https://www.chatdocket.xyz/guide"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Freelancer & Contract Dispute Proof",
+              "item": "https://www.chatdocket.xyz/guide/whatsapp-evidence-freelancer-contract-dispute"
+            }
+          ]
+        }
+      ],
+      "frequentTerms": {
+        "whatsapp": 12,
+        "client": 9,
+        "chatdocket": 8,
+        "contract": 6,
+        "messages": 6,
+        "chat": 6,
+        "debt": 5,
+        "small": 5,
+        "claims": 5,
+        "export": 5,
+        "exhibit": 4,
+        "browser": 4,
+        "evidence": 3,
+        "commercial": 3,
+        "prove": 3,
+        "invoices": 3,
+        "text": 3,
+        "court": 3,
+        "exhibits": 3,
+        "scope": 3,
+        "without": 3,
+        "client-side": 3,
+        "work": 3,
+        "approved": 3,
+        "invoice": 3,
+        "bates": 3,
+        "bates-": 3,
+        "local": 3,
+        "canada": 2,
+        "australia": 2,
+        "free": 2,
+        "guides": 2,
+        "dispute": 2,
+        "unpaid": 2,
+        "file": 2,
+        "compliant": 2,
+        "additional": 2,
+        "quick": 2,
+        "changes": 2,
+        "extra": 2
+      },
+      "features": {
+        "tables": 0,
+        "orderedLists": 2,
+        "unorderedLists": 1,
+        "forms": 0
+      }
+    },
+    {
+      "url": "http://127.0.0.1:4174/guide/how-to-export-whatsapp-chat-iphone-android",
+      "finalUrl": "http://127.0.0.1:4174/guide/how-to-export-whatsapp-chat-iphone-android",
+      "status": 200,
+      "title": "How to Export WhatsApp Chat: iPhone Android | ChatDocket",
+      "canonical": [
+        "https://www.chatdocket.xyz/guide/how-to-export-whatsapp-chat-iphone-android"
+      ],
+      "description": "Step-by-step guide to exporting WhatsApp chats with photos and call logs as .zip or .txt on iPhone and Android. 100% private, no cloud upload.",
+      "robots": "index, follow",
+      "openGraph": {
+        "og:title": "How to Export WhatsApp Chat: iPhone &amp; Android",
+        "og:description": "Step-by-step guide to exporting WhatsApp chats with photos and call logs as .zip or .txt on iPhone and Android. 100% private, no cloud upload.",
+        "og:url": "https://www.chatdocket.xyz/guide/how-to-export-whatsapp-chat-iphone-android",
+        "og:site_name": "ChatDocket",
+        "og:image": "https://www.chatdocket.xyz/opengraph-image",
+        "og:image:width": "1200",
+        "og:image:height": "630",
+        "og:image:alt": "ChatDocket WhatsApp PDF converter",
+        "og:type": "article"
+      },
+      "twitter": {
+        "twitter:card": "summary_large_image",
+        "twitter:title": "How to Export WhatsApp Chat: iPhone &amp; Android",
+        "twitter:description": "Step-by-step guide to exporting WhatsApp chats with photos and call logs as .zip or .txt on iPhone and Android. 100% private, no cloud upload.",
+        "twitter:image": "https://www.chatdocket.xyz/opengraph-image"
+      },
+      "headings": [
+        {
+          "level": 1,
+          "text": "How to Export WhatsApp Chat on iPhone and Android"
+        },
+        {
+          "level": 2,
+          "text": "How to Export WhatsApp Chat on iPhone (iOS)"
+        },
+        {
+          "level": 3,
+          "text": "Open Chat Tap Contact Name"
+        },
+        {
+          "level": 3,
+          "text": "Scroll Down Tap “Export Chat”"
+        },
+        {
+          "level": 3,
+          "text": "Choose “Attach Media”"
+        },
+        {
+          "level": 3,
+          "text": "Save to Files or AirDrop"
+        },
+        {
+          "level": 2,
+          "text": "How to Export WhatsApp Chat on Android"
+        },
+        {
+          "level": 3,
+          "text": "Tap the Three Dots Menu"
+        },
+        {
+          "level": 3,
+          "text": "Select More &gt; Export Chat"
+        },
+        {
+          "level": 3,
+          "text": "Choose Include Media or Without Media"
+        },
+        {
+          "level": 3,
+          "text": "Save to Google Drive or Files"
+        },
+        {
+          "level": 2,
+          "text": "Next Step: Convert the Exported ZIP into Official PDF"
+        },
+        {
+          "level": 3,
+          "text": "Ready to Format Your Exported WhatsApp Chat?"
+        },
+        {
+          "level": 2,
+          "text": "Frequently Asked Questions"
+        },
+        {
+          "level": 3,
+          "text": "What is the message limit when exporting WhatsApp chats?"
+        },
+        {
+          "level": 3,
+          "text": "Should I choose Attach Media or Without Media ?"
+        },
+        {
+          "level": 3,
+          "text": "How do I transfer the exported file to my computer?"
+        },
+        {
+          "level": 3,
+          "text": "Does ChatDocket store my exported WhatsApp chat on any server?"
+        }
+      ],
+      "wordCount": 573,
+      "internalLinkCount": 15,
+      "internalLinks": [
+        "/",
+        "/guide/whatsapp-to-pdf-uk-spouse-visa",
+        "/guide/whatsapp-chat-proof-uscis-i130",
+        "/guide/whatsapp-evidence-canada-ircc",
+        "/guide/whatsapp-proof-australia-partner-visa",
+        "/guide",
+        "/guide/whatsapp-chat-to-pdf-with-photos",
+        "/privacy",
+        "/terms"
+      ],
+      "images": {
+        "total": 0,
+        "withAlt": 0,
+        "withDimensions": 0
+      },
+      "graph": [
+        {
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          "name": "ChatDocket",
+          "url": "https://www.chatdocket.xyz",
+          "description": "Browser-based WhatsApp chat PDF converter and evidence formatting guides.",
+          "inLanguage": "en"
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "ChatDocket",
+          "url": "https://www.chatdocket.xyz",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://www.chatdocket.xyz/icon.svg"
+          },
+          "sameAs": [
+            "https://github.com/tawhid2005/ChatDocket"
+          ],
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "support@chatdocket.com",
+            "contactType": "customer support",
+            "availableLanguage": "English"
+          }
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "Article",
+          "headline": "How to Export WhatsApp Chat History with Media on iPhone and Android (Complete Tutorial)",
+          "description": "Comprehensive step-by-step guide to extracting your full WhatsApp message archives, photos, and voice notes into .zip or .txt files for legal formatting and permanent backup.",
+          "url": "https://www.chatdocket.xyz/guide/how-to-export-whatsapp-chat-iphone-android",
+          "author": {
+            "@type": "Organization",
+            "name": "ChatDocket"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "ChatDocket",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://www.chatdocket.xyz/icon.svg"
+            }
+          },
+          "datePublished": "2026-11-01",
+          "inLanguage": "en"
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "HowTo",
+          "name": "How to Export WhatsApp Chat on iOS and Android",
+          "description": "Step-by-step instructions for extracting WhatsApp chat histories with attached photos, voice notes, and timestamps.",
+          "step": [
+            {
+              "@type": "HowToStep",
+              "name": "Open WhatsApp Chat",
+              "text": "Open WhatsApp and navigate to the individual or group conversation you wish to export."
+            },
+            {
+              "@type": "HowToStep",
+              "name": "Access Contact Info / Menu",
+              "text": "On iPhone, tap the contact name at the top. On Android, tap the three dots in the top-right corner and tap More."
+            },
+            {
+              "@type": "HowToStep",
+              "name": "Select Export Chat",
+              "text": "Tap Export Chat and choose whether to export With Media or Without Media."
+            },
+            {
+              "@type": "HowToStep",
+              "name": "Save or Share the Archive",
+              "text": "Save the exported .zip or .txt file to Files, Google Drive, AirDrop to your computer, or email it to yourself."
+            }
+          ]
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What is the message limit when exporting WhatsApp chats?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "WhatsApp allows up to 10,000 messages when exporting with media, or up to 40,000 messages without media. These limits are set by WhatsApp to prevent excessive file sizes during export."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Should I choose \"Attach Media\" or \"Without Media\"?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "For visa petitions and court exhibits, choosing \"Attach Media\" is recommended because it bundles attached photos, documents, and voice call records into a single .zip file for complete evidentiary credibility."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How do I transfer the exported file to my computer?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "On iPhone, use AirDrop, Save to Files, or iCloud Drive. On Android, share the .zip to Google Drive, Nearby Share / Quick Share, or connect via USB cable."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Does ChatDocket store my exported WhatsApp chat on any server?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. ChatDocket operates 100% locally in your web browser RAM using JavaScript. Your personal chats, photos, and call logs never leave your device."
+              }
+            }
+          ]
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://www.chatdocket.xyz"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Guides",
+              "item": "https://www.chatdocket.xyz/guide"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Export WhatsApp Chat Tutorial",
+              "item": "https://www.chatdocket.xyz/guide/how-to-export-whatsapp-chat-iphone-android"
+            }
+          ]
+        }
+      ],
+      "frequentTerms": {
+        "whatsapp": 14,
+        "chat": 13,
+        "media": 12,
+        "export": 11,
+        "file": 7,
+        "save": 6,
+        "chatdocket": 5,
+        "call": 5,
+        "browser": 5,
+        "open": 5,
+        "select": 5,
+        "photos": 5,
+        "without": 5,
+        "share": 5,
+        "exported": 5,
+        "official": 4,
+        "device": 4,
+        "android": 4,
+        "iphone": 4,
+        "attach": 4,
+        "files": 4,
+        "drive": 4,
+        "contact": 3,
+        "choose": 3,
+        "voice": 3,
+        "airdrop": 3,
+        "computer": 3,
+        "messages": 3,
+        "never": 3,
+        "visa": 2,
+        "uscis": 2,
+        "free": 2,
+        "guides": 2,
+        "tutorial": 2,
+        "conversation": 2,
+        "archive": 2,
+        "ready": 2,
+        "conversion": 2,
+        "convert": 2,
+        "name": 2
+      },
+      "features": {
+        "tables": 0,
+        "orderedLists": 1,
+        "unorderedLists": 1,
+        "forms": 0
+      }
+    },
+    {
+      "url": "http://127.0.0.1:4174/guide/whatsapp-chat-to-pdf-with-photos",
+      "finalUrl": "http://127.0.0.1:4174/guide/whatsapp-chat-to-pdf-with-photos",
+      "status": 200,
+      "title": "How to Save a WhatsApp Chat as PDF With Photos | ChatDocket",
+      "canonical": [
+        "https://www.chatdocket.xyz/guide/whatsapp-chat-to-pdf-with-photos"
+      ],
+      "description": "Export WhatsApp with media, open the ZIP in ChatDocket, and check which photos appear before saving a PDF from iPhone or Android.",
+      "robots": "index, follow",
+      "openGraph": {
+        "og:title": "How to Save a WhatsApp Chat as PDF With Photos",
+        "og:description": "Export WhatsApp with media, open the ZIP in ChatDocket, and check which photos appear before saving a PDF from iPhone or Android.",
+        "og:url": "https://www.chatdocket.xyz/guide/whatsapp-chat-to-pdf-with-photos",
+        "og:site_name": "ChatDocket",
+        "og:image": "https://www.chatdocket.xyz/opengraph-image",
+        "og:image:width": "1200",
+        "og:image:height": "630",
+        "og:image:alt": "ChatDocket WhatsApp PDF converter",
+        "og:type": "article"
+      },
+      "twitter": {
+        "twitter:card": "summary_large_image",
+        "twitter:title": "How to Save a WhatsApp Chat as PDF With Photos",
+        "twitter:description": "Export WhatsApp with media, open the ZIP in ChatDocket, and check which photos appear before saving a PDF from iPhone or Android.",
+        "twitter:image": "https://www.chatdocket.xyz/opengraph-image"
+      },
+      "headings": [
+        {
+          "level": 1,
+          "text": "How to Save a WhatsApp Chat as PDF With Photos"
+        },
+        {
+          "level": 2,
+          "text": "Export with media on iPhone or Android"
+        },
+        {
+          "level": 2,
+          "text": "What to check when photos are missing"
+        },
+        {
+          "level": 2,
+          "text": "Review before saving or sharing"
+        }
+      ],
+      "wordCount": 365,
+      "internalLinkCount": 17,
+      "internalLinks": [
+        "/",
+        "/guide/whatsapp-to-pdf-uk-spouse-visa",
+        "/guide/whatsapp-chat-proof-uscis-i130",
+        "/guide/whatsapp-evidence-canada-ircc",
+        "/guide/whatsapp-proof-australia-partner-visa",
+        "/guide",
+        "/guide/how-to-export-whatsapp-chat-iphone-android",
+        "/guide/whatsapp-chat-court-evidence-bates-stamping",
+        "/guide/whatsapp-chat-to-pdf-with-photos",
+        "/privacy",
+        "/terms"
+      ],
+      "images": {
+        "total": 0,
+        "withAlt": 0,
+        "withDimensions": 0
+      },
+      "graph": [
+        {
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          "name": "ChatDocket",
+          "url": "https://www.chatdocket.xyz",
+          "description": "Browser-based WhatsApp chat PDF converter and evidence formatting guides.",
+          "inLanguage": "en"
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "ChatDocket",
+          "url": "https://www.chatdocket.xyz",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://www.chatdocket.xyz/icon.svg"
+          },
+          "sameAs": [
+            "https://github.com/tawhid2005/ChatDocket"
+          ],
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "support@chatdocket.com",
+            "contactType": "customer support",
+            "availableLanguage": "English"
+          }
+        },
+        {
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "Article",
+              "headline": "How to Save a WhatsApp Chat as PDF With Photos",
+              "description": "Export WhatsApp with media, open the ZIP in ChatDocket, and check which photos appear before saving a PDF from iPhone or Android.",
+              "mainEntityOfPage": "https://www.chatdocket.xyz/guide/whatsapp-chat-to-pdf-with-photos",
+              "author": {
+                "@type": "Organization",
+                "name": "ChatDocket",
+                "url": "https://www.chatdocket.xyz"
+              }
+            },
+            {
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "ChatDocket",
+                  "item": "https://www.chatdocket.xyz/"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "Guides",
+                  "item": "https://www.chatdocket.xyz/guide"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 3,
+                  "name": "WhatsApp PDF with photos",
+                  "item": "https://www.chatdocket.xyz/guide/whatsapp-chat-to-pdf-with-photos"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "frequentTerms": {
+        "photos": 11,
+        "export": 10,
+        "open": 8,
+        "chat": 7,
+        "whatsapp": 6,
+        "check": 6,
+        "chatdocket": 5,
+        "media": 5,
+        "original": 4,
+        "guides": 3,
+        "conversation": 3,
+        "review": 3,
+        "files": 3,
+        "iphone": 3,
+        "android": 3,
+        "name": 3,
+        "choose": 3,
+        "visa": 2,
+        "save": 2,
+        "text": 2,
+        "preview": 2,
+        "before": 2,
+        "saving": 2,
+        "keep": 2,
+        "image": 2,
+        "menu": 2,
+        "separately": 2,
+        "without": 2,
+        "date": 2,
+        "messages": 2,
+        "guide": 2,
+        "saved": 2,
+        "whether": 2,
+        "compare": 2,
+        "evidence": 2,
+        "uscis": 1,
+        "canada": 1,
+        "australia": 1,
+        "free": 1,
+        "containing": 1
+      },
+      "features": {
+        "tables": 1,
+        "orderedLists": 1,
+        "unorderedLists": 1,
+        "forms": 0
+      }
+    },
+    {
+      "url": "http://127.0.0.1:4174/privacy",
+      "finalUrl": "http://127.0.0.1:4174/privacy",
+      "status": 200,
+      "title": "Privacy Policy — Zero-Knowledge Client-Side Processing | ChatDocket",
+      "canonical": [
+        "https://www.chatdocket.xyz/privacy"
+      ],
+      "description": "ChatDocket Zero-Knowledge Privacy Policy: 100% client-side in-browser WhatsApp PDF processing with zero cloud uploads and full data confidentiality.",
+      "robots": "index, follow",
+      "openGraph": {
+        "og:title": "Privacy Policy — Zero-Knowledge Client-Side Processing",
+        "og:description": "ChatDocket Zero-Knowledge Privacy Policy: 100% client-side in-browser WhatsApp PDF processing with zero cloud uploads and full data confidentiality.",
+        "og:url": "https://www.chatdocket.xyz/privacy",
+        "og:site_name": "ChatDocket",
+        "og:image": "https://www.chatdocket.xyz/opengraph-image",
+        "og:image:width": "1200",
+        "og:image:height": "630",
+        "og:image:alt": "ChatDocket WhatsApp PDF converter",
+        "og:type": "website"
+      },
+      "twitter": {
+        "twitter:card": "summary_large_image",
+        "twitter:title": "Privacy Policy — Zero-Knowledge Client-Side Processing",
+        "twitter:description": "ChatDocket Zero-Knowledge Privacy Policy: 100% client-side in-browser WhatsApp PDF processing with zero cloud uploads and full data confidentiality.",
+        "twitter:image": "https://www.chatdocket.xyz/opengraph-image"
+      },
+      "headings": [
+        {
+          "level": 1,
+          "text": "Privacy Policy"
+        },
+        {
+          "level": 2,
+          "text": "1. 100% Client-Side Chat Processing (Zero Server Uploads)"
+        },
+        {
+          "level": 2,
+          "text": "2. Account Information Authentication"
+        },
+        {
+          "level": 2,
+          "text": "3. Payments Billing Data"
+        },
+        {
+          "level": 2,
+          "text": "4. Data Deletion Contact"
+        }
+      ],
+      "wordCount": 166,
+      "internalLinkCount": 2,
+      "internalLinks": [
+        "/"
+      ],
+      "images": {
+        "total": 0,
+        "withAlt": 0,
+        "withDimensions": 0
+      },
+      "graph": [
+        {
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          "name": "ChatDocket",
+          "url": "https://www.chatdocket.xyz",
+          "description": "Browser-based WhatsApp chat PDF converter and evidence formatting guides.",
+          "inLanguage": "en"
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "ChatDocket",
+          "url": "https://www.chatdocket.xyz",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://www.chatdocket.xyz/icon.svg"
+          },
+          "sameAs": [
+            "https://github.com/tawhid2005/ChatDocket"
+          ],
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "support@chatdocket.com",
+            "contactType": "customer support",
+            "availableLanguage": "English"
+          }
+        }
+      ],
+      "frequentTerms": {
+        "chatdocket": 4,
+        "privacy": 3,
+        "account": 3,
+        "chat": 2,
+        "server": 2,
+        "never": 2,
+        "authentication": 2,
+        "sign": 2,
+        "email": 2,
+        "payments": 2,
+        "data": 2,
+        "record": 2,
+        "deletion": 2,
+        "support": 2,
+        "docket": 1,
+        "back": 1,
+        "zero-knowledge": 1,
+        "architecture": 1,
+        "policy": 1,
+        "last": 1,
+        "updated": 1,
+        "november": 1,
+        "client-side": 1,
+        "processing": 1,
+        "zero": 1,
+        "uploads": 1,
+        "processes": 1,
+        "exported": 1,
+        "whatsapp": 1,
+        "files": 1,
+        "strictly": 1,
+        "within": 1,
+        "browser": 1,
+        "local": 1,
+        "memory": 1,
+        "private": 1,
+        "messages": 1,
+        "phone": 1,
+        "numbers": 1,
+        "call": 1
+      },
+      "features": {
+        "tables": 0,
+        "orderedLists": 0,
+        "unorderedLists": 0,
+        "forms": 0
+      }
+    },
+    {
+      "url": "http://127.0.0.1:4174/terms",
+      "finalUrl": "http://127.0.0.1:4174/terms",
+      "status": 200,
+      "title": "Terms of Service 30-Day Guarantee | ChatDocket",
+      "canonical": [
+        "https://www.chatdocket.xyz/terms"
+      ],
+      "description": "Terms of Service and 30-Day Money-Back Guarantee for ChatDocket WhatsApp Chat to Legal &amp; Spouse Visa PDF Exporter. Fair, transparent usage terms.",
+      "robots": "index, follow",
+      "openGraph": {
+        "og:title": "Terms of Service &amp; 30-Day Guarantee",
+        "og:description": "Terms of Service and 30-Day Money-Back Guarantee for ChatDocket WhatsApp Chat to Legal &amp; Spouse Visa PDF Exporter. Fair, transparent usage terms.",
+        "og:url": "https://www.chatdocket.xyz/terms",
+        "og:site_name": "ChatDocket",
+        "og:image": "https://www.chatdocket.xyz/opengraph-image",
+        "og:image:width": "1200",
+        "og:image:height": "630",
+        "og:image:alt": "ChatDocket WhatsApp PDF converter",
+        "og:type": "website"
+      },
+      "twitter": {
+        "twitter:card": "summary_large_image",
+        "twitter:title": "Terms of Service &amp; 30-Day Guarantee",
+        "twitter:description": "Terms of Service and 30-Day Money-Back Guarantee for ChatDocket WhatsApp Chat to Legal &amp; Spouse Visa PDF Exporter. Fair, transparent usage terms.",
+        "twitter:image": "https://www.chatdocket.xyz/opengraph-image"
+      },
+      "headings": [
+        {
+          "level": 1,
+          "text": "Terms of Service"
+        },
+        {
+          "level": 2,
+          "text": "1. Service Description"
+        },
+        {
+          "level": 2,
+          "text": "2. User Licenses Plans"
+        },
+        {
+          "level": 2,
+          "text": "3. 30-Day Money-Back Guarantee"
+        }
+      ],
+      "wordCount": 118,
+      "internalLinkCount": 2,
+      "internalLinks": [
+        "/"
+      ],
+      "images": {
+        "total": 0,
+        "withAlt": 0,
+        "withDimensions": 0
+      },
+      "graph": [
+        {
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          "name": "ChatDocket",
+          "url": "https://www.chatdocket.xyz",
+          "description": "Browser-based WhatsApp chat PDF converter and evidence formatting guides.",
+          "inLanguage": "en"
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "ChatDocket",
+          "url": "https://www.chatdocket.xyz",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://www.chatdocket.xyz/icon.svg"
+          },
+          "sameAs": [
+            "https://github.com/tawhid2005/ChatDocket"
+          ],
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "support@chatdocket.com",
+            "contactType": "customer support",
+            "availableLanguage": "English"
+          }
+        }
+      ],
+      "frequentTerms": {
+        "formatting": 4,
+        "legal": 3,
+        "chatdocket": 3,
+        "chat": 2,
+        "terms": 2,
+        "service": 2,
+        "visa": 2,
+        "firm": 2,
+        "licenses": 2,
+        "document": 2,
+        "technical": 2,
+        "docket": 1,
+        "back": 1,
+        "licensing": 1,
+        "last": 1,
+        "updated": 1,
+        "november": 1,
+        "description": 1,
+        "provides": 1,
+        "browser-based": 1,
+        "tools": 1,
+        "convert": 1,
+        "user-exported": 1,
+        "whatsapp": 1,
+        "archives": 1,
+        "structured": 1,
+        "exhibits": 1,
+        "immigration": 1,
+        "dossiers": 1,
+        "does": 1,
+        "provide": 1,
+        "advice": 1,
+        "user": 1,
+        "plans": 1,
+        "paid": 1,
+        "court": 1,
+        "single": 1,
+        "case": 1,
+        "pass": 1,
+        "agency": 1
+      },
+      "features": {
+        "tables": 0,
+        "orderedLists": 0,
+        "unorderedLists": 0,
+        "forms": 0
+      }
+    },
+    {
+      "url": "http://127.0.0.1:4174/payment-success",
+      "finalUrl": "http://127.0.0.1:4174/payment-success",
+      "status": 200,
+      "title": "Payment Confirmation | ChatDocket",
+      "canonical": [],
+      "description": "Convert exported WhatsApp TXT or ZIP chats into a PDF. Preview messages, choose a date range and add Bates numbering for visa or court documents.",
+      "robots": "noindex, nofollow",
+      "openGraph": {},
+      "twitter": {},
+      "headings": [],
+      "wordCount": 0,
+      "internalLinkCount": 0,
+      "internalLinks": [],
+      "images": {
+        "total": 0,
+        "withAlt": 0,
+        "withDimensions": 0
+      },
+      "graph": [
+        {
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          "name": "ChatDocket",
+          "url": "https://www.chatdocket.xyz",
+          "description": "Browser-based WhatsApp chat PDF converter and evidence formatting guides.",
+          "inLanguage": "en"
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "ChatDocket",
+          "url": "https://www.chatdocket.xyz",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://www.chatdocket.xyz/icon.svg"
+          },
+          "sameAs": [
+            "https://github.com/tawhid2005/ChatDocket"
+          ],
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "support@chatdocket.com",
+            "contactType": "customer support",
+            "availableLanguage": "English"
+          }
+        }
+      ],
+      "frequentTerms": {},
+      "features": {
+        "tables": 0,
+        "orderedLists": 0,
+        "unorderedLists": 0,
+        "forms": 0
+      }
+    }
+  ],
+  "checks": {
+    "sitemapAndRobots": true,
+    "paymentNoindex": true,
+    "uniqueTitlesAndDescriptions": true,
+    "brokenLinks": []
+  },
+  "scorecards": [
+    {
+      "url": "http://127.0.0.1:4174/",
+      "score": 100,
+      "rules": {
+        "http200": true,
+        "title": true,
+        "description": true,
+        "selfCanonical": true,
+        "openGraph": true,
+        "twitter": true,
+        "singleH1": true,
+        "imageAlt": true,
+        "jsonLd": true,
+        "crawlable": true
+      }
+    },
+    {
+      "url": "http://127.0.0.1:4174/guide",
+      "score": 100,
+      "rules": {
+        "http200": true,
+        "title": true,
+        "description": true,
+        "selfCanonical": true,
+        "openGraph": true,
+        "twitter": true,
+        "singleH1": true,
+        "imageAlt": true,
+        "jsonLd": true,
+        "crawlable": true
+      }
+    },
+    {
+      "url": "http://127.0.0.1:4174/guide/whatsapp-to-pdf-uk-spouse-visa",
+      "score": 100,
+      "rules": {
+        "http200": true,
+        "title": true,
+        "description": true,
+        "selfCanonical": true,
+        "openGraph": true,
+        "twitter": true,
+        "singleH1": true,
+        "imageAlt": true,
+        "jsonLd": true,
+        "crawlable": true
+      }
+    },
+    {
+      "url": "http://127.0.0.1:4174/guide/whatsapp-chat-proof-uscis-i130",
+      "score": 100,
+      "rules": {
+        "http200": true,
+        "title": true,
+        "description": true,
+        "selfCanonical": true,
+        "openGraph": true,
+        "twitter": true,
+        "singleH1": true,
+        "imageAlt": true,
+        "jsonLd": true,
+        "crawlable": true
+      }
+    },
+    {
+      "url": "http://127.0.0.1:4174/guide/whatsapp-evidence-canada-ircc",
+      "score": 100,
+      "rules": {
+        "http200": true,
+        "title": true,
+        "description": true,
+        "selfCanonical": true,
+        "openGraph": true,
+        "twitter": true,
+        "singleH1": true,
+        "imageAlt": true,
+        "jsonLd": true,
+        "crawlable": true
+      }
+    },
+    {
+      "url": "http://127.0.0.1:4174/guide/whatsapp-proof-australia-partner-visa",
+      "score": 100,
+      "rules": {
+        "http200": true,
+        "title": true,
+        "description": true,
+        "selfCanonical": true,
+        "openGraph": true,
+        "twitter": true,
+        "singleH1": true,
+        "imageAlt": true,
+        "jsonLd": true,
+        "crawlable": true
+      }
+    },
+    {
+      "url": "http://127.0.0.1:4174/guide/whatsapp-chat-court-evidence-bates-stamping",
+      "score": 100,
+      "rules": {
+        "http200": true,
+        "title": true,
+        "description": true,
+        "selfCanonical": true,
+        "openGraph": true,
+        "twitter": true,
+        "singleH1": true,
+        "imageAlt": true,
+        "jsonLd": true,
+        "crawlable": true
+      }
+    },
+    {
+      "url": "http://127.0.0.1:4174/guide/whatsapp-evidence-child-custody-family-court",
+      "score": 100,
+      "rules": {
+        "http200": true,
+        "title": true,
+        "description": true,
+        "selfCanonical": true,
+        "openGraph": true,
+        "twitter": true,
+        "singleH1": true,
+        "imageAlt": true,
+        "jsonLd": true,
+        "crawlable": true
+      }
+    },
+    {
+      "url": "http://127.0.0.1:4174/guide/whatsapp-chat-proof-landlord-tenant-dispute",
+      "score": 100,
+      "rules": {
+        "http200": true,
+        "title": true,
+        "description": true,
+        "selfCanonical": true,
+        "openGraph": true,
+        "twitter": true,
+        "singleH1": true,
+        "imageAlt": true,
+        "jsonLd": true,
+        "crawlable": true
+      }
+    },
+    {
+      "url": "http://127.0.0.1:4174/guide/whatsapp-evidence-freelancer-contract-dispute",
+      "score": 100,
+      "rules": {
+        "http200": true,
+        "title": true,
+        "description": true,
+        "selfCanonical": true,
+        "openGraph": true,
+        "twitter": true,
+        "singleH1": true,
+        "imageAlt": true,
+        "jsonLd": true,
+        "crawlable": true
+      }
+    },
+    {
+      "url": "http://127.0.0.1:4174/guide/how-to-export-whatsapp-chat-iphone-android",
+      "score": 100,
+      "rules": {
+        "http200": true,
+        "title": true,
+        "description": true,
+        "selfCanonical": true,
+        "openGraph": true,
+        "twitter": true,
+        "singleH1": true,
+        "imageAlt": true,
+        "jsonLd": true,
+        "crawlable": true
+      }
+    },
+    {
+      "url": "http://127.0.0.1:4174/guide/whatsapp-chat-to-pdf-with-photos",
+      "score": 100,
+      "rules": {
+        "http200": true,
+        "title": true,
+        "description": true,
+        "selfCanonical": true,
+        "openGraph": true,
+        "twitter": true,
+        "singleH1": true,
+        "imageAlt": true,
+        "jsonLd": true,
+        "crawlable": true
+      }
+    },
+    {
+      "url": "http://127.0.0.1:4174/privacy",
+      "score": 100,
+      "rules": {
+        "http200": true,
+        "title": true,
+        "description": true,
+        "selfCanonical": true,
+        "openGraph": true,
+        "twitter": true,
+        "singleH1": true,
+        "imageAlt": true,
+        "jsonLd": true,
+        "crawlable": true
+      }
+    },
+    {
+      "url": "http://127.0.0.1:4174/terms",
+      "score": 100,
+      "rules": {
+        "http200": true,
+        "title": true,
+        "description": true,
+        "selfCanonical": true,
+        "openGraph": true,
+        "twitter": true,
+        "singleH1": true,
+        "imageAlt": true,
+        "jsonLd": true,
+        "crawlable": true
+      }
+    }
+  ]
+}

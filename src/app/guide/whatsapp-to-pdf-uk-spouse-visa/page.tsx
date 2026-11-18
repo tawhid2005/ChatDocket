@@ -1,33 +1,13 @@
-import type { Metadata } from 'next';
 import Link from 'next/link';
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://chatdocket.xyz';
+import { pageMetadata, siteUrl } from '@/lib/seo';
 
-export const metadata: Metadata = {
-  title: 'WhatsApp Chat to PDF for UK Spouse Visa (UKVI)',
-  description:
-    'Convert WhatsApp chats into UK Home Office Appendix FM spouse visa PDFs with smart sampling, call logs & Bates numbers. 100% private in browser.',
-  keywords: [
-    'UK spouse visa whatsapp evidence',
-    'whatsapp chat proof for spouse visa UK',
-    'Appendix FM relationship evidence whatsapp',
-    'UK Home Office whatsapp chat PDF',
-    'UK spouse visa communication evidence',
-    'whatsapp to pdf UK visa application',
-    'UKVI whatsapp chat history',
-    'UK partner visa whatsapp proof',
-  ],
-  alternates: {
-    canonical: `${siteUrl}/guide/whatsapp-to-pdf-uk-spouse-visa`,
-  },
-  openGraph: {
-    title: 'WhatsApp Chat to PDF for UK Spouse Visa — Free Guide | ChatDocket',
-    description:
-      'Step-by-step guide: convert your WhatsApp chat into Home Office-compliant evidence for a UK Spouse Visa (Appendix FM). 100% client-side, Bates-numbered PDFs.',
-    url: `${siteUrl}/guide/whatsapp-to-pdf-uk-spouse-visa`,
-    type: 'article',
-  },
-};
+export const metadata = pageMetadata(
+  '/guide/whatsapp-to-pdf-uk-spouse-visa',
+  'WhatsApp Chat to PDF for UK Spouse Visa (UKVI)',
+  'Convert WhatsApp chats into UK Home Office Appendix FM spouse visa PDFs with smart sampling, call logs & Bates numbers. 100% private in browser.',
+  'article',
+);
 
 const jsonLdArticle = {
   '@context': 'https://schema.org',
@@ -43,7 +23,6 @@ const jsonLdArticle = {
     logo: { '@type': 'ImageObject', url: `${siteUrl}/icon.svg` },
   },
   datePublished: '2026-11-01',
-  dateModified: new Date().toISOString().split('T')[0],
   inLanguage: 'en',
 };
 

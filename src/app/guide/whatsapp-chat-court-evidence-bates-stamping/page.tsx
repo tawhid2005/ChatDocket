@@ -1,33 +1,13 @@
-import type { Metadata } from 'next';
 import Link from 'next/link';
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://chatdocket.xyz';
+import { pageMetadata, siteUrl } from '@/lib/seo';
 
-export const metadata: Metadata = {
-  title: 'WhatsApp Chat as Court Evidence — Bates Stamping Guide',
-  description:
-    'Submit WhatsApp chat logs as court-admissible evidence with automated Bates stamping, cryptographic SHA-256 hashes & statement of truth.',
-  keywords: [
-    'whatsapp chat as court evidence',
-    'whatsapp bates numbering court exhibit',
-    'court admissible whatsapp text messages',
-    'whatsapp message affidavit CPR 32',
-    'submit whatsapp chat in court litigation',
-    'whatsapp digital evidence civil litigation',
-    'bates stamped chat exhibit generator',
-    'whatsapp evidence chain of custody',
-  ],
-  alternates: {
-    canonical: `${siteUrl}/guide/whatsapp-chat-court-evidence-bates-stamping`,
-  },
-  openGraph: {
-    title: 'WhatsApp Chat as Court Evidence — Bates Stamping Guide',
-    description:
-      'Format WhatsApp chat logs into court-admissible PDF exhibits with automated sequential Bates numbering, SHA-256 hashes, and Statements of Truth.',
-    url: `${siteUrl}/guide/whatsapp-chat-court-evidence-bates-stamping`,
-    type: 'article',
-  },
-};
+export const metadata = pageMetadata(
+  '/guide/whatsapp-chat-court-evidence-bates-stamping',
+  'WhatsApp Chat as Court Evidence — Bates Stamping Guide',
+  'Format exported WhatsApp messages as a numbered PDF exhibit, preserve the original file, and understand what a SHA-256 hash can verify.',
+  'article',
+);
 
 const jsonLdArticle = {
   '@context': 'https://schema.org',
@@ -43,7 +23,6 @@ const jsonLdArticle = {
     logo: { '@type': 'ImageObject', url: `${siteUrl}/icon.svg` },
   },
   datePublished: '2026-11-01',
-  dateModified: new Date().toISOString().split('T')[0],
   inLanguage: 'en',
 };
 
@@ -229,7 +208,7 @@ export default function CourtEvidenceBatesGuidePage() {
               <strong className="text-white">Verify SHA-256 hash:</strong> Upload the archive to ChatDocket. The browser Web Crypto API instantly computes a forensic hash of the raw file before rendering.
             </li>
             <li>
-              <strong className="text-white">Switch to Legal Table mode:</strong> In the sidebar under Purpose, select <strong>Court &amp; Litigation</strong>. This sets the theme to an official courtroom grid with line-by-line numbering.
+              <strong className="text-white">Switch to Legal Table mode:</strong> In the sidebar under Purpose, select <strong>Court &amp; Litigation</strong>. This sets the theme to a table layout with line-by-line numbering.
             </li>
             <li>
               <strong className="text-white">Configure Bates Prefix &amp; Case Reference:</strong> In the Names &amp; ID tab, enter your Case Reference (e.g. <code>HC-2026-00492</code>), Exhibit Letter (e.g. <code>Exhibit B</code>), and Law Firm details.

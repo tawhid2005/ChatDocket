@@ -1,32 +1,13 @@
-import type { Metadata } from 'next';
 import Link from 'next/link';
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://chatdocket.xyz';
+import { pageMetadata, siteUrl } from '@/lib/seo';
 
-export const metadata: Metadata = {
-  title: 'WhatsApp Proof for Freelancer & Contract Cases',
-  description:
-    'Prove client approvals, scope changes, and unpaid invoices using formatted WhatsApp chat PDF exhibits with Bates stamps and hash verification.',
-  keywords: [
-    'whatsapp proof freelancer contract dispute',
-    'whatsapp message proof unpaid client invoice',
-    'scope creep whatsapp agreement evidence',
-    'freelance client chat exhibit small claims',
-    'contractor whatsapp message legal proof',
-    'bates stamped whatsapp exhibit client dispute',
-    'verbal contract whatsapp text message proof',
-  ],
-  alternates: {
-    canonical: `${siteUrl}/guide/whatsapp-evidence-freelancer-contract-dispute`,
-  },
-  openGraph: {
-    title: 'WhatsApp Proof for Freelancer & Contract Cases',
-    description:
-      'Prove client approvals, scope changes, and unpaid invoices using formatted WhatsApp chat PDF exhibits with Bates stamps and hash verification.',
-    url: `${siteUrl}/guide/whatsapp-evidence-freelancer-contract-dispute`,
-    type: 'article',
-  },
-};
+export const metadata = pageMetadata(
+  '/guide/whatsapp-evidence-freelancer-contract-dispute',
+  'WhatsApp Proof for Freelancer & Contract Cases',
+  'Prove client approvals, scope changes, and unpaid invoices using formatted WhatsApp chat PDF exhibits with Bates stamps and hash verification.',
+  'article',
+);
 
 const jsonLdArticle = {
   '@context': 'https://schema.org',
@@ -42,7 +23,6 @@ const jsonLdArticle = {
     logo: { '@type': 'ImageObject', url: `${siteUrl}/icon.svg` },
   },
   datePublished: '2026-11-01',
-  dateModified: new Date().toISOString().split('T')[0],
   inLanguage: 'en',
 };
 

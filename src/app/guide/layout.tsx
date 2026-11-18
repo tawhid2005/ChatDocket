@@ -1,7 +1,5 @@
 import Link from 'next/link';
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://chatdocket.xyz';
-
 export default function GuideLayout({
   children,
 }: {
@@ -52,7 +50,9 @@ export default function GuideLayout({
           <p>
             &copy; {new Date().getFullYear()} ChatDocket. All processing is 100% client-side — your data never leaves your browser.
           </p>
-          <div className="flex justify-center gap-6 mt-3">
+          <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 mt-3">
+            <Link href="/guide" className="hover:text-slate-300 transition-colors">All guides</Link>
+            <Link href="/guide/whatsapp-chat-to-pdf-with-photos" className="hover:text-slate-300 transition-colors">WhatsApp PDF with photos</Link>
             <Link href="/privacy" className="hover:text-slate-300 transition-colors">Privacy Policy</Link>
             <Link href="/terms" className="hover:text-slate-300 transition-colors">Terms of Use</Link>
             <Link href="/" className="hover:text-slate-300 transition-colors">Main App</Link>

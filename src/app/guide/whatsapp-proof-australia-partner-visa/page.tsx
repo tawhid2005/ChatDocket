@@ -1,33 +1,13 @@
-import type { Metadata } from 'next';
 import Link from 'next/link';
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://chatdocket.xyz';
+import { pageMetadata, siteUrl } from '@/lib/seo';
 
-export const metadata: Metadata = {
-  title: 'WhatsApp Proof for Australia Partner Visa 820/801',
-  description:
-    'Convert WhatsApp exports into Australia DHA Subclass 820/801 relationship evidence PDFs with call logs & Bates stamps—100% private, zero uploads.',
-  keywords: [
-    'Australia partner visa 820 801 whatsapp proof',
-    'whatsapp evidence Australia partner visa',
-    'DHA partner visa whatsapp chat export',
-    'subclass 820 genuine relationship evidence',
-    'Australia spouse visa whatsapp history',
-    'whatsapp chat PDF Australia immigration',
-    'partner visa 309 whatsapp evidence',
-    'genuine relationship whatsapp proof Australia',
-  ],
-  alternates: {
-    canonical: `${siteUrl}/guide/whatsapp-proof-australia-partner-visa`,
-  },
-  openGraph: {
-    title: 'WhatsApp Proof for Australia Partner Visa 820/801 — Free Guide | ChatDocket',
-    description:
-      'Prepare WhatsApp chat evidence of a genuine de facto or spousal relationship for an Australia DHA Partner Visa (subclass 820/801). Smart-sampled PDF, 100% private.',
-    url: `${siteUrl}/guide/whatsapp-proof-australia-partner-visa`,
-    type: 'article',
-  },
-};
+export const metadata = pageMetadata(
+  '/guide/whatsapp-proof-australia-partner-visa',
+  'WhatsApp Proof for Australia Partner Visa 820/801',
+  'Convert WhatsApp exports into Australia DHA Subclass 820/801 relationship evidence PDFs with call logs & Bates stamps—100% private, zero uploads.',
+  'article',
+);
 
 const jsonLdArticle = {
   '@context': 'https://schema.org',
@@ -43,7 +23,6 @@ const jsonLdArticle = {
     logo: { '@type': 'ImageObject', url: `${siteUrl}/icon.svg` },
   },
   datePublished: '2026-11-01',
-  dateModified: new Date().toISOString().split('T')[0],
   inLanguage: 'en',
 };
 

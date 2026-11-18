@@ -1,6 +1,6 @@
 import { ImageResponse } from 'next/og';
 
-export const alt = 'ChatDocket — Official WhatsApp to Legal & Spouse Visa PDF Exporter';
+export const alt = 'ChatDocket — WhatsApp Chat to PDF for Visa and Court';
 export const size = {
   width: 1200,
   height: 630,

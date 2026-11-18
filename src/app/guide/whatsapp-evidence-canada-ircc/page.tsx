@@ -1,33 +1,13 @@
-import type { Metadata } from 'next';
 import Link from 'next/link';
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://chatdocket.xyz';
+import { pageMetadata, siteUrl } from '@/lib/seo';
 
-export const metadata: Metadata = {
-  title: 'WhatsApp Chat Evidence for Canada IRCC (IMM 5289)',
-  description:
-    "Meet Canada IRCC's 10-page communication limit using smart WhatsApp chat sampling, call logs, and bilingual support. 100% private in browser.",
-  keywords: [
-    'Canada IRCC whatsapp chat history',
-    'whatsapp evidence Canada spousal sponsorship',
-    'IMM 5289 whatsapp chat PDF',
-    'IRCC 10 page communication history',
-    'Canada PR spouse whatsapp proof',
-    'whatsapp chat export Canada immigration',
-    'IRCC relationship evidence whatsapp',
-    'Canadian spouse visa whatsapp history',
-  ],
-  alternates: {
-    canonical: `${siteUrl}/guide/whatsapp-evidence-canada-ircc`,
-  },
-  openGraph: {
-    title: 'WhatsApp Evidence for Canada IRCC Spousal Sponsorship — Free Guide | ChatDocket',
-    description:
-      'Prepare WhatsApp chat history that meets Canada IRCC\'s ~10-page guideline (IMM 5289) for spousal sponsorship. Smart-sampled, Bates-numbered PDF — 100% private.',
-    url: `${siteUrl}/guide/whatsapp-evidence-canada-ircc`,
-    type: 'article',
-  },
-};
+export const metadata = pageMetadata(
+  '/guide/whatsapp-evidence-canada-ircc',
+  'WhatsApp Chat Evidence for Canada IRCC (IMM 5289)',
+  "Prepare WhatsApp messages for Canadian spousal sponsorship, check the 10-page proof-of-communication limit, and review translation requirements.",
+  'article',
+);
 
 const jsonLdArticle = {
   '@context': 'https://schema.org',
@@ -43,39 +23,8 @@ const jsonLdArticle = {
     logo: { '@type': 'ImageObject', url: `${siteUrl}/icon.svg` },
   },
   datePublished: '2026-11-01',
-  dateModified: new Date().toISOString().split('T')[0],
+  dateModified: '2026-11-18',
   inLanguage: 'en',
-};
-
-const jsonLdFaq = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: [
-    {
-      '@type': 'Question',
-      name: "What is Canada IRCC's 10-page guideline for WhatsApp chat history?",
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: "IRCC Guide IMM 5289 advises that applicants submit no more than approximately 10 pages of communication history (such as texts, emails, or social media messages). ChatDocket's Canada IRCC preset automatically samples your WhatsApp export to produce a 10–15 page PDF covering your full relationship timeline.",
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Does IRCC accept WhatsApp chats as proof of a genuine relationship?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Yes. Immigration, Refugees and Citizenship Canada (IRCC) accepts digital communication records including WhatsApp messages as evidence of a genuine relationship under IMM 5289 guidelines. The evidence should be clearly dated, paginated, and representative of the relationship.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'How do I export WhatsApp chat for a Canadian immigration application?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'On iPhone: open the chat → tap the contact name → Export Chat → Attach Media. On Android: open the chat → ⋮ menu → More → Export Chat. Upload the .zip or .txt file to ChatDocket, select the Canada IRCC preset, and download your ready-to-submit PDF.',
-      },
-    },
-  ],
 };
 
 const jsonLdBreadcrumb = {
@@ -99,10 +48,6 @@ export default function CanadaIRCCGuidePage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdArticle) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdFaq) }}
       />
       <script
         type="application/ld+json"
@@ -130,13 +75,13 @@ export default function CanadaIRCCGuidePage() {
             How to Prepare WhatsApp Chat Evidence for Canada IRCC Spousal Sponsorship (IMM 5289)
           </h1>
           <p className="text-lg text-slate-400 leading-relaxed">
-            Canada&apos;s IRCC (Immigration, Refugees and Citizenship Canada) accepts WhatsApp message history as proof of a genuine relationship — but specifies a strict approximately <strong className="text-white">10-page limit</strong> in Guide IMM 5289. This guide shows you how to format your chats correctly and stay within that limit automatically.
+            <a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/application/application-forms-guides/guide-5289-sponsor-your-spouse-common-law-partner-conjugal-partner-dependent-child-complete-guide.html" className="text-emerald-400 underline">IRCC Guide IMM 5289</a> sets a maximum of <strong className="text-white">10 pages of proof of communication</strong>. If your checklist calls for these records, choose representative messages, check translation requirements, and count the pages in your saved PDF.
           </p>
         </header>
 
         {/* CTA */}
         <div className="bg-red-950/30 border border-red-700/40 rounded-xl p-6 mb-10 text-center">
-          <p className="text-red-300 font-semibold mb-3">Generate your 10-page IRCC-compliant WhatsApp evidence PDF</p>
+          <p className="text-red-300 font-semibold mb-3">Preview your WhatsApp proof of communication</p>
           <Link
             href="/"
             className="inline-block bg-emerald-500 hover:bg-emerald-400 text-white font-bold px-8 py-3 rounded-lg transition-colors text-lg"
@@ -150,13 +95,13 @@ export default function CanadaIRCCGuidePage() {
         <section className="mb-10">
           <h2 className="text-2xl font-bold text-white mb-4">Understanding IRCC&apos;s 10-Page Communication History Guideline</h2>
           <p className="text-slate-300 leading-relaxed mb-4">
-            IRCC Guide <strong className="text-white">IMM 5289</strong> (Sponsoring your spouse, common-law partner, conjugal partner or dependent child) explicitly advises applicants to include communication history as evidence of a genuine relationship. The guide states that submissions should be concise — typically around <strong className="text-white">10 pages</strong> of chat history.
+            The ten-page maximum applies to proof of communication. Count the pages in your WhatsApp PDF along with any other texts, emails, or social-media conversations you include in that category.
           </p>
           <p className="text-slate-300 leading-relaxed mb-4">
-            This creates a critical challenge: if your WhatsApp chat with your partner spans years, the full export may contain thousands of pages. Manually selecting 10 representative pages is tedious and prone to bias. ChatDocket&apos;s <strong className="text-white">Canada IRCC preset</strong> solves this by using <em>proportional milestone sampling</em> — automatically selecting messages from across the entire relationship timeline to produce a 10–15 page representative PDF.
+            Use the Canada IRCC preset to sample messages from across the selected dates. The final page count depends on message length, attachments, and layout. Open the saved PDF, check the total, and adjust your selections if needed.
           </p>
           <div className="bg-amber-900/20 border border-amber-700/40 rounded-lg p-4 text-amber-300 text-sm">
-            <strong className="text-amber-200">⚠ Important:</strong> The 10-page guideline is a recommendation for communication history (texts, emails). You may still submit additional evidence categories such as photos, flight records, and financial documents separately.
+            <strong className="text-amber-200">⚠ Important:</strong> IRCC requires translations for proof of communication in languages other than English or French. Check the official guide and your application checklist for the required translation documents and other evidence categories.
           </div>
         </section>
 
@@ -178,7 +123,7 @@ export default function CanadaIRCCGuidePage() {
 
           <h3 className="text-xl font-semibold text-emerald-400 mb-3">Step 3 — Select the Canada IRCC Preset</h3>
           <p className="text-slate-300 leading-relaxed mb-4">
-            Choose the <strong className="text-white">Canada IRCC (IMM 5289) Preset</strong>. ChatDocket&apos;s algorithm proportionally samples messages across your entire relationship timeline — early months, midway milestones, and recent exchanges — targeting a final PDF of <strong className="text-white">10–15 pages</strong>.
+            Choose the <strong className="text-white">Canada IRCC preset</strong> and review the sampled messages. Adjust the date range, sample density, and attachments, then save the PDF and count its pages.
           </p>
 
           <h3 className="text-xl font-semibold text-emerald-400 mb-3">Step 4 — Review, Redact, and Download</h3>
@@ -201,7 +146,7 @@ export default function CanadaIRCCGuidePage() {
               </thead>
               <tbody className="divide-y divide-slate-800">
                 {[
-                  ['Meets ~10-page IRCC guideline', '✗ Hard to control precisely', '✓ Preset targets exactly 10–15 pages'],
+                  ['Page count', 'Count the pages of the saved PDF', 'Check after saving and adjust as needed'],
                   ['Proportional timeline coverage', '✗ Often biased to recent messages', '✓ Proportional milestone sampling'],
                   ['Includes call log table', '✗ Not included', '✓ Auto-generated'],
                   ['Cover page with analytics', '✗ No', '✓ Relationship summary included'],
@@ -243,7 +188,7 @@ export default function CanadaIRCCGuidePage() {
             {[
               {
                 q: "What is Canada IRCC's 10-page guideline for WhatsApp chat history?",
-                a: "IRCC Guide IMM 5289 advises submitting approximately 10 pages of communication history. ChatDocket's Canada IRCC preset automatically samples your WhatsApp export to produce a representative 10–15 page PDF covering your entire relationship timeline.",
+                a: "IRCC Guide IMM 5289 sets a maximum of 10 pages for proof of communication. Check the saved PDF page count and leave room for any other communication records you plan to submit.",
               },
               {
                 q: 'Does IRCC accept WhatsApp chats as proof of a genuine relationship?',
@@ -251,7 +196,7 @@ export default function CanadaIRCCGuidePage() {
               },
               {
                 q: 'Should I submit my entire WhatsApp chat history to IRCC?',
-                a: "No. IRCC explicitly asks for concise, representative evidence — approximately 10 pages. Submitting hundreds of pages may actually be counterproductive. Use ChatDocket's Canada preset to produce a smart-sampled, 10-page representative document.",
+                a: "Select representative messages from the relevant dates. Keep the original export and verify that all submitted communication records fit within the 10-page maximum.",
               },
               {
                 q: 'Is it safe to use ChatDocket for IRCC immigration documents?',
@@ -273,7 +218,7 @@ export default function CanadaIRCCGuidePage() {
         <section className="bg-gradient-to-br from-red-950/40 to-slate-900/60 border border-red-700/30 rounded-xl p-8 text-center mb-10">
           <h2 className="text-2xl font-bold text-white mb-3">Generate Your IRCC-Ready WhatsApp Evidence PDF Now</h2>
           <p className="text-slate-400 mb-6 max-w-xl mx-auto">
-            Automatically create a 10-page, proportionally sampled WhatsApp evidence PDF for your Canada IRCC spousal sponsorship — in under 5 minutes, with zero data uploaded.
+            Preview a sample of your WhatsApp history and check the final page count before adding it to your application.
           </p>
           <Link
             href="/"

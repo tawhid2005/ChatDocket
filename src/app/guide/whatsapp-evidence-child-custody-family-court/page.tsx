@@ -1,33 +1,13 @@
-import type { Metadata } from 'next';
 import Link from 'next/link';
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://chatdocket.xyz';
+import { pageMetadata, siteUrl } from '@/lib/seo';
 
-export const metadata: Metadata = {
-  title: 'WhatsApp Evidence for Child Custody & Family Court',
-  description:
-    'Document co-parenting communication, missed call logs, and child welfare messages for family court proceedings. 100% private in-browser tool.',
-  keywords: [
-    'whatsapp chat evidence child custody',
-    'family court text message proof',
-    'co-parenting communication log whatsapp',
-    'whatsapp harassment proof family court',
-    'child visitation schedule text evidence',
-    'how to print whatsapp messages for custody court',
-    'parental alienation whatsapp chat proof',
-    'family court bates stamped messages',
-  ],
-  alternates: {
-    canonical: `${siteUrl}/guide/whatsapp-evidence-child-custody-family-court`,
-  },
-  openGraph: {
-    title: 'WhatsApp Evidence for Child Custody & Family Court',
-    description:
-      'Prepare admissible, chronological WhatsApp communication records for family court, custody hearings, and co-parenting mediation.',
-    url: `${siteUrl}/guide/whatsapp-evidence-child-custody-family-court`,
-    type: 'article',
-  },
-};
+export const metadata = pageMetadata(
+  '/guide/whatsapp-evidence-child-custody-family-court',
+  'WhatsApp Evidence for Child Custody & Family Court',
+  'Document co-parenting communication, missed call logs, and child welfare messages for family court proceedings. 100% private in-browser tool.',
+  'article',
+);
 
 const jsonLdArticle = {
   '@context': 'https://schema.org',
@@ -43,7 +23,6 @@ const jsonLdArticle = {
     logo: { '@type': 'ImageObject', url: `${siteUrl}/icon.svg` },
   },
   datePublished: '2026-11-01',
-  dateModified: new Date().toISOString().split('T')[0],
   inLanguage: 'en',
 };
 

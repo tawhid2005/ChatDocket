@@ -1,33 +1,13 @@
-import type { Metadata } from 'next';
 import Link from 'next/link';
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://chatdocket.xyz';
+import { pageMetadata, siteUrl } from '@/lib/seo';
 
-export const metadata: Metadata = {
-  title: 'WhatsApp Chat Proof for USCIS I-130 & CR1 Visa',
-  description:
-    'Format WhatsApp chat logs into Bates-numbered PDF exhibits for USCIS I-130 & CR1 petitions with call schedules & timestamps. 100% local privacy.',
-  keywords: [
-    'USCIS I-130 whatsapp chat logs',
-    'whatsapp proof for I-130 petition',
-    'CR1 visa whatsapp evidence',
-    'bona fide marriage whatsapp proof USCIS',
-    'whatsapp chat export for immigration USA',
-    'I-130 supporting evidence whatsapp',
-    'USCIS communication history whatsapp PDF',
-    'whatsapp to pdf for US green card application',
-  ],
-  alternates: {
-    canonical: `${siteUrl}/guide/whatsapp-chat-proof-uscis-i130`,
-  },
-  openGraph: {
-    title: 'WhatsApp Chat Proof for USCIS I-130 & CR1 Visa — Free Guide | ChatDocket',
-    description:
-      'Prepare Bates-numbered WhatsApp chat PDF exhibits as evidence of a bona fide marriage for USCIS I-130 and CR1 visa petitions. 100% client-side, private tool.',
-    url: `${siteUrl}/guide/whatsapp-chat-proof-uscis-i130`,
-    type: 'article',
-  },
-};
+export const metadata = pageMetadata(
+  '/guide/whatsapp-chat-proof-uscis-i130',
+  'WhatsApp Chat Proof for USCIS I-130 & CR1 Visa',
+  'Format WhatsApp chat logs into Bates-numbered PDF exhibits for USCIS I-130 & CR1 petitions with call schedules & timestamps. 100% local privacy.',
+  'article',
+);
 
 const jsonLdArticle = {
   '@context': 'https://schema.org',
@@ -43,7 +23,6 @@ const jsonLdArticle = {
     logo: { '@type': 'ImageObject', url: `${siteUrl}/icon.svg` },
   },
   datePublished: '2026-11-01',
-  dateModified: new Date().toISOString().split('T')[0],
   inLanguage: 'en',
 };
 

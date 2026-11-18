@@ -1,5 +1,8 @@
 'use client';
 
+import Link from 'next/link';
+import { siteUrl } from '@/lib/seo';
+
 import React, { useState, useMemo, useEffect } from 'react';
 import { Navbar } from '@/components/Navbar';
 import { OnboardingGuide } from '@/components/OnboardingGuide';
@@ -827,7 +830,7 @@ export default function Home() {
 
       {/* Main Content Area */}
       {messages.length === 0 ? (
-        <main className="flex-1 flex items-center justify-center p-4">
+        <main className="flex-1 flex flex-col items-center justify-center p-4">
           <OnboardingGuide
             onFileUpload={handleFileUpload}
             onLoadDemo={handleLoadDemo}
@@ -835,6 +838,7 @@ export default function Home() {
             isLoading={isLoading}
             uploadError={uploadError}
           />
+          <ConverterGuide />
         </main>
       ) : (
         <main className="flex-1 min-h-0 flex flex-col lg:flex-row relative lg:overflow-hidden print:h-auto print:overflow-visible">
@@ -992,5 +996,50 @@ export default function Home() {
         onSaveTranslation={handleSaveTranslation}
       />
     </div>
+  );
+}
+
+const converterSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebApplication',
+  name: 'ChatDocket',
+  url: siteUrl + '/',
+  applicationCategory: 'UtilitiesApplication',
+  operatingSystem: 'Web',
+  description: 'Browser-based converter for exported WhatsApp TXT and ZIP files with a PDF preview.',
+};
+
+function ConverterGuide() {
+  return (
+    <section className="no-print w-full max-w-3xl space-y-6 px-2 py-10 text-sm leading-relaxed text-slate-300" aria-labelledby="convert-whatsapp">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(converterSchema) }} />
+      <div className="space-y-3">
+        <h2 id="convert-whatsapp" className="text-2xl font-bold text-white">How to convert a WhatsApp chat to PDF</h2>
+        <p>Use Export Chat in WhatsApp, open the exported TXT or ZIP file in ChatDocket, and preview the conversation before saving it as a PDF. Choose a date range to include the messages you need. ChatDocket processes the chat file in your browser.</p>
+        <ol className="list-decimal space-y-2 pl-5">
+          <li>On iPhone, open the conversation, tap the contact or group name, then choose Export Chat. On Android, open the chat menu and choose More, then Export chat.</li>
+          <li>Choose the text-only export for messages, or keep the attachments in the export if you need photos. Save the export and open it in the converter.</li>
+          <li>Review names, dates, messages and any photos in the preview before using the PDF save option. Keep the original export alongside the PDF.</li>
+        </ol>
+      </div>
+      <div className="space-y-3">
+        <h2 className="text-xl font-bold text-white">WhatsApp PDF questions</h2>
+        <details>
+          <summary className="cursor-pointer font-semibold text-white">Can I turn WhatsApp messages into a PDF without screenshots?</summary>
+          <p className="mt-2">Yes. Import a WhatsApp TXT or ZIP export. The preview uses the exported text with timestamps and sender names, so you can review the conversation before saving it.</p>
+        </details>
+        <details>
+          <summary className="cursor-pointer font-semibold text-white">Can I include WhatsApp photos in the PDF?</summary>
+          <p className="mt-2">Use a ZIP export containing the chat text and supported image files. Review which photos appear in the preview. A text-only export contains no image files to embed.</p>
+        </details>
+      </div>
+      <nav aria-label="WhatsApp conversion and evidence guides" className="flex flex-wrap gap-x-5 gap-y-2 text-emerald-400">
+        <Link href="/guide/how-to-export-whatsapp-chat-iphone-android">Export WhatsApp on iPhone or Android</Link>
+        <Link href="/guide/whatsapp-to-pdf-uk-spouse-visa">WhatsApp PDF for a UK spouse visa</Link>
+        <Link href="/guide/whatsapp-chat-court-evidence-bates-stamping">Bates numbering for chat exhibits</Link>
+        <Link href="/guide/whatsapp-chat-to-pdf-with-photos">Save a WhatsApp chat as PDF with photos</Link>
+        <Link href="/guide">All WhatsApp evidence guides</Link>
+      </nav>
+    </section>
   );
 }

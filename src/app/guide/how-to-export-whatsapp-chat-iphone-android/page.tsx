@@ -1,33 +1,13 @@
-import type { Metadata } from 'next';
 import Link from 'next/link';
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://chatdocket.xyz';
+import { pageMetadata, siteUrl } from '@/lib/seo';
 
-export const metadata: Metadata = {
-  title: 'How to Export WhatsApp Chat: iPhone & Android',
-  description:
-    'Step-by-step guide to exporting WhatsApp chats with photos and call logs as .zip or .txt on iPhone and Android. 100% private, no cloud upload.',
-  keywords: [
-    'how to export whatsapp chat iphone',
-    'how to export whatsapp chat android',
-    'export whatsapp chat with media zip',
-    'export full whatsapp chat history',
-    'export whatsapp messages to pdf',
-    'save whatsapp conversation as text file',
-    'whatsapp export chat limit workaround',
-    'export whatsapp chat without email size limit',
-  ],
-  alternates: {
-    canonical: `${siteUrl}/guide/how-to-export-whatsapp-chat-iphone-android`,
-  },
-  openGraph: {
-    title: 'How to Export WhatsApp Chat: iPhone & Android',
-    description:
-      'Step-by-step guide to exporting WhatsApp chats with photos and call logs as .zip or .txt on iPhone and Android. 100% private, no cloud upload.',
-    url: `${siteUrl}/guide/how-to-export-whatsapp-chat-iphone-android`,
-    type: 'article',
-  },
-};
+export const metadata = pageMetadata(
+  '/guide/how-to-export-whatsapp-chat-iphone-android',
+  'How to Export WhatsApp Chat: iPhone & Android',
+  'Step-by-step guide to exporting WhatsApp chats with photos and call logs as .zip or .txt on iPhone and Android. 100% private, no cloud upload.',
+  'article',
+);
 
 const jsonLdArticle = {
   '@context': 'https://schema.org',
@@ -43,7 +23,6 @@ const jsonLdArticle = {
     logo: { '@type': 'ImageObject', url: `${siteUrl}/icon.svg` },
   },
   datePublished: '2026-11-01',
-  dateModified: new Date().toISOString().split('T')[0],
   inLanguage: 'en',
 };
 

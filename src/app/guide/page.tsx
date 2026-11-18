@@ -1,23 +1,13 @@
-import type { Metadata } from 'next';
 import Link from 'next/link';
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://chatdocket.xyz';
+import { pageMetadata, siteUrl } from '@/lib/seo';
 
-export const metadata: Metadata = {
-  title: 'WhatsApp Legal & Visa Evidence Guides Hub',
-  description:
-    'Official guides to export and format WhatsApp chats into court-admissible and spouse visa PDF evidence for UKVI, USCIS, IRCC, and civil courts.',
-  alternates: {
-    canonical: `${siteUrl}/guide`,
-  },
-  openGraph: {
-    title: 'WhatsApp Legal & Visa Evidence Guides Hub',
-    description:
-      'Official guides to export and format WhatsApp chats into court-admissible and spouse visa PDF evidence for UKVI, USCIS, IRCC, and civil courts.',
-    url: `${siteUrl}/guide`,
-    type: 'website',
-  },
-};
+export const metadata = pageMetadata(
+  '/guide',
+  'WhatsApp Export, Visa & Court Evidence Guides',
+  'Learn to export WhatsApp chats on iPhone and Android and format messages, photos and call entries for visa and court document bundles.',
+  'website',
+);
 
 interface GuideItem {
   icon: string;
@@ -53,7 +43,7 @@ const visaGuides: GuideItem[] = [
     title: 'WhatsApp Evidence for Canada IRCC Spousal Sponsorship (IMM 5289)',
     href: '/guide/whatsapp-evidence-canada-ircc',
     summary:
-      'Comply strictly with Canada IRCC\'s 10-page communication proof guideline using automated milestone sampling and bilingual formatting.',
+      'Prepare proof of communication for Canadian spousal sponsorship and review the 10-page limit and translation instructions.',
     badge: '10–15 Page Target Limit',
   },
   {
@@ -74,7 +64,7 @@ const legalGuides: GuideItem[] = [
     title: 'WhatsApp Chat as Court Evidence — Bates Stamping Guide',
     href: '/guide/whatsapp-chat-court-evidence-bates-stamping',
     summary:
-      'Submit WhatsApp chat logs as court-admissible evidence with automated sequential Bates stamping, SHA-256 hash integrity, and statutory statements of truth.',
+      'Format WhatsApp messages into a numbered PDF exhibit and retain the original chat export.',
     badge: 'Bates Stamping · CPR Part 32 / Rule 901',
   },
   {
@@ -195,7 +185,7 @@ export default function GuidesHubPage() {
             WhatsApp Legal &amp; Visa Evidence Guides
           </h1>
           <p className="text-base sm:text-lg text-slate-300 max-w-3xl leading-relaxed">
-            Every legal case and visa authority has distinct evidentiary expectations. Use these official guides to format your WhatsApp chat logs into persuasive, compliant PDF bundles.
+            Learn to export WhatsApp chats, choose messages for a document bundle, and find the instructions for your visa application or court process.
           </p>
         </header>
 
